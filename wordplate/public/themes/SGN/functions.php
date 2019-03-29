@@ -11,6 +11,9 @@ require get_template_directory().'/post-types/branch.php';
 require get_template_directory().'/post-types/project.php';
 require get_template_directory().'/post-types/news.php';
 
+// Register taxonomies for branches
+require get_template_directory().'/taxonomies/facebook.php';
+
 // Set theme defaults.
 add_action('after_setup_theme', function () {
     // Disable the admin toolbar.

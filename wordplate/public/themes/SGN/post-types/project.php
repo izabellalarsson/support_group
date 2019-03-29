@@ -18,7 +18,7 @@ add_action('init', function () {
             'thumbnail',
         ],
         'menu_icon' => 'dashicons-editor-ol',
-        'menu_position' => 20,
+        'menu_position' => 1,
         'public' => true,
     ]);
 });

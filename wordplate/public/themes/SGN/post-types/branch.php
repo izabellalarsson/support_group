@@ -18,7 +18,7 @@ add_action('init', function () {
             'thumbnail',
         ],
         'menu_icon' => 'dashicons-admin-home',
-        'menu_position' => 20,
+        'menu_position' => 3,
         'public' => true,
     ]);
 });

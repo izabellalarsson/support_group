@@ -18,7 +18,7 @@ add_action('init', function () {
             'thumbnail',
         ],
         'menu_icon' => 'dashicons-testimonial',
-        'menu_position' => 20,
+        'menu_position' => 0,
         'public' => true,
     ]);
 });
