@@ -11,6 +11,41 @@ require get_template_directory().'/post-types/branch.php';
 require get_template_directory().'/post-types/project.php';
 require get_template_directory().'/post-types/news.php';
 
+
+// Added Branches to Rest API
+add_action( 'init', 'my_branch_cpt' );
+function my_branch_cpt() {
+    $args = array(
+      'public'       => true,
+      'show_in_rest' => true,
+      'label'        => 'Branches'
+    );
+    register_post_type( 'branch', $args );
+}
+
+// Added News to Rest API
+add_action( 'init', 'my_news_cpt' );
+function my_news_cpt() {
+    $args = array(
+      'public'       => true,
+      'show_in_rest' => true,
+      'label'        => 'News'
+    );
+    register_post_type( 'news', $args );
+}
+
+// Added Project to Rest API
+add_action( 'init', 'my_project_cpt' );
+function my_project_cpt() {
+    $args = array(
+      'public'       => true,
+      'show_in_rest' => true,
+      'label'        => 'Projects'
+    );
+    register_post_type( 'project', $args );
+}
+
+
 // Register taxonomies if needed
 //require get_template_directory().'/taxonomies/example.php';
 
