@@ -5,6 +5,12 @@ declare(strict_types=1);
 error_reporting(E_ALL & ~E_NOTICE);
 // Register plugin helpers.
 require template_path('includes/plugins/plate.php');
+
+// Register post-types
+require get_template_directory().'/post-types/branch.php';
+require get_template_directory().'/post-types/project.php';
+require get_template_directory().'/post-types/news.php';
+
 // Set theme defaults.
 add_action('after_setup_theme', function () {
     // Disable the admin toolbar.
@@ -46,3 +52,5 @@ add_action('wp_enqueue_scripts', function () {
 add_filter('jpeg_quality', function () {
     return 100;
 }, 10, 2);
+
+
