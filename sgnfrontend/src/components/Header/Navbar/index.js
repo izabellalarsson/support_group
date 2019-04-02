@@ -6,7 +6,7 @@ import Dropdown from '../Dropdown'
 const NavbarStyle = styled.nav`
 background: #C4C4C4;
 width: 100%;
-height: 25vh;
+/* height: 25vh; */
 display: flex;
 justify-content: space-around;
 position: fixed;
