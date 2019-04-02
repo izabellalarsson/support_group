@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Navbar from './Navbar'
 
 class Header extends Component {
     state = {
-        pages: []
+        pages: [],
+        isClicked: false
     }
+
+    
+    handleClickMenu = () => {
+        this.setState ({
+            isClicked: !this.state.isClicked
+        })
+    }
+
     componentDidMount () {
         this.fetchPages()
     }
@@ -24,11 +34,8 @@ class Header extends Component {
     render() {
         console.log(this.state.pages)
         return (
-            <div>
-               {this.state.pages.map(item => (
-                   <p>{item.title.rendered}</p>
-               ))}
-            </div>
+            <Navbar handleClickMenu={this.handleClickMenu} isClicked={this.state.isClicked}>
+            </Navbar>
         );
     }
 }
