@@ -1,5 +1,5 @@
 languages
-mu-plugins
+mu-plugins/plate
 plugins/*
 !plugins/index.php
 upgrade
