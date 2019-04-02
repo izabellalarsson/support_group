@@ -17,7 +17,7 @@ require get_template_directory().'/post-types/news.php';
 
 //-----------------------------------------------------------------
 // Added Branches to Rest API
-//-----------------------------------------------------------------
+//----------------------------------------------------------------- 
 add_action( 'init', 'my_branch_cpt' );
 function my_branch_cpt() {
     $args = array(
