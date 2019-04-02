@@ -40,7 +40,7 @@ const Dropdown = ({isClicked}) => {
     return (
         <DropdownStyle isClicked={isClicked}>
             <nav className="Dropdown-Main-Item">
-                <DropdownMainItem isClicked={isClicked} text="About" link="branches"/>
+                <DropdownMainItem isClicked={isClicked} text="About" link="about"/>
                 <hr/>
                 <DropdownMainItem isClicked={isClicked} text="Events" link="hje"/>
                 <hr/>
