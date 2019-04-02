@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 error_reporting(E_ALL & ~E_NOTICE);
+
 // Register plugin helpers.
 require template_path('includes/plugins/plate.php');
 
@@ -12,7 +13,11 @@ require get_template_directory().'/post-types/project.php';
 require get_template_directory().'/post-types/news.php';
 
 
+
+
+//-----------------------------------------------------------------
 // Added Branches to Rest API
+//-----------------------------------------------------------------
 add_action( 'init', 'my_branch_cpt' );
 function my_branch_cpt() {
     $args = array(
@@ -35,8 +40,10 @@ function my_rest_prepare_branch($data, $post, $request) {
   return $data;
 }
 add_filter("rest_prepare_branch", 'my_rest_prepare_branch', 10, 3);
-//---------------------------------------------
+
+//-----------------------------------------------------------------
 // Added News to Rest API
+//-----------------------------------------------------------------
 add_action( 'init', 'my_news_cpt' );
 function my_news_cpt() {
     $args = array(
@@ -46,8 +53,9 @@ function my_news_cpt() {
     );
     register_post_type( 'news', $args );
 }
-
+//-----------------------------------------------------------------
 // Added Project to Rest API
+//-----------------------------------------------------------------
 add_action( 'init', 'my_project_cpt' );
 function my_project_cpt() {
     $args = array(
@@ -60,7 +68,7 @@ function my_project_cpt() {
 
 
 // Register taxonomies if needed
-//require get_template_directory().'/taxonomies/example.php';
+require get_template_directory().'/taxonomies/activities.php';
 
 // Set theme defaults.
 add_action('after_setup_theme', function () {
