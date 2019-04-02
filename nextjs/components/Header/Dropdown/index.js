@@ -48,6 +48,8 @@ const Dropdown = ({isClicked}) => {
                 <hr/>
                 <DropdownMainItem isClicked={isClicked} text="Make a change" link="hje"/>
                 <hr/>
+                <DropdownMainItem isClicked={isClicked} text="Branches" link="branches"/>
+                <hr/>
             </nav>
             <nav className="Dropdown-Secondary-Item">
                 <DropdownSecondaryItem text="Language" link="hje"/>

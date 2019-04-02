@@ -9,9 +9,9 @@ const DropdownMainItemStyle = styled.a`
     margin-right: 5%;
     margin-top: 5%;
 `
-const DropdownMainItem = ({text, link}) => {
+const DropdownMainItem = ({text, link, isClicked}) => {
     return (
-        <DropdownMainItemStyle href={link}>
+        <DropdownMainItemStyle href={link} onClick={!isClicked}>
            {text} 
         </DropdownMainItemStyle>
     );
