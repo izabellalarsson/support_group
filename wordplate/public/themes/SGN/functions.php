@@ -23,6 +23,19 @@ function my_branch_cpt() {
     register_post_type( 'branch', $args );
 }
 
+function my_rest_prepare_branch($data, $post, $request) {
+  $_data = $data->data;
+
+  $fields = get_fields($post->ID);
+  foreach ($fields as $key => $value){
+    $_data[$key] = get_field($key, $post->ID);
+  }
+  $data->data = $_data;
+
+  return $data;
+}
+add_filter("rest_prepare_branch", 'my_rest_prepare_branch', 10, 3);
+//---------------------------------------------
 // Added News to Rest API
 add_action( 'init', 'my_news_cpt' );
 function my_news_cpt() {
