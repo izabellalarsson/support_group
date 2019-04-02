@@ -9,14 +9,18 @@ width: 100%;
 height: 25vh;
 display: flex;
 justify-content: space-around;
+position: fixed;
+.fa-bars {
+    z-index:1;
+}
 `
 
 const Navbar = ({isClicked, handleClickMenu}) => {
     return (
         <NavbarStyle>
-            <i class="fab fa-wordpress"></i>
-            <i class="fas fa-search"></i>
-             <i class="fas fa-bars" onClick={handleClickMenu}></i>
+            <i className="fab fa-wordpress"></i>
+            <i className="fas fa-search"></i>
+            <i className="fas fa-bars" onClick={handleClickMenu}></i>
             <Dropdown onClick={handleClickMenu} isClicked={isClicked}/>
         </NavbarStyle>
     );

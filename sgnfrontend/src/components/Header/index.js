@@ -32,7 +32,7 @@ class Header extends Component {
     };
 
     render() {
-        console.log(this.state.pages)
+        // console.log(this.state.pages)
         return (
             <Navbar handleClickMenu={this.handleClickMenu} isClicked={this.state.isClicked}>
             </Navbar>

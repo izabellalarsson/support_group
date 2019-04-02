@@ -5,10 +5,12 @@ import styled from 'styled-components'
 
 const DropdownStyle = styled.div`
 
-display: ${props => props.isClicked ? "none" : "block; position: absolute; "};
-top: 50px;
+display: ${props => props.isClicked ? "none" : "flex; position: absolute; "};
+justify-content: center;
+align-items: center;
+flex-direction: column;
 width: 100%;
-height: 50px;
+height: 100vh;
 background: #EFEFEF;
 
 `
@@ -17,7 +19,7 @@ background: #EFEFEF;
 const Dropdown = ({isClicked}) => {
     return (
         <DropdownStyle isClicked={isClicked}>
-            <DropdownMainItem/>
+            <DropdownMainItem isClicked={isClicked}/>
         </DropdownStyle>
             
         
