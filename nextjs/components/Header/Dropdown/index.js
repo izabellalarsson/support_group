@@ -40,7 +40,7 @@ const Dropdown = ({isClicked, handleClickMenu}) => {
     return (
         <DropdownStyle isClicked={isClicked}>
             <nav className="Dropdown-Main-Item">
-                <DropdownMainItem text="About" link="about" handleClickMenu={handleClickMenu}/>
+                <DropdownMainItem text="About" link="/about" handleClickMenu={handleClickMenu}/>
                 <hr/>
                 <DropdownMainItem text="Events" link="hje"/>
                 <hr/>
@@ -48,7 +48,7 @@ const Dropdown = ({isClicked, handleClickMenu}) => {
                 <hr/>
                 <DropdownMainItem text="Make a change" link="hje"/>
                 <hr/>
-                <DropdownMainItem text="Branches" link="branches"/>
+                <DropdownMainItem text="Branches" link="/branches" handleClickMenu={handleClickMenu} />
                 <hr/>
             </nav>
             <nav className="Dropdown-Secondary-Item">

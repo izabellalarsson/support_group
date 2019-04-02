@@ -13,7 +13,7 @@ const DropdownMainItemStyle = styled.div`
 const DropdownMainItem = ({text, link, handleClickMenu}) => {
     return (
         <DropdownMainItemStyle>
-            <Link href="/about"><a href="/about">{text}</a></Link>
+            <Link href={link}><a href={link} onClick={handleClickMenu}>{text}</a></Link>
         </DropdownMainItemStyle>
     );
 };
