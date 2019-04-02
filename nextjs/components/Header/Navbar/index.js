@@ -21,7 +21,7 @@ const Navbar = ({isClicked, handleClickMenu}) => {
             <i className="fab fa-wordpress"></i>
             <i className="fas fa-search"></i>
             <i className="fas fa-bars" onClick={handleClickMenu}></i>
-            <Dropdown onClick={handleClickMenu} isClicked={isClicked}/>
+            <Dropdown handleClickMenu={handleClickMenu} onClick={handleClickMenu} isClicked={isClicked}/>
         </NavbarStyle>
     );
 };

@@ -6,7 +6,7 @@ import DropdownSecondaryItem from '../DropdownSecondaryItem';
 
 const DropdownStyle = styled.div`
 
-display: ${props => props.isClicked ? "none" : "flex; position: absolute; "};
+display: ${props => !props.isClicked ? "none" : "flex; position: absolute; "};
 justify-content: center;
 align-items: center;
 flex-direction: column;
@@ -36,19 +36,19 @@ background: #EFEFEF;
 `
 
 
-const Dropdown = ({isClicked}) => {
+const Dropdown = ({isClicked, handleClickMenu}) => {
     return (
         <DropdownStyle isClicked={isClicked}>
             <nav className="Dropdown-Main-Item">
-                <DropdownMainItem isClicked={isClicked} text="About" link="about"/>
+                <DropdownMainItem text="About" link="about" handleClickMenu={handleClickMenu}/>
                 <hr/>
-                <DropdownMainItem isClicked={isClicked} text="Events" link="hje"/>
+                <DropdownMainItem text="Events" link="hje"/>
                 <hr/>
-                <DropdownMainItem isClicked={isClicked} text="Member" link="hje"/>
+                <DropdownMainItem text="Member" link="hje"/>
                 <hr/>
-                <DropdownMainItem isClicked={isClicked} text="Make a change" link="hje"/>
+                <DropdownMainItem text="Make a change" link="hje"/>
                 <hr/>
-                <DropdownMainItem isClicked={isClicked} text="Branches" link="branches"/>
+                <DropdownMainItem text="Branches" link="branches"/>
                 <hr/>
             </nav>
             <nav className="Dropdown-Secondary-Item">
