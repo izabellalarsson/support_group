@@ -5,14 +5,22 @@ import styled from 'styled-components'
 import DropdownSecondaryItem from '../DropdownSecondaryItem';
 
 const DropdownStyle = styled.div`
-
-display: ${props => !props.isClicked ? "none" : "flex; position: absolute; "};
+position:fixed;
 justify-content: center;
 align-items: center;
 flex-direction: column;
 width: 100%;
-height: 100vh;
-background: #EFEFEF;
+height: 93vh;
+transition: transform 0.5s ease;
+transform: ${props => !props.isClicked ? "translateX(100vw)" : "translateX(0)"};
+top: 7vh;
+background: #F1E7FF;
+
+/* &:hover {
+    left: 100vw;
+} */
+
+
 
 .Dropdown-Main-Item {
     display: flex;
