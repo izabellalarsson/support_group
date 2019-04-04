@@ -32,9 +32,7 @@ background: #EFEFEF;
     margin-top: 20%;
 }
 
-
 `
-
 
 const Dropdown = ({isClicked, handleClickMenu}) => {
     return (
