@@ -6,10 +6,13 @@ import Dropdown from '../Dropdown'
 const NavbarStyle = styled.nav`
 background: #C4C4C4;
 width: 100%;
-top: 0;
+height: 7vh;
 display: flex;
 justify-content: space-around;
-position: fixed;
+align-items: center;
+position: sticky;
+top:0;
+
 .fa-bars {
     z-index:1;
 }
