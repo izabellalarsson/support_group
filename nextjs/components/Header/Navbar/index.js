@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Dropdown from '../Dropdown'
 
 const NavbarStyle = styled.nav`
-background: #C4C4C4;
+background: #233591;
 width: 100%;
 height: 7vh;
 display: flex;

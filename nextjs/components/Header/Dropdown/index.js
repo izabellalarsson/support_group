@@ -14,7 +14,7 @@ height: 93vh;
 transition: transform 0.5s ease;
 transform: ${props => !props.isClicked ? "translateX(100vw)" : "translateX(0)"};
 top: 7vh;
-background: #EFEFEF;
+background: #F1E7FF;
 
 /* &:hover {
     left: 100vw;
