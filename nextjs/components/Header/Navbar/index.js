@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components'
 import Dropdown from '../Dropdown'
+import DropdownButton from '../DropdownButton'
 
 const NavbarStyle = styled.nav`
 background: #233591;
@@ -23,7 +24,8 @@ const Navbar = ({isClicked, handleClickMenu}) => {
         <NavbarStyle>
             <i className="fab fa-wordpress"></i>
             <i className="fas fa-search"></i>
-            <i className="fas fa-bars" onClick={handleClickMenu}></i>
+            {/* <i className="fas fa-bars" onClick={handleClickMenu}></i> */}
+            <DropdownButton handleClickMenu={handleClickMenu} isClicked={isClicked}/>
             <Dropdown handleClickMenu={handleClickMenu} onClick={handleClickMenu} isClicked={isClicked}/>
         </NavbarStyle>
     );
