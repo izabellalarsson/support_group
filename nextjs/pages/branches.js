@@ -1,9 +1,10 @@
 
 import { Fragment } from 'react'
 import Layout from '../components/Layout';
+import Branches from '../components/Branches';
 
 export default () => (
     <Layout>
-        <h1>Our Branches Page!</h1>
+        <Branches />
     </Layout >
 )
