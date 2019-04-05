@@ -25,6 +25,7 @@ class Branches extends Component {
                         email: branch.email,
                         whatsApp: branch.whatsapp,
                         facebook: branch.facebook_page,
+                        link: branch.slug,
                         activities: [],
                         activitesApi: branch._links['wp:term'][0].href
                     })
@@ -62,7 +63,8 @@ class Branches extends Component {
             <div>
                 {this.state.branches.map(branch => {
                     return <Branch name={branch.name}
-                            description={branch.description}
+                            description={branch.description} 
+                            link={branch.link}
                     />
                 })}
             </div>
