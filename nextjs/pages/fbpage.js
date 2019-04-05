@@ -17,10 +17,10 @@ const fbpage = ({events}) => {
 fbpage.getInitialProps = async ({ props }) => {
     
     const query = {
-        access_token: "EAAEkOZAzEd28BAGHBeNdkOj0BqoBfgwmWzFJ0CpLNOrPaufSEZBXVD6ZCHUrRnbnnQnCqaPHvc36fLFpGe4ZCz0MjtDtsVVHxnV7CjJZBI5DxVvEXvykbY8ixZCKncBLoYVpeDeS250aFZCGhBZCPHlgAunpPV3okkMZD"
+        access_token: "EAAOiEBWI2PQBAMldQOPUwEVLH4Lqh2ZAM9dTtkEh2VnIibN5qpSTPZCsZB7Px3K3meH3Vtf490KchNSeZBZAZCZC42stZAq5ODgfSwQ13Yx3sLknx1UXd0ZCTxqxNRVUPsZC70DHBgCwZBiMcGeExbK9UDNx2wO9QpfKwYZD"
     }
     const res = await fetch(
-        `https://graph.facebook.com/v3.2/421066311976162/posts?${qs.stringify(
+        `https://graph.facebook.com/v3.2/SupportRestadGard/posts?${qs.stringify(
             query
         )}`)
 
