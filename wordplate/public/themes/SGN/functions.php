@@ -32,9 +32,12 @@ function my_rest_prepare_branch($data, $post, $request) {
   $_data = $data->data;
 
   $fields = get_fields($post->ID);
+
+  
   foreach ($fields as $key => $value){
     $_data[$key] = get_field($key, $post->ID);
   }
+ 
   $data->data = $_data;
 
   return $data;
