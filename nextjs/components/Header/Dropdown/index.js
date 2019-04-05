@@ -16,12 +16,6 @@ transform: ${props => !props.isClicked ? "translateX(100vw)" : "translateX(0)"};
 top: 7vh;
 background: #F1E7FF;
 
-/* &:hover {
-    left: 100vw;
-} */
-
-
-
 .Dropdown-Main-Item {
     display: flex;
     justify-content: center;
