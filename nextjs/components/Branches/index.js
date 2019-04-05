@@ -60,7 +60,11 @@ class Branches extends Component {
         
         return (
             <div>
-               <Branch />
+                {this.state.branches.map(branch => {
+                    return <Branch name={branch.name}
+                            description={branch.description}
+                    />
+                })}
             </div>
         );
     }
