@@ -17,7 +17,7 @@ const fbpage = ({events}) => {
 fbpage.getInitialProps = async ({ props }) => {
     
     const query = {
-        access_token: process.env.FB_ACCESS_TOKEN,
+        access_token: process.env.FB_ACCESS_TOKEN
     }
     const res = await fetch(
         `https://graph.facebook.com/v3.2/SupportRestadGard/posts?${qs.stringify(
