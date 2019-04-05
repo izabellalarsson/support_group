@@ -3,13 +3,13 @@ import styled from 'styled-components';
 
 const StyledBranch = styled.div`
     height: 300px;
-    background: blue;
 `
 
-const Branch = () => {
+const Branch = ({name, description}) => {
     return (
         <StyledBranch>
-            <h1>First Branch Name</h1>
+            <h1>{name}</h1>
+            <p dangerouslySetInnerHTML={{__html: description}} />
         </StyledBranch>
     );
 };
