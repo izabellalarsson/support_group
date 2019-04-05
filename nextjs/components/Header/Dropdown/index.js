@@ -6,6 +6,7 @@ import DropdownSecondaryItem from '../DropdownSecondaryItem';
 
 const DropdownStyle = styled.div`
 position:fixed;
+display:flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
@@ -14,7 +15,7 @@ height: 93vh;
 transition: transform 0.5s ease;
 transform: ${props => !props.isClicked ? "translateX(100vw)" : "translateX(0)"};
 top: 7vh;
-background: #F1E7FF;
+background: #F3F5FF;
 
 .Dropdown-Main-Item {
     display: flex;
@@ -32,6 +33,7 @@ background: #F1E7FF;
 }
 .Dropdown-Secondary-Item {
     margin-top: 20%;
+    align-self: flex-start;
 }
 
 `
@@ -42,19 +44,19 @@ const Dropdown = ({isClicked, handleClickMenu}) => {
             <nav className="Dropdown-Main-Item">
                 <DropdownMainItem text="About" link="/about" handleClickMenu={handleClickMenu}/>
                 <hr/>
-                <DropdownMainItem text="Events" link="hje"/>
+                <DropdownMainItem text="Events" link="/" handleClickMenu={handleClickMenu}/>
                 <hr/>
-                <DropdownMainItem text="Member" link="hje"/>
+                <DropdownMainItem text="Member" link="/" handleClickMenu={handleClickMenu}/>
                 <hr/>
-                <DropdownMainItem text="Make a change" link="hje"/>
+                <DropdownMainItem text="Make a change" link="/" handleClickMenu={handleClickMenu}/>
                 <hr/>
                 <DropdownMainItem text="Branches" link="/branches" handleClickMenu={handleClickMenu} />
                 <hr/>
             </nav>
             <nav className="Dropdown-Secondary-Item">
-                <DropdownSecondaryItem text="Language" link="hje"/>
-                <DropdownSecondaryItem text="Accessability" link="hje"/>
-                <DropdownSecondaryItem text="Help" link="hje"/>
+                <DropdownSecondaryItem text="Language" link="/" handleClickMenu={handleClickMenu}/>
+                <DropdownSecondaryItem text="Accessability" link="/hej" handleClickMenu={handleClickMenu}/>
+                <DropdownSecondaryItem text="Help" link="/" handleClickMenu={handleClickMenu}/>
             </nav>
         </DropdownStyle>
             

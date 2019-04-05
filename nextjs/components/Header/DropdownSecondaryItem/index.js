@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components'
+import Link from 'next/link'
 
-const DropdownSecondaryItemStyle = styled.a`
+const DropdownSecondaryItemStyle = styled.div`
 display: flex;
 flex-direction: column;
 align-items: flex-start;
@@ -17,10 +18,10 @@ text-decoration: none;
 }
 
 `
-const DropdownSecondaryItem = ({text, link}) => {
+const DropdownSecondaryItem = ({text, link, handleClickMenu}) => {
     return (
-        <DropdownSecondaryItemStyle href={link}>
-            {text} 
+        <DropdownSecondaryItemStyle>
+            <Link href={link}><a href={link} onClick={handleClickMenu}>{text}</a></Link>
         </DropdownSecondaryItemStyle>
     );
 };
