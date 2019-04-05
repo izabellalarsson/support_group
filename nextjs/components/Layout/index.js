@@ -3,6 +3,9 @@ import Header from '../Header'
 import Footer from '../Footer'
 import GlobalStyle from '../../styles'
 import Head from 'next/head';
+import dotenv from 'dotenv'
+
+dotenv.config();
 class Layout extends Component {
 	render() {
 		const { children } = this.props

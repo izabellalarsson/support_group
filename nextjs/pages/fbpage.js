@@ -17,7 +17,7 @@ const fbpage = ({events}) => {
 fbpage.getInitialProps = async ({ props }) => {
     
     const query = {
-        access_token: "EAAOiEBWI2PQBAMldQOPUwEVLH4Lqh2ZAM9dTtkEh2VnIibN5qpSTPZCsZB7Px3K3meH3Vtf490KchNSeZBZAZCZC42stZAq5ODgfSwQ13Yx3sLknx1UXd0ZCTxqxNRVUPsZC70DHBgCwZBiMcGeExbK9UDNx2wO9QpfKwYZD"
+        access_token: process.env.FB_ACCESS_TOKEN,
     }
     const res = await fetch(
         `https://graph.facebook.com/v3.2/SupportRestadGard/posts?${qs.stringify(
