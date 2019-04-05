@@ -7,9 +7,6 @@ class Branches extends Component {
         branches: []
     };
     componentDidMount() {
-        
-        
-        
         this.fetchBranches();
         
     }
@@ -19,23 +16,44 @@ class Branches extends Component {
         fetch(branchApi)
             .then(res => res.json())
             .then(branches => {
-                let branches2 = branches.map(branch => {
-
-                    console.log(branch)
-                    return ({
+                branches.map(branch => {
+                    let newBranch =  ({
                         id: branch.id,
                         name: branch.title.rendered,
                         description: branch.content.rendered,
                         adress: branch.adress,
                         email: branch.email,
-                        
-
+                        whatsApp: branch.whatsapp,
+                        facebook: branch.facebook_page,
+                        activities: [],
+                        activitesApi: branch._links['wp:term'][0].href
                     })
-                });
-                console.log(branches2);
+                  
+                    this.fetchActivities(newBranch);
+        
+                    
+                    
+                });  
             })
     }
+    // Fetch Activites for chosen Branch
+    fetchActivities = (newBranch) => {
+        fetch(newBranch.activitesApi)
+            .then(res => res.json())
+            .then(activites => {
 
+                newBranch.activities =
+                    activites.map(activity => {
+                        return {
+                            name: activity.name,
+                            description: activity.description
+                        }
+                    })
+                this.setState({
+                    branches: [...this.state.branches, newBranch]
+                })
+            })
+    }
 
 
     render() {

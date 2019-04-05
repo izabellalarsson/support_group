@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const StyledBranch = styled.div`
     height: 300px;
-    background: blue;
 `
 
 const Branch = () => {
