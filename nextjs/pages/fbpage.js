@@ -25,7 +25,7 @@ fbpage.getInitialProps = async ({ props }) => {
         )}`)
 
     const json = await res.json();
-
+   
     return { events: json.data };
 }
 

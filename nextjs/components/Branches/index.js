@@ -66,6 +66,7 @@ class Branches extends Component {
                             description={branch.description} 
                             link={branch.link}
                             key={i}
+                            id = {branch.id}
                     />
                 })}
             </div>
