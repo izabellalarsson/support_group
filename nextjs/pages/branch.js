@@ -1,28 +1,8 @@
 
 import React, { Component } from 'react'
 import Layout from '../components/Layout';
-//import BranchPage from '../components/BranchPage';
-
-// const BranchPage = (props) => {
-//     const slug = props.url.query.slug;
-
-
-//     props.branches.map(branch => {
-//         if (branch.slug === slug){
-//             console.log('hej')
-//         }
-//         return (branch.slug == slug)
-//     })
-
-
-
-
-//     return (
-//         <Layout>
-//             <h1>Branches</h1>
-//         </Layout>
-//     );
-// } 
+import BranchCard from '../components/BranchCard'
+import fetch from 'isomorphic-unfetch';
 
 class BranchPage extends Component {
 
@@ -54,7 +34,7 @@ class BranchPage extends Component {
 
 
 BranchPage.getInitialProps = async function () {
-    const res = await fetch('http://sgn.test/wp-json/wp/v2/branch')
+    const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/branch`)
     const data = await res.json();
     return {
         branches: data
