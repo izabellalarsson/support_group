@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 const ReadMoreStyle = styled.div`
-
+align-self: flex-end;
 width: 30%;
 
 a {
@@ -31,7 +31,7 @@ a:hover {
 }
 
 hr {
-    border: 0px;
+    border: 4px;
 }
 
 

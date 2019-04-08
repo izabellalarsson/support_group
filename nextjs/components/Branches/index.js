@@ -23,6 +23,7 @@ class Branches extends Component {
                         description: branch.content.rendered,
                         shortDescription: branch.excerpt.rendered,
                         adress: branch.adress,
+                        city: branch.city,
                         email: branch.email,
                         whatsApp: branch.whatsapp,
                         facebook: branch.facebook_page,
@@ -64,10 +65,11 @@ class Branches extends Component {
             <div>
                 {this.state.branches.map((branch,i) => {
                     return <BranchCard name={branch.name}
-                            description={branch.description} 
+                            shortDescription={branch.shortDescription} 
                             link={branch.link}
                             key={i}
                             id = {branch.id}
+                            city= {branch.city}
                     />
                 })}
             </div>
