@@ -5,7 +5,7 @@ import Dropdown from '../Dropdown'
 import DropdownButton from '../DropdownButton'
 
 const NavbarStyle = styled.nav`
-background: #233591;
+background: #151A32;
 width: 100%;
 height: 7vh;
 display: flex;
@@ -13,6 +13,7 @@ justify-content: space-around;
 align-items: center;
 position: sticky;
 top:0;
+z-index:999;
 
 .fa-bars {
     z-index:1;
