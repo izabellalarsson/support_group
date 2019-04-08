@@ -1,8 +1,9 @@
 
 import React, { Component } from 'react'
 import Layout from '../components/Layout';
-import fetch from 'isomorphic-unfetch';
 
+import BranchCard from '../components/BranchCard'
+import fetch from 'isomorphic-unfetch';
 
 class BranchPage extends Component {
 
@@ -35,7 +36,7 @@ class BranchPage extends Component {
 
 
 BranchPage.getInitialProps = async function () {
-    const res = await fetch('http://sgn.test/wp-json/wp/v2/branch')
+    const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/branch`)
     const data = await res.json();
     return {
         branches: data

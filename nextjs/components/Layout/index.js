@@ -15,7 +15,8 @@ class Layout extends Component {
 				<Head>
 					<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     				integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
-   					 <title>hej App</title>
+					<link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet" />
+					<title>hej App</title>
 				</Head>
 				<Header/>
 				    {children}
