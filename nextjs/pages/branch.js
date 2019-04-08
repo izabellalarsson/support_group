@@ -1,28 +1,8 @@
 
 import React, { Component } from 'react'
 import Layout from '../components/Layout';
-//import BranchPage from '../components/BranchPage';
+import fetch from 'isomorphic-unfetch';
 
-// const BranchPage = (props) => {
-//     const slug = props.url.query.slug;
-
-
-//     props.branches.map(branch => {
-//         if (branch.slug === slug){
-//             console.log('hej')
-//         }
-//         return (branch.slug == slug)
-//     })
-
-
-
-
-//     return (
-//         <Layout>
-//             <h1>Branches</h1>
-//         </Layout>
-//     );
-// } 
 
 class BranchPage extends Component {
 
@@ -36,6 +16,7 @@ class BranchPage extends Component {
         this.state = {
             branch: newBranch[0]
         }
+        console.log(this.state.branch);
 
         //this.handleClick = this.handleClick.bind(this)
     }

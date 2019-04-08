@@ -11,6 +11,8 @@ require template_path('includes/plugins/plate.php');
 require get_template_directory().'/post-types/branch.php';
 require get_template_directory().'/post-types/project.php';
 require get_template_directory().'/post-types/news.php';
+require get_template_directory().'/post-types/journey.php';
+
 
 
 
@@ -68,6 +70,19 @@ function my_project_cpt() {
     );
     register_post_type( 'project', $args );
 }
+//-----------------------------------------------------------------
+// Added Journey to Rest API
+//-----------------------------------------------------------------
+add_action( 'init', 'my_journey_cpt' );
+function my_journey_cpt() {
+    $args = array(
+      'public'       => true,
+      'show_in_rest' => true,
+      'label'        => 'Journies'
+    );
+    register_post_type( 'journey', $args );
+}
+
 
 
 // Register taxonomies if needed

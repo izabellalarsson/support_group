@@ -16,6 +16,7 @@ add_action('init', function () {
             'title',
             'editor',
             'thumbnail',
+            'excerpt'
         ],
         'menu_icon' => 'dashicons-admin-home',
         'menu_position' => 3,
