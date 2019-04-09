@@ -19,6 +19,7 @@ a:hover {
     animation-iteration-count: 0; 
     font-weight: bold; 
 
+
     +hr {
         animation-name: stripe;
         animation-duration: 0.5s;
@@ -26,7 +27,8 @@ a:hover {
         border: 3px solid #EE7171;
         display: block;
         width: 80%;
-        margin:0;
+        margin: 0;
+        margin-bottom: 10px;
     }
 }
 

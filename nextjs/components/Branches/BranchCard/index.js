@@ -60,7 +60,7 @@ width: 100%;
     }
 `
 
-const Branch = ({name, shortDescription, link, id, city}) => {
+const BranchCard = ({name, shortDescription, link, id, city}) => {
     return (
         <BranchCardStyle>
             <Link id={id} href={`/branches/${link}`} ><a href={`/branches/${link}`}><Title text={name}/></a></Link>
@@ -87,4 +87,4 @@ const Branch = ({name, shortDescription, link, id, city}) => {
     );
 };
 
-export default Branch;
+export default BranchCard;
