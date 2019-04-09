@@ -1,8 +1,9 @@
 import { Fragment } from 'react'
 import Layout from '../components/Layout';
-import ProjectCard from '../components/ProjectCard'
+import Projects from '../components/Projects'
+
 export default () => (
   <Layout>
-    <ProjectCard/>
+    <Projects/>
   </Layout>
 )
