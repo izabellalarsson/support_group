@@ -24,7 +24,7 @@ a:hover {
         animation-name: stripe;
         animation-duration: 0.5s;
         animation-iteration-count: 1;  
-        border: 3px solid #EE7171;
+        border-top: 3px solid #EE7171;
         display: block;
         width: 80%;
         margin: 0;

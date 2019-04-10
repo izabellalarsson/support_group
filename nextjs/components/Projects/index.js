@@ -24,11 +24,19 @@ export default class Projects extends Component {
                         id: project.id,
                         title: project.title.rendered,
                         description: project.content.rendered,
+                        date: project.date,
                     }]
                 })
             })
 
         })
+    }
+
+
+    splitWord = (str) => {
+        let word = str.split('T')
+        return word[0];
+
     }
 
 
@@ -38,7 +46,8 @@ export default class Projects extends Component {
         {this.state.projects.map((project, i) => (
             <ProjectCard title={project.title}
                          description={project.description}
-                         key={i}/>
+                         key={i}
+                         date={this.splitWord(project.date)}/>
         ))}
       </div>
     )

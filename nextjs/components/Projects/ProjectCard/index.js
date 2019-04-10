@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components'
 import Title from '../../Title'
 import Text from '../../Text'
+import DateText from '../DateText'
 import ReadMore from '../../ReadMore'
 
 const ProjectCardStyle = styled.div`
@@ -18,16 +19,17 @@ h1 {
 
 .blue-line {
     border: 1px solid #B9C4EA;
-    width: 90%;
+    width: 92%;
     margin-right: 0;
     margin-bottom: 0;
 }
 `
 
-const ProjectCard = ({title, description}) => {
+const ProjectCard = ({title, description, date}) => {
     return (
         <ProjectCardStyle>
             <Title text={title}/>
+            <DateText text={date}/>
             <Text text={description}/>
             <ReadMore/>
             <hr className="blue-line"/>

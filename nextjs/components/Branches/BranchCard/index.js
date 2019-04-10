@@ -75,7 +75,7 @@ const BranchCard = ({name, shortDescription, link, id, city}) => {
                 <ReadMore/>
                 <article>
                     <atricle className="one">
-                    <Text text="Visit the Facebook-page for more info"/>
+                    <Text text="Visit the Facebook page for more info"/>
                     </atricle>
 
                     <article className="two">
