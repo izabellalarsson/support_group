@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components'
 import Dropdown from '../Dropdown'
 import DropdownButton from '../DropdownButton'
+import Search from '../Search';
+import Logo from '../Logo';
 
 const NavbarStyle = styled.nav`
 background: #151A32;
 width: 100%;
 height: 7vh;
 display: flex;
-justify-content: space-around;
+justify-content: space-between;
 align-items: center;
 position: sticky;
 top:0;
@@ -18,13 +20,16 @@ z-index:999;
 .fa-bars {
     z-index:1;
 }
+i {
+    color: white;
+}
 `
 
 const Navbar = ({isClicked, handleClickMenu}) => {
     return (
         <NavbarStyle>
-            <i className="fab fa-wordpress"></i>
-            <i className="fas fa-search"></i>
+            <Logo />
+            <Search />
             <DropdownButton handleClickMenu={handleClickMenu} isClicked={isClicked}/>
             <Dropdown handleClickMenu={handleClickMenu} onClick={handleClickMenu} isClicked={isClicked}/>
         </NavbarStyle>

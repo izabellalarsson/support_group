@@ -4,11 +4,21 @@ import styled from 'styled-components';
 import Link from 'next/link'
 
 const DropdownMainItemStyle = styled.div`
-    color: #808080;
-    text-decoration: none;
-    font-size: 20px;
-    margin-right: 5%;
-    margin-top: 5%;
+    
+    
+    
+    margin: 30px 30px 30px 0;
+    font-family: 'Rubik', sans-serif;
+    
+    a {
+        text-decoration: none;
+        line-height: 90%;
+        font-weight: bold;
+        color: var(--headline-font);
+        font-size: 26px;
+    }
+   
+    
 `
 const DropdownMainItem = ({text, link, handleClickMenu}) => {
     return (

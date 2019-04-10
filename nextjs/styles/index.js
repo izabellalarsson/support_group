@@ -15,7 +15,13 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
 }
-
+:root {
+    --headline-font: #1B224A;
+    --font-grey: #343849;
+    --main-bg: #F3F5FF;
+    --sub-bg: #AEBDEF;
+    --detail-red: #EE7171;
+}
 `
 
 export default GlobalStyle

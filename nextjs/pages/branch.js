@@ -1,9 +1,8 @@
 
 import React, { Component } from 'react'
 import Layout from '../components/Layout';
-
-import BranchCard from '../components/BranchCard'
 import fetch from 'isomorphic-unfetch';
+import Title from '../components/Title';
 
 class BranchPage extends Component {
 
@@ -19,14 +18,14 @@ class BranchPage extends Component {
         }
         console.log(this.state.branch);
 
-        //this.handleClick = this.handleClick.bind(this)
     }
 
     
     render () {
         return (
             <Layout>
-                <h1>{this.state.branch.title.rendered}</h1>
+                <Title text={this.state.branch.title.rendered} />
+
             </Layout>
         )
     }

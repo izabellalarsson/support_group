@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import DropdownMainItem from '../DropdownMainItem'
 import styled from 'styled-components'
 import DropdownSecondaryItem from '../DropdownSecondaryItem';
+import Arrow from '../Arrow';
 
 const DropdownStyle = styled.div`
 position:fixed;
 display:flex;
-justify-content: center;
+justify-content: space-between;
 align-items: center;
 flex-direction: column;
 width: 100%;
@@ -18,6 +19,7 @@ top: 7vh;
 background: #F3F5FF;
 
 .Dropdown-Main-Item {
+    padding-top: 30px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -25,41 +27,51 @@ background: #F3F5FF;
     width: 100%;
 }
 
-.Dropdown-Main-Item hr {
-    color: #808080;
-    width: 90%;
-    border: 1px solid #808080;
-    margin-right: 0;
-}
 .Dropdown-Secondary-Item {
-    margin-top: 20%;
+    margin-bottom: 50px;
     align-self: flex-start;
 }
+
+
 
 `
 
 class Dropdown extends Component {
     constructor(props) {
         super(props),
+        
         this.state = {
             isClicked: this.props.isClicked, 
-            handleClickMenu: this.props.handleClickMenu}
+            handleClickMenu: this.props.handleClickMenu,
+            pages: []
+        }
+        this.fetchPages();
+        
+
+    }
+
+    fetchPages = async () => {
+        const pagesApi = `http://${process.env.HOST}/wp-json/wp/v2/pages`;
+        const response = await fetch(pagesApi);
+        const data = await response.json();
+        this.setState ({
+            pages: data
+        }) 
+
     }
 
     render() {
         return (
             <DropdownStyle isClicked={this.props.isClicked}>
                 <nav className="Dropdown-Main-Item">
-                    <DropdownMainItem text="About" link="/about" handleClickMenu={this.state.handleClickMenu}/>
-                    <hr/>
-                    <DropdownMainItem text="Events" link="/" handleClickMenu={this.state.handleClickMenu}/>
-                    <hr/>
-                    <DropdownMainItem text="Member" link="/" handleClickMenu={this.state.handleClickMenu}/>
-                    <hr/>
-                    <DropdownMainItem text="Make a change" link="/" handleClickMenu={this.state.handleClickMenu}/>
-                    <hr/>
-                    <DropdownMainItem text="Branches" link="/branches" handleClickMenu={this.state.handleClickMenu} />
-                    <hr/>
+                    {this.state.pages.map((page, i) => {
+                        return (
+                            <DropdownMainItem 
+                                text={page.title.rendered} 
+                                link={`/${page.slug}`}
+                                handleClickMenu={this.state.handleClickMenu} />
+                        )
+                    })}
                 </nav>
                 <nav className="Dropdown-Secondary-Item">
                     <DropdownSecondaryItem text="Language" link="/" handleClickMenu={this.state.handleClickMenu}/>

@@ -2,21 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components'
 const DropdownButtonStyle = styled.div`
-
+margin-right: 30px;
 .bar1, .bar2 {
-    width: 35px;
-    height: 5px;
+    width: 24px;
+    height: 3px;
     background-color: #fff;
     margin: 6px 0;
     transition: 0.4s;
 }
 
 .bar1 {
-    ${props => !props.isClicked ? "translateX(0)" : "transform: rotate(-45deg) translate(-6px, 6px);"}
+    ${props => !props.isClicked ? "translateX(0)" : "transform: rotate(-45deg) translate(-0.5px, 6px);"}
 }
 
 .bar2 {
-    ${props => !props.isClicked ? "translateX(0)" : "transform: rotate(45deg) translate(-2px, -2px);"}  
+    ${props => !props.isClicked ? "translateX(0)" : "transform: rotate(45deg) translate(0px, -6px);"}  
 }
 `
 

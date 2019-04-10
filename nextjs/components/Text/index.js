@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const TextStyle = styled.p`
 font-family: 'Aktiv Grotesk', sans-serif;
 font-size: 16px;
-color: #343849;
+color: var(--font-grey);
 padding: 0 30px;
 
 `

@@ -12,7 +12,7 @@ class Branches extends Component {
     }
     // Fetch branches api
     fetchBranches = () => {
-        const branchApi = 'http://sgn.test/wp-json/wp/v2/branch';
+        const branchApi = `http://${process.env.HOST}/wp-json/wp/v2/branch`;
         fetch(branchApi)
             .then(res => res.json())
             .then(branches => {
