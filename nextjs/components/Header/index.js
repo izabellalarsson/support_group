@@ -4,7 +4,6 @@ import Navbar from './Navbar'
 
 class Header extends Component {
     state = {
-        pages: [],
         isClicked: false
     }
 
