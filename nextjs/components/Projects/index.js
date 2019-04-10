@@ -13,7 +13,11 @@ export default class Projects extends Component {
     }
 
     fetchProjects = () => {
+<<<<<<< HEAD
         const projectApi = 'http://sgn.test/wp-json/wp/v2/project';
+=======
+        const projectApi = `http://${process.env.HOST}/wp-json/wp/v2/project`;
+>>>>>>> c73a551e9ccac43ca6f3e8210b5f8ba9460fbc0d
 
         fetch(projectApi)
         .then(res => res.json())
