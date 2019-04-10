@@ -76,6 +76,16 @@ function my_project_cpt() {
     );
     register_post_type( 'project', $args );
 }
+function my_rest_prepare_project($data, $post, $request) {
+  $_data = $data->data;
+  $fields = get_fields($post->ID);
+  foreach ($fields as $key => $value){
+    $_data[$key] = get_field($key, $post->ID);
+  }
+  $data->data = $_data;
+  return $data;
+}
+add_filter("rest_prepare_project", 'my_rest_prepare_project', 10, 3);
 //-----------------------------------------------------------------
 // Added Journey to Rest API
 //-----------------------------------------------------------------
