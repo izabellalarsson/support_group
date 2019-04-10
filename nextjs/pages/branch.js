@@ -1,8 +1,6 @@
 
 import React, { Component } from 'react'
 import Layout from '../components/Layout';
-
-import BranchCard from '../components/BranchCard'
 import fetch from 'isomorphic-unfetch';
 
 class BranchPage extends Component {

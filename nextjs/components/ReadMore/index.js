@@ -68,7 +68,7 @@ hr {
 `
 
 
-const ReadMore = ({props}) => {
+const ReadMore = ({}) => {
     return (
         <ReadMoreStyle>
             <Link href=""><a href="">Read more</a></Link>

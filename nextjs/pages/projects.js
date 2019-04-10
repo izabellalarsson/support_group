@@ -4,6 +4,6 @@ import Projects from '../components/Projects'
 
 export default () => (
   <Layout>
-    <Projects/>
+    <Projects />
   </Layout>
 )

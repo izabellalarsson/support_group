@@ -13,11 +13,7 @@ export default class Projects extends Component {
     }
 
     fetchProjects = () => {
-<<<<<<< HEAD
-        const projectApi = 'http://sgn.test/wp-json/wp/v2/project';
-=======
         const projectApi = `http://${process.env.HOST}/wp-json/wp/v2/project`;
->>>>>>> c73a551e9ccac43ca6f3e8210b5f8ba9460fbc0d
 
         fetch(projectApi)
         .then(res => res.json())
@@ -26,9 +22,13 @@ export default class Projects extends Component {
                 this.setState({
                     projects: [...this.state.projects,{
                         id: project.id,
-                        title: project.title.rendered,
-                        description: project.content.rendered,
+                        title: project.name,
+                        description: project.description,
                         date: project.date,
+                        imageUrl: project.image,
+                        link: project.slug,
+                        purpose: project.purpose,
+                        goal: project.goal,
                     }]
                 })
             })
@@ -49,15 +49,34 @@ export default class Projects extends Component {
         return word;
     }
 
+    getExcerpted = (str, limit) => {
+        var fullText = str;
+        var shortText = str;
+        shortText = shortText.substr( 0, shortText.lastIndexOf( ' ', limit ) ) + '...';
+        var returnString = {
+            fullText: fullText,
+            shortText: shortText
+        };
+
+        return returnString;
+    }
+
+
 
   render() {
+      console.log(this.state.projects)
     return (
       <div>
         {this.state.projects.map((project, i) => (
-            <ProjectCard title={project.title}
-                         description={project.description}
+            <ProjectCard id={project.id}
+                         title={project.title}
+                         description={this.getExcerpted(project.description, 200).shortText}
                          key={i}
-                         date={this.splitWord(project.date)}/>
+                         date={this.splitWord(project.date)}
+                         imageUrl={project.imageUrl}
+                         link={project.link}
+                         purpose={project.purpose}
+                         goal={project.goal}/>
         ))}
       </div>
     )

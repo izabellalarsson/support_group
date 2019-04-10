@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components'
+import Link from 'next/link'
 import Title from '../../Title'
 import Text from '../../Text'
 import DateText from '../DateText'
 import ReadMore from '../../ReadMore'
+import BlueLine from '../../BlueLine'
 
 const ProjectCardStyle = styled.div`
 background-image: linear-gradient(#F3F5FF, white);
@@ -17,22 +19,27 @@ h1 {
     margin-top: 0;
 }
 
-.blue-line {
-    border: 1px solid #B9C4EA;
-    width: 92%;
-    margin-right: 0;
-    margin-bottom: 0;
+a {
+    text-decoration: none;
+    z-index: 998;
+}
+
+img {
+    margin: 30px 0 0 30px;
+    object-fit: cover;
+    width: 84%;
 }
 `
 
-const ProjectCard = ({title, description, date}) => {
+const ProjectCard = ({title, description, date, imageUrl, id, link}) => {
     return (
         <ProjectCardStyle>
-            <Title text={title}/>
+            <Link id={id} href={`/projects/${link}`}><a href={`/projects/${link}`}><Title text={title}/></a></Link>
+            <img src={imageUrl}/>
             <DateText text={date}/>
             <Text text={description}/>
             <ReadMore/>
-            <hr className="blue-line"/>
+            <BlueLine/>
         </ProjectCardStyle>
     );
 };
