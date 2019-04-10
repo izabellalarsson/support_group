@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Branch from './Branch';
+import BranchCard from './BranchCard';
 
 class Branches extends Component {
     state = {
@@ -21,7 +21,9 @@ class Branches extends Component {
                         id: branch.id,
                         name: branch.title.rendered,
                         description: branch.content.rendered,
+                        shortDescription: branch.excerpt.rendered,
                         adress: branch.adress,
+                        city: branch.city,
                         email: branch.email,
                         whatsApp: branch.whatsapp,
                         facebook: branch.facebook_page,
@@ -62,11 +64,12 @@ class Branches extends Component {
         return (
             <div>
                 {this.state.branches.map((branch,i) => {
-                    return <Branch name={branch.name}
-                            description={branch.description} 
+                    return <BranchCard name={branch.name}
+                            shortDescription={branch.shortDescription} 
                             link={branch.link}
                             key={i}
                             id = {branch.id}
+                            city= {branch.city}
                     />
                 })}
             </div>

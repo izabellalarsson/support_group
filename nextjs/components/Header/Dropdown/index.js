@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import DropdownMainItem from '../DropdownMainItem'
 import styled from 'styled-components'
@@ -38,30 +38,43 @@ background: #F3F5FF;
 
 `
 
-const Dropdown = ({isClicked, handleClickMenu}) => {
-    return (
-        <DropdownStyle isClicked={isClicked}>
-            <nav className="Dropdown-Main-Item">
-                <DropdownMainItem text="About" link="/about" handleClickMenu={handleClickMenu}/>
-                <hr/>
-                <DropdownMainItem text="Events" link="/" handleClickMenu={handleClickMenu}/>
-                <hr/>
-                <DropdownMainItem text="Member" link="/" handleClickMenu={handleClickMenu}/>
-                <hr/>
-                <DropdownMainItem text="Make a change" link="/" handleClickMenu={handleClickMenu}/>
-                <hr/>
-                <DropdownMainItem text="Branches" link="/branches" handleClickMenu={handleClickMenu} />
-                <hr/>
-            </nav>
-            <nav className="Dropdown-Secondary-Item">
-                <DropdownSecondaryItem text="Language" link="/" handleClickMenu={handleClickMenu}/>
-                <DropdownSecondaryItem text="Accessability" link="/hej" handleClickMenu={handleClickMenu}/>
-                <DropdownSecondaryItem text="Help" link="/" handleClickMenu={handleClickMenu}/>
-            </nav>
-        </DropdownStyle>
+class Dropdown extends Component {
+    constructor(props) {
+        super(props),
+        this.state = {
+            isClicked: this.props.isClicked, 
+            handleClickMenu: this.props.handleClickMenu}
+    }
+
+    render() {
+        return (
+            <DropdownStyle isClicked={this.props.isClicked}>
+                <nav className="Dropdown-Main-Item">
+                    <DropdownMainItem text="About" link="/about" handleClickMenu={this.state.handleClickMenu}/>
+                    <hr/>
+                    <DropdownMainItem text="Events" link="/" handleClickMenu={this.state.handleClickMenu}/>
+                    <hr/>
+                    <DropdownMainItem text="Member" link="/" handleClickMenu={this.state.handleClickMenu}/>
+                    <hr/>
+                    <DropdownMainItem text="Make a change" link="/" handleClickMenu={this.state.handleClickMenu}/>
+                    <hr/>
+                    <DropdownMainItem text="Branches" link="/branches" handleClickMenu={this.state.handleClickMenu} />
+                    <hr/>
+                </nav>
+                <nav className="Dropdown-Secondary-Item">
+                    <DropdownSecondaryItem text="Language" link="/" handleClickMenu={this.state.handleClickMenu}/>
+                    <DropdownSecondaryItem text="Accessability" link="/hej" handleClickMenu={this.state.handleClickMenu}/>
+                    <DropdownSecondaryItem text="Help" link="/" handleClickMenu={this.state.handleClickMenu}/>
+                </nav>
+            </DropdownStyle>
+                
             
-        
-    );
+        )
+    }
+
+
+
+
 };
 
 Dropdown.propTypes = {

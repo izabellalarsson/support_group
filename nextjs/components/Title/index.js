@@ -7,9 +7,14 @@ font-family: 'Rubik', sans-serif;
 color: #151A32;
 font-size: 40px;
 font-weight: bold;
-margin-top: 60px;
-padding-left: 30px;
+padding-top: 60px;
+margin-left: 30px;
 z-index: 998;
+margin-bottom: 0;
+line-height: 100%;
+
+
+/* snygga till */
 `
 
 const Title = ({text}) => {

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 const ReadMoreStyle = styled.div`
-
+align-self: flex-end;
 width: 30%;
 
 a {
@@ -19,19 +19,21 @@ a:hover {
     animation-iteration-count: 0; 
     font-weight: bold; 
 
+
     +hr {
         animation-name: stripe;
         animation-duration: 0.5s;
         animation-iteration-count: 1;  
-        border: 3px solid #EE7171;
+        border-top: 3px solid #EE7171;
         display: block;
         width: 80%;
-        margin:0;
+        margin: 0;
+        margin-bottom: 10px;
     }
 }
 
 hr {
-    border: 0px;
+    border: 4px;
 }
 
 

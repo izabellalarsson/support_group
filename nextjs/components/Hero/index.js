@@ -11,7 +11,7 @@ align-items: flex-end;
 div {
     height: 70vh;
     width: 92vw;
-    margin-top: -50px;
+    margin-top: -20px;
     padding: 0;
     background: #EFEFEF;
     margin-bottom: 55px;
