@@ -32,16 +32,11 @@ function my_branch_cpt() {
 
 function my_rest_prepare_branch($data, $post, $request) {
   $_data = $data->data;
-
   $fields = get_fields($post->ID);
-
-  
   foreach ($fields as $key => $value){
     $_data[$key] = get_field($key, $post->ID);
   }
- 
   $data->data = $_data;
-
   return $data;
 }
 add_filter("rest_prepare_branch", 'my_rest_prepare_branch', 10, 3);
@@ -58,6 +53,17 @@ function my_news_cpt() {
     );
     register_post_type( 'news', $args );
 }
+
+function my_rest_prepare_news($data, $post, $request) {
+  $_data = $data->data;
+  $fields = get_fields($post->ID);
+  foreach ($fields as $key => $value){
+    $_data[$key] = get_field($key, $post->ID);
+  }
+  $data->data = $_data;
+  return $data;
+}
+add_filter("rest_prepare_news", 'my_rest_prepare_news', 10, 3);
 //-----------------------------------------------------------------
 // Added Project to Rest API
 //-----------------------------------------------------------------
@@ -83,10 +89,39 @@ function my_journey_cpt() {
     register_post_type( 'journey', $args );
 }
 
+function my_rest_prepare_journey($data, $post, $request) {
+  $_data = $data->data;
+  $fields = get_fields($post->ID);
+  foreach ($fields as $key => $value){
+    $_data[$key] = get_field($key, $post->ID);
+  }
+  $data->data = $_data;
+  return $data;
+}
+add_filter("rest_prepare_journey", 'my_rest_prepare_journey', 10, 3);
 
+
+//-----------------------------------------------------------------
+// Shortening the excerpt
+//-----------------------------------------------------------------
+function new_excerpt_more( $more ) {
+    return '';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
 
 // Register taxonomies if needed
 require get_template_directory().'/taxonomies/activities.php';
+
+// Remove Posts from Admin Sidebar
+function remove_menu () 
+{
+   remove_menu_page('edit.php');
+   remove_menu_page('edit-comments.php');
+   remove_menu_page( 'themes.php' ); 
+
+} 
+
+add_action('admin_menu', 'remove_menu');
 
 // Set theme defaults.
 add_action('after_setup_theme', function () {
