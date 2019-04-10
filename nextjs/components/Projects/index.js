@@ -34,9 +34,13 @@ export default class Projects extends Component {
 
 
     splitWord = (str) => {
+        const date = new DateX(str).format('m d - Y');
+        console.log(date);
         let word = str.split('T')
         return word[0];
-
+        // const day = date.getDate();
+        // const month = date.getMonth()+1;
+        // const year = date.
     }
 
 
