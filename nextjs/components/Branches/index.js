@@ -31,7 +31,7 @@ class Branches extends Component {
                         activities: [],
                         activitesApi: branch._links['wp:term'][0].href
                     })
-                  
+                    // Behövs inte göras här eftersom vi skriver ut den här. ska flyttas till singlePage...
                     this.fetchActivities(newBranch);
         
                     

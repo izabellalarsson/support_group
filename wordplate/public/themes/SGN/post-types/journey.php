@@ -12,6 +12,10 @@ add_action('init', function () {
             'search_items' => __('Search Journey'),
             'singular_name' => __('Journey'),
         ],
+        'supports' => [
+            'content',
+            'title'
+        ],
         'menu_icon' => 'dashicons-admin-site',
         'menu_position' => 3,
         'public' => true,
