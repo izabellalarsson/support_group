@@ -34,8 +34,11 @@ export default class Projects extends Component {
 
 
     splitWord = (str) => {
+
+        
         let word = str.split('T')
         return word[0];
+
 
     }
 
