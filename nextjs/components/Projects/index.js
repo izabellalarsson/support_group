@@ -13,7 +13,7 @@ export default class Projects extends Component {
     }
 
     fetchProjects = () => {
-        const projectApi = 'http://wordplate.test/wp-json/wp/v2/project';
+        const projectApi = 'http://sgn.test/wp-json/wp/v2/project';
 
         fetch(projectApi)
         .then(res => res.json())
@@ -34,13 +34,15 @@ export default class Projects extends Component {
 
 
     splitWord = (str) => {
-        const date = new DateX(str).format('m d - Y');
-        console.log(date);
-        let word = str.split('T')
-        return word[0];
-        // const day = date.getDate();
-        // const month = date.getMonth()+1;
-        // const year = date.
+        const date = new Date(str);
+        const options = {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        };
+        
+        let word = date.toLocaleDateString('en-EN', options)
+        return word;
     }
 
 
