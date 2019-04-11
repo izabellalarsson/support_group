@@ -29,6 +29,7 @@ export default class Projects extends Component {
                         link: project.slug,
                         purpose: project.purpose,
                         goal: project.goal,
+                        type: project.type
                     }]
                 })
             })
@@ -76,7 +77,8 @@ export default class Projects extends Component {
                          imageUrl={project.imageUrl}
                          link={project.link}
                          purpose={project.purpose}
-                         goal={project.goal}/>
+                         goal={project.goal}
+                         type={project.type}/>
         ))}
       </div>
     )

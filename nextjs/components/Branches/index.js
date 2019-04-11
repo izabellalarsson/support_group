@@ -29,7 +29,8 @@ class Branches extends Component {
                         facebook: branch.facebook_page,
                         link: branch.slug,
                         activities: [],
-                        activitesApi: branch._links['wp:term'][0].href
+                        activitesApi: branch._links['wp:term'][0].href,
+                        type: branch.type
                     })
                     // Behövs inte göras här eftersom vi skriver ut den här. ska flyttas till singlePage...
                     this.fetchActivities(newBranch);
@@ -70,6 +71,7 @@ class Branches extends Component {
                             key={i}
                             id = {branch.id}
                             city= {branch.city}
+                            type={branch.type}
                     />
                 })}
             </div>

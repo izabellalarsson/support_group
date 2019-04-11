@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Title from '../../Title';
+import TitleProject from './TitleProject'
 import Text from '../../Text';
 import BlueLine from '../../BlueLine'
 
@@ -22,12 +22,9 @@ img {
     padding:0;
 }
 
-h1 {
-    padding-top: 50px;
-}
-
 hr {
     width: 100%;
+    padding-top: 0px;
 }
 
 `
@@ -36,12 +33,24 @@ const Project = ({imageUrl, description, name, purpose, goal}) => {
         <ProjectStyle>
             <img src={imageUrl}/>
             <div>
-                <Title text={name}/>
+                <TitleProject text={name} padding="padding"/>
                 <Text text={description}/>
                 <BlueLine/>
-                <Text text={purpose}/>
-                <BlueLine/>
-                <Text text={goal}/>
+                {(purpose == undefined) ? null :
+                    <div>
+                        <TitleProject text="Purpose"/>
+                        <Text text={purpose}/>
+                        <BlueLine/>
+                    </div>
+                }
+                {(goal == undefined) ? null :
+                    <div>
+                        <TitleProject text="Goal"/>
+                        <Text text={goal}/>
+                        <BlueLine/>
+                    </div>
+                }
+
             </div>
         </ProjectStyle>
     );

@@ -7,6 +7,9 @@ class Header extends Component {
         isClicked: false
     }
 
+    componentDidMount () {
+        // this.handleClickMenu()
+    }
     
     handleClickMenu = () => {
         this.setState ({
