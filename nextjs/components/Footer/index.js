@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import SmallText from './SmallText';
 
 const FooterStyled = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     background: #151A32;
     height: 650px;
     width: 100%;

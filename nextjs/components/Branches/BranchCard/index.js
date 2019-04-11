@@ -71,7 +71,7 @@ const BranchCard = ({name, shortDescription, link, id, city, type}) => {
                 </div>
 
                 <Text dangerouslySetInnerHTML={{__html: shortDescription}} text={shortDescription}/>
-                
+                <ReadMore id={id} link={link} type={type}/>
                 <article>
                     <atricle className="one">
                     <Text text="Visit the Facebook page for more info"/>

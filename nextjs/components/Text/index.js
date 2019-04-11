@@ -6,7 +6,7 @@ const TextStyle = styled.p`
 font-family: 'Aktiv Grotesk', sans-serif;
 font-size: 16px;
 color: var(--font-grey);
-padding: 0 30px;
+padding: 0 30px 42px 30px;
 
 `
 

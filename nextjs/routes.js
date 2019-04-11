@@ -2,7 +2,7 @@ const routes = require('next-routes');
 
 module.exports = routes()
     .add('index', '/')
-    .add('branches')
-    .add('branch', '/branches/:slug')
-    .add('projects')
-    .add('project', '/projects/:slug')
+    .add('branch')
+    .add('singleBranch', '/branch/:slug')
+    .add('project')
+    .add('singleProject', '/project/:slug')

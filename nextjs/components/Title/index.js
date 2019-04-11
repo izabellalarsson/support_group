@@ -11,6 +11,7 @@ padding-top: 60px;
 margin-left: 30px;
 z-index: 998;
 margin-bottom: 0;
+margin-top: 0;
 line-height: 100%;
 
 
