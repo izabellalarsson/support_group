@@ -2,23 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CopywriteStyled = styled.div `
-width: 40%;
+width: 43%;
 display: flex;
-justify-content: center;
+justify-content: space-between;
 align-items: center;
-p{
-    text-align: center;
-    color: white;
-    font-family: 'Rubik', sans-serif;
-    font-size: 12px;
-
-}
+text-align: center;
+color: white;
+font-family: 'Rubik', sans-serif;
+font-size: 12px;
 `
 
 const Copywrite = ({children}) => {
     return (
         <CopywriteStyled>
-            <p>{children}</p>
+            {children}
         </CopywriteStyled>
     );
 };

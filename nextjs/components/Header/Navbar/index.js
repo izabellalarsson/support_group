@@ -7,7 +7,7 @@ import Search from '../Search';
 import Logo from '../Logo';
 
 const NavbarStyle = styled.nav`
-background: #151A32;
+background: var(--headline-font);
 width: 100%;
 height: 7vh;
 display: flex;
