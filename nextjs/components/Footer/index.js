@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import SmallText from './SmallText';
 
 const FooterStyled = styled.div`
     background: #151A32;
-    height: 50px;
+    height: 650px;
     width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
 `
 class Footer extends Component {
     render() {
         return (
             <FooterStyled>
-                <p>hej</p>
+                <SmallText>If you have any questions, feel free to contact us</SmallText>
+                <SmallText>For donations and supportive acts Click here</SmallText>
+                <SmallText>Support Group Network © 2019</SmallText>
             </FooterStyled>
         );
     }

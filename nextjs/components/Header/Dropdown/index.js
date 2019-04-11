@@ -79,7 +79,8 @@ class Dropdown extends Component {
                             <DropdownMainItem 
                                 text={page.title.rendered} 
                                 link={`/${page.slug}`}
-                                handleClickMenu={this.state.handleClickMenu} />
+                                handleClickMenu={this.state.handleClickMenu} 
+                                key={i}/>
                         )
                     })}
                 </nav>

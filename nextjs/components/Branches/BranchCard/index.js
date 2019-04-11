@@ -63,7 +63,7 @@ width: 100%;
 const BranchCard = ({name, shortDescription, link, id, city, type}) => {
     return (
         <BranchCardStyle>
-            <Link id={id} href={`/branches/${link}`} ><a href={`/branches/${link}`}><Title text={name}/></a></Link>
+            <Link id={id} href={`/${type}/${link}`} ><a href={`/${type}/${link}`}><Title text={name}/></a></Link>
             <section>
                 <div className="where">
                     <i class="fas fa-map-marker-alt"></i>
