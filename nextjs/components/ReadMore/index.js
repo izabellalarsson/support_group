@@ -6,6 +6,7 @@ import Link from 'next/link';
 const ReadMoreStyle = styled.div`
 align-self: flex-end;
 width: 30%;
+height: 20px;
 
 a {
     animation-name: move;
@@ -33,7 +34,7 @@ a:hover {
 }
 
 hr {
-    border: 4px;
+  display: none;
 }
 
 
@@ -71,7 +72,7 @@ hr {
 const ReadMore = ({link, type}) => {
     return (
         <ReadMoreStyle>
-            <Link href={`/${type}s/${link}`}><a href={`/${type}s/${link}`}>Read more</a></Link>
+            <Link href={`/${type}/${link}`}><a href={`/${type}s/${link}`}>Read more</a></Link>
             <hr/>
         </ReadMoreStyle>
     );
