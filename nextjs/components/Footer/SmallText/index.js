@@ -10,6 +10,8 @@ text-align: center;
 color: white;
 font-family: 'Rubik', sans-serif;
 font-size: 12px;
+line-height: 20px;
+margin-bottom: 32px;
 `
 
 const Copywrite = ({children}) => {

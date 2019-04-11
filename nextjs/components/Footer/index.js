@@ -15,7 +15,10 @@ const FooterStyled = styled.div`
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: space-around;  
+    /* justify-content: space-around;   */
+    div:last-child{
+        margin-bottom: 0px;
+    }
 
 `
 class Footer extends Component {

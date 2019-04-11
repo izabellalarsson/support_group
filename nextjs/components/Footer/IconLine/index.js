@@ -4,6 +4,8 @@ import FooterIcon from '../FooterIcon';
 
 const IconLineStyled = styled.div`
     width: 100%;
+    margin-top: 24px;
+    margin-bottom: 60px;
     .icon-container{
         position: absolute;
         display: flex;
@@ -12,7 +14,7 @@ const IconLineStyled = styled.div`
         justify-content: center;
     }
     hr{
-        border-top: 2px solid white;
+        border-top: 1px solid white;
     }
 `
 const IconLine = () => {

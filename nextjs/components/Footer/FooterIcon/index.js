@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const FooterIconStyled = styled.div`
 width: 42px;
 height: 42px;
-border: 3px solid white;
+border: 2px solid white;
 border-radius: 50%;
 margin: 0px 15px;
 display: flex;

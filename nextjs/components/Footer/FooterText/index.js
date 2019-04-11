@@ -6,6 +6,8 @@ const FooterTextStyled = styled.div`
     font-size: 16px;
     color: white;
     width: 40%;
+    margin-bottom: 32px;
+    line-height: 22px;
 `
 
 const FooterText = ({children}) => {
