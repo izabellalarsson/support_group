@@ -29,7 +29,7 @@ export default class Projects extends Component {
                         link: project.slug,
                         purpose: project.purpose,
                         goal: project.goal,
-                        type: project.type
+                        type: project.type,
                     }]
                 })
             })

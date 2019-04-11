@@ -39,7 +39,7 @@ hr {
 }
 
 `
-const Project = ({imageUrl, description, name, purpose, goal}) => {
+const Project = ({imageUrl, description, name, purpose, goal, headlinePurpose, headlineGoal}) => {
     return (
         <ProjectStyle>
             <img src={imageUrl}/>
@@ -47,16 +47,16 @@ const Project = ({imageUrl, description, name, purpose, goal}) => {
                 <TitleProject text={name} padding="padding"/>
                 <Text text={description}/>
                 <BlueLine/>
-                {(purpose == undefined) ? null :
+                {(purpose == "") ? null :
                     <div>
-                        <TitleProject text="Purpose"/>
+                        <TitleProject text={headlinePurpose}/>
                         <Text text={purpose}/>
                         <BlueLine/>
                     </div>
                 }
-                {(goal == undefined) ? null :
+                {(goal == "") ? null :
                     <div>
-                        <TitleProject text="Goal"/>
+                        <TitleProject text={headlineGoal}/>
                         <Text text={goal}/>
                         <BlueLine/>
                     </div>
