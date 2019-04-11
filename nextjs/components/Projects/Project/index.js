@@ -14,6 +14,17 @@ img {
     height: auto;
 }
 
+&::before {
+    content: "";
+    background-image: linear-gradient(rgba(0,0,0,0), white, rgba(0,0,0,0));
+    position: absolute;
+    top: 30.5%;
+    color: red;
+    font-weight: bold;
+    width: 100%;
+    height: 15%;
+}
+
 > div {
     position: relative;
     background-color: #F3F5FF;
