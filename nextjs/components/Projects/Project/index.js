@@ -8,6 +8,9 @@ import BlueLine from '../../BlueLine'
 const ProjectStyle = styled.div`
 background: #F3F5FF;
 width: 100%;
+padding-bottom: 60px;
+
+
 img {
     object-fit: cover;
     width: 100%;
