@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Title from '../../Title';
+import TitleProject from './TitleProject'
 import Text from '../../Text';
 import BlueLine from '../../BlueLine'
 
@@ -14,6 +14,17 @@ img {
     height: auto;
 }
 
+&::before {
+    content: "";
+    background-image: linear-gradient(rgba(0,0,0,0), white, rgba(0,0,0,0));
+    position: absolute;
+    top: 30.5%;
+    color: red;
+    font-weight: bold;
+    width: 100%;
+    height: 15%;
+}
+
 > div {
     position: relative;
     background-color: #F3F5FF;
@@ -22,26 +33,35 @@ img {
     padding:0;
 }
 
-h1 {
-    padding-top: 50px;
-}
-
 hr {
     width: 100%;
+    padding-top: 0px;
 }
 
 `
-const Project = ({imageUrl, description, name, purpose, goal}) => {
+const Project = ({imageUrl, description, name, purpose, goal, headlinePurpose, headlineGoal}) => {
     return (
         <ProjectStyle>
             <img src={imageUrl}/>
             <div>
-                <Title text={name}/>
+                <TitleProject text={name} padding="padding"/>
                 <Text text={description}/>
                 <BlueLine/>
-                <Text text={purpose}/>
-                <BlueLine/>
-                <Text text={goal}/>
+                {(purpose == "") ? null :
+                    <div>
+                        <TitleProject text={headlinePurpose}/>
+                        <Text text={purpose}/>
+                        <BlueLine/>
+                    </div>
+                }
+                {(goal == "") ? null :
+                    <div>
+                        <TitleProject text={headlineGoal}/>
+                        <Text text={goal}/>
+                        <BlueLine/>
+                    </div>
+                }
+
             </div>
         </ProjectStyle>
     );

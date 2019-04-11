@@ -27,7 +27,11 @@ class ProjectPage extends Component {
             <Layout>
                 <Project name={this.state.project.name}
                          imageUrl={this.state.project.image}
-                         description={this.state.project.description}/>
+                         description={this.state.project.description}
+                         purpose={this.state.project.purpose}
+                         goal={this.state.project.goal}
+                         headlinePurpose={this.state.project.headlinepurpose}
+                         headlineGoal={this.state.project.headlinegoal}/>
             </Layout>
         )
     }

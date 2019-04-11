@@ -68,10 +68,10 @@ hr {
 `
 
 
-const ReadMore = ({}) => {
+const ReadMore = ({link, type}) => {
     return (
         <ReadMoreStyle>
-            <Link href=""><a href="">Read more</a></Link>
+            <Link href={`/${type}s/${link}`}><a href={`/${type}s/${link}`}>Read more</a></Link>
             <hr/>
         </ReadMoreStyle>
     );

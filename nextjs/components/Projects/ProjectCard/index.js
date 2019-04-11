@@ -31,14 +31,14 @@ img {
 }
 `
 
-const ProjectCard = ({title, description, date, imageUrl, id, link}) => {
+const ProjectCard = ({title, description, date, imageUrl, id, link, type}) => {
     return (
         <ProjectCardStyle>
             <Link id={id} href={`/projects/${link}`}><a href={`/projects/${link}`}><Title text={title}/></a></Link>
             <img src={imageUrl}/>
             <DateText text={date}/>
             <Text text={description}/>
-            <ReadMore/>
+            <ReadMore id={id} link={link} type={type}/>
             <BlueLine/>
         </ProjectCardStyle>
     );

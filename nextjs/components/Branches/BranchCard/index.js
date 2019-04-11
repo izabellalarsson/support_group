@@ -60,7 +60,7 @@ width: 100%;
     }
 `
 
-const BranchCard = ({name, shortDescription, link, id, city}) => {
+const BranchCard = ({name, shortDescription, link, id, city, type}) => {
     return (
         <BranchCardStyle>
             <Link id={id} href={`/branches/${link}`} ><a href={`/branches/${link}`}><Title text={name}/></a></Link>
@@ -72,7 +72,6 @@ const BranchCard = ({name, shortDescription, link, id, city}) => {
 
                 <Text dangerouslySetInnerHTML={{__html: shortDescription}} text={shortDescription}/>
                 
-                <ReadMore/>
                 <article>
                     <atricle className="one">
                     <Text text="Visit the Facebook page for more info"/>

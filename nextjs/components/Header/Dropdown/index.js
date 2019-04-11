@@ -14,7 +14,7 @@ flex-direction: column;
 width: 100%;
 height: 93vh;
 transition: transform 0.5s ease;
-transform: ${props => !props.isClicked ? "translateX(100vw)" : "translateX(0)"};
+transform: ${props => props.isClicked ? "translateX(0)" : "translateX(100vw)"};
 top: 7vh;
 background: #F3F5FF;
 
