@@ -54,6 +54,16 @@ class Dropdown extends Component {
         const pagesApi = `http://${process.env.HOST}/wp-json/wp/v2/pages`;
         const response = await fetch(pagesApi);
         const data = await response.json();
+        const compare = (a,b) => {
+            if (a.menu_order < b.menu_order){
+                return -1;
+            }
+            if (a.menu_order > b.menu_order)
+                return 1;
+            return 0;
+        }
+        data.sort(compare);
+        console.log(data);
         this.setState ({
             pages: data
         }) 

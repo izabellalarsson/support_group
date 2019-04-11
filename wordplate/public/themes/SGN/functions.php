@@ -12,10 +12,18 @@ require get_template_directory().'/post-types/branch.php';
 require get_template_directory().'/post-types/project.php';
 require get_template_directory().'/post-types/news.php';
 require get_template_directory().'/post-types/journey.php';
+require get_template_directory().'/post-types/site-text.php';
 
 
-
-
+add_action( 'init', 'my_site_text_cpt' );
+function my_site_text_cpt() {
+    $args = array(
+      'public'       => true,
+      'show_in_rest' => true,
+      'label'        => 'Site-Text'
+    );
+    register_post_type( 'site-text', $args );
+}
 
 //-----------------------------------------------------------------
 // Added Branches to Rest API
