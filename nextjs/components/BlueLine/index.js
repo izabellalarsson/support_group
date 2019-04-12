@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components'
 
 const BlueLineStyle = styled.hr`
-    border: 1px solid #B9C4EA;
+    border: 1px solid var(--blue-line);
     width: 92%;
     margin-right: 0;
     margin-bottom: 0;

@@ -51,10 +51,10 @@ export default class Projects extends Component {
     }
 
     getExcerpted = (str, limit) => {
-        var fullText = str;
-        var shortText = str;
+        let fullText = str;
+        let shortText = str;
         shortText = shortText.substr( 0, shortText.lastIndexOf( ' ', limit ) ) + '...';
-        var returnString = {
+        let returnString = {
             fullText: fullText,
             shortText: shortText
         };
