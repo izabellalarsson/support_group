@@ -34,6 +34,8 @@ const FormStyled = styled.div`
             height: 34px;
             width: 80%;
             outline: none;
+            color: var(--sub-bg);
+            font-size: 14px;
 
             &::placeholder{
                 color: var(--sub-bg);
@@ -50,6 +52,8 @@ const FormStyled = styled.div`
             margin-bottom: 15px;
             resize: none;
             outline: none;
+            color: var(--sub-bg);
+            font-size: 14px;
 
             &::placeholder{
                 color: var(--sub-bg);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import Title from '../Title';
 import Text from '../Text';
@@ -18,24 +18,28 @@ div:last-child {
 `
 
 
-const MakeAChange = () => {
-    return (
-        <MakeAChangeStyled>
-            <img src="" alt="support" />
-            <Title text="We need your support" />
-            <Text text="
-                As our members grow in numbers our needs increase. 
-                When we organise activities we have a need for 
-                partners and people who are willing to lend out 
-                their facilities and share their competences. 
-                If you are willing to help out, please contact us." />
-            
-            <Form />
-            <div>
-                <BlueLine />
-            </div>
-        </MakeAChangeStyled>
-    );
+
+class MakeAChange extends Component {
+    render() {
+
+        return (
+            <MakeAChangeStyled>
+                <img src="" alt="support" />
+                <Title text="We need your support" />
+                <Text text="
+                    As our members grow in numbers our needs increase. 
+                    When we organise activities we have a need for 
+                    partners and people who are willing to lend out 
+                    their facilities and share their competences. 
+                    If you are willing to help out, please contact us." />
+                
+                <Form />
+                <div>
+                    <BlueLine />
+                </div>
+            </MakeAChangeStyled>
+        );
+    }
 };
 
 
