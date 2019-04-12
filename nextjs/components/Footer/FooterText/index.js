@@ -5,7 +5,7 @@ const FooterTextStyled = styled.div`
     text-align: center;
     font-size: 16px;
     color: white;
-    width: 40%;
+    width: 60%;
     margin-bottom: 32px;
     line-height: 22px;
 `

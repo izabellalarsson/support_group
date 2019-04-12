@@ -15,7 +15,6 @@ a{
     font-size: 22px;
     color: var(--font-grey);
     text-decoration: none;
-    
 }
 
 :hover {

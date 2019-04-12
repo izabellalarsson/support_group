@@ -1,8 +1,8 @@
 import { Fragment } from 'react'
 import Layout from '../components/Layout';
-
+import MakeAChange from '../components/MakeAChange';
 export default () => (
     <Layout>
-        <h1>Make-A-Change</h1>
+        <MakeAChange />
     </Layout >
 )
