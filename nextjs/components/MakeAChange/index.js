@@ -3,12 +3,17 @@ import styled from 'styled-components';
 import Title from '../Title';
 import Text from '../Text';
 import Form from './Form';
+import BlueLine from '../BlueLine';
 
 const MakeAChangeStyled = styled.div`
 img {
     object-fit: cover;
     width: 100%;
     height: auto;
+}
+div:last-child {
+    height: 50px;
+    background-color: var(--main-bg);
 }
 `
 
@@ -26,7 +31,9 @@ const MakeAChange = () => {
                 If you are willing to help out, please contact us." />
             
             <Form />
-            
+            <div>
+                <BlueLine />
+            </div>
         </MakeAChangeStyled>
     );
 };

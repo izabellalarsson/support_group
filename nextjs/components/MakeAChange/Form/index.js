@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Button from '../../Button';
+import BlueLine from '../../BlueLine';
 
 const FormStyled = styled.div`
     background-color: var(--main-bg);
@@ -12,7 +13,7 @@ const FormStyled = styled.div`
         display: flex;
         align-items: center;
         input{
-            
+
             height: 25px;
             width: 25px;
             margin-right: 14px;
@@ -21,7 +22,7 @@ const FormStyled = styled.div`
             margin-left: 25px;
         }       
     }
-    div:last-child {
+    div:nth-child(3) {
         display: flex;
         flex-flow: column;
         input{
@@ -32,6 +33,7 @@ const FormStyled = styled.div`
             margin-bottom: 16px;
             height: 34px;
             width: 80%;
+            outline: none;
 
             &::placeholder{
                 color: var(--sub-bg);
@@ -45,12 +47,27 @@ const FormStyled = styled.div`
             border-radius: 6px;
             padding-left: 10px;
             padding-top: 8px;
+            margin-bottom: 15px;
+            resize: none;
+            outline: none;
 
             &::placeholder{
                 color: var(--sub-bg);
                 font-size: 14px;
             }
         }
+        
+    }
+    div:nth-child(4) {
+        display: flex;
+        justify-content: flex-end;
+
+    }
+    button{
+        justify-self: end;
+        align-self: end;
+
+        justify-self: end;
     }
 `
 
@@ -68,7 +85,11 @@ const Form = () => {
                     <input type="text" placeholder="Name" />
                     <input type="text" placeholder="Email" />
                     <textarea type="text" placeholder="Message" />
-                </div>      
+                </div>   
+                <div>
+                    <Button text="Send" />
+                </div>
+                
             </form>    
         </FormStyled>
     );
