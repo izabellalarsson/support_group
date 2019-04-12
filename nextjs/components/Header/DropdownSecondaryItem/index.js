@@ -22,8 +22,10 @@ a{
 hr {
     display: block;
     width: 100vw;
-    border: 1px solid blue;
+    border-top: 2px solid var(--sub-bg);
 }
+
+
 
 :hover {
     text-decoration: underline;
@@ -33,7 +35,7 @@ hr {
 const DropdownSecondaryItem = ({text, link, handleClickMenu}) => {
     return (
         <DropdownSecondaryItemStyle>
-            <IconLine/>
+            <IconLine menu="menu"/>
             <Link href={link}><a href={link} onClick={handleClickMenu}>{text}</a></Link>
         </DropdownSecondaryItemStyle>
     );

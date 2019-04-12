@@ -4,8 +4,9 @@ import FooterIcon from '../Footer/FooterIcon';
 
 const IconLineStyled = styled.div`
     width: 100%;
-    margin-top: 24px;
+    margin-top: ${props => props.menu ? "50px" : "24px"};
     margin-bottom: 60px;
+
     .icon-container{
         position: absolute;
         display: flex;
@@ -14,17 +15,20 @@ const IconLineStyled = styled.div`
         justify-content: center;
     }
     hr{
-        border-top: 1px solid white;
+        border-top: 1px solid ${props => props.menu ? "var(--sub-bg)" : "white"};
     }
+
+
 `
-const IconLine = () => {
+const IconLine = (props) => {
+    // console.log(props.menu)
     return (
-        <IconLineStyled>
+        <IconLineStyled menu={props.menu}>
             <hr/>
             <div className="icon-container">
-                <FooterIcon> O </FooterIcon>
-                <FooterIcon> f </FooterIcon>
-                <FooterIcon> |> </FooterIcon>
+                <FooterIcon style={ (props.menu == "menu") ? "var(--sub-bg)" : null}> O </FooterIcon>
+                <FooterIcon style={ (props.menu == "menu") ? "var(--sub-bg)" : null}> f </FooterIcon>
+                <FooterIcon style={ (props.menu == "menu") ? "var(--sub-bg)" : null}> |> </FooterIcon>
             </div>
         </IconLineStyled>
     );
