@@ -7,6 +7,7 @@ const BlueLineStyle = styled.hr`
     width: 92%;
     margin-right: 0;
     margin-bottom: 0;
+    margin-top: 0;
 
 `
 const BlueLine = ({props}) => {
