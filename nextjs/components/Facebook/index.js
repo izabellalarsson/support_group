@@ -30,7 +30,7 @@ div:nth-child(2){
     z-index: 998;
     width: 30%;
     height: 70px;
-    background: #3B5998;
+    background: var(--facebook-bg);
     align-self: flex-end;
 }
 
@@ -57,7 +57,7 @@ const Facebook = ({props}) => {
             <Subheading text='Our Facebook activity'/>
             <div></div>
             <div>
-            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSupportRestadGard%2F&tabs=timeline&width=250&height=380&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=321304838567791" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSupportRestadGard%2F&tabs=timeline&width=250&height=380&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=321304838567791" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
             </div>
 
         </FacebookStyle>

@@ -21,6 +21,8 @@ code {
     --main-bg: #F3F5FF;
     --sub-bg: #AEBDEF;
     --detail-red: #EE7171;
+    --blue-line: #B9C4EA;
+    --facebook-bg: #3B5998;
 }
 `
 

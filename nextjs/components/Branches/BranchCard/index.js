@@ -16,7 +16,7 @@ width: 100%;
     }
 
     i {
-        color: #EE7171;
+        color: var(--detail-red);
         margin-right: 10px;
     }
 
@@ -30,13 +30,13 @@ width: 100%;
     section {
         display: flex;
         flex-direction: column;
-        background: #F3F5FF;
+        background: var(--main-bg);
         margin-top: -20px;
     }
 
     .fa-exclamation-circle {
         font-size: 42px;
-        color: #3B5998;
+        color: var(--facebook-bg);
         align-self: flex-end;
         margin: 30px;
     }
