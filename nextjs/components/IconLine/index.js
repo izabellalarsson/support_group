@@ -19,6 +19,12 @@ const IconLineStyled = styled.div`
     }
 
 
+i {
+    /* font-size: 20px;
+    color: ${props => props.menu ? "blue" : "red"}; */
+}
+
+
 `
 const IconLine = (props) => {
     // console.log(props.menu)
@@ -26,9 +32,9 @@ const IconLine = (props) => {
         <IconLineStyled menu={props.menu}>
             <hr/>
             <div className="icon-container">
-                <FooterIcon style={ (props.menu == "menu") ? "var(--sub-bg)" : null}> O </FooterIcon>
-                <FooterIcon style={ (props.menu == "menu") ? "var(--sub-bg)" : null}> f </FooterIcon>
-                <FooterIcon style={ (props.menu == "menu") ? "var(--sub-bg)" : null}> |> </FooterIcon>
+                <FooterIcon style={ (props.menu == "menu") ? "var(--sub-bg)" : null}><i class="fas fa-cog"/></FooterIcon>
+                <FooterIcon style={ (props.menu == "menu") ? "var(--sub-bg)" : null}><i class="fab fa-facebook-f"/></FooterIcon>
+                <FooterIcon style={ (props.menu == "menu") ? "var(--sub-bg)" : null}><i class="fab fa-youtube"/></FooterIcon>
             </div>
         </IconLineStyled>
     );

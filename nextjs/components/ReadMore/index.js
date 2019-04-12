@@ -7,6 +7,7 @@ const ReadMoreStyle = styled.div`
 align-self: flex-end;
 width: 30%;
 height: 20px;
+margin-bottom: 8px;
 
 a {
     animation-name: move;
