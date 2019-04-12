@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import FooterIcon from '../FooterIcon';
+import FooterIcon from '../Footer/FooterIcon';
 
 const IconLineStyled = styled.div`
     width: 100%;

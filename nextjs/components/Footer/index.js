@@ -3,18 +3,16 @@ import styled from 'styled-components';
 import SmallText from './SmallText';
 import FooterText from './FooterText';
 import FooterTitle from './FooterTitle';
-import IconLine from './IconLine';
+import IconLine from '../IconLine';
 
 const FooterStyled = styled.div`
     display: flex;
     justify-content: flex-start;
+    flex-flow: column;
     align-items: center;
     background: var(--headline-font);
     height: 650px;
     width: 100%;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
     
     div:last-child{
         margin-bottom: 0px;

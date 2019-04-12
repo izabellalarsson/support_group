@@ -86,9 +86,7 @@ class Dropdown extends Component {
                     })}
                 </nav>
                 <nav className="Dropdown-Secondary-Item">
-                    <DropdownSecondaryItem text="Language" link="/" handleClickMenu={this.state.handleClickMenu}/>
-                    <DropdownSecondaryItem text="Accessability" link="/hej" handleClickMenu={this.state.handleClickMenu}/>
-                    <DropdownSecondaryItem text="Help" link="/" handleClickMenu={this.state.handleClickMenu}/>
+                    <DropdownSecondaryItem link="/" handleClickMenu={this.state.handleClickMenu}/>
                 </nav>
             </DropdownStyle>
                 

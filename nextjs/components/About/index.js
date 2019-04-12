@@ -9,8 +9,6 @@ import Map from './Map'
 import Partners from '../Partners';
 
 const AboutStyle = styled.div`
-
-
 h2 {
     margin-left: 30px;
 }
