@@ -15,17 +15,7 @@ img {
     object-fit: cover;
     width: 100%;
     height: auto;
-}
-
-&::before {
-    content: "";
-    background-image: linear-gradient(rgba(0,0,0,0), white, rgba(0,0,0,0));
-    position: absolute;
-    top: 30.5%;
-    color: red;
-    font-weight: bold;
-    width: 100%;
-    height: 15%;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0));
 }
 
 > div {
