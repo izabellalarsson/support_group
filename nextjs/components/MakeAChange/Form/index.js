@@ -65,13 +65,6 @@ const FormStyled = styled.div`
     div:nth-child(4) {
         display: flex;
         justify-content: flex-end;
-
-    }
-    button{
-        justify-self: end;
-        align-self: end;
-
-        justify-self: end;
     }
 `
 
