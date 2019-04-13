@@ -64,17 +64,20 @@ const MembersStyled = styled.div`
 
 class Members extends Component {
     state = {
-        signIn: true
+        signIn: true,
+        buttonText: 'Sign In'
     }
 
     setTrue= () => {
         this.setState({
-            signIn: true
+            signIn: true,
+            buttonText: 'Sign In'
         });
     }
     setFalse= () => {
         this.setState({
-            signIn: false
+            signIn: false,
+            buttonText: 'Register'
         });
     }
 
@@ -92,7 +95,7 @@ class Members extends Component {
                     <InputField name="email" type="email" placeholder="Email" />
                     <InputField name="password" type="password" placeholder="Password" />
                     <div>
-                        <Button text="Continue" />
+                        <Button text={this.state.buttonText} />
                     </div>
                 </section>
                 <section>
