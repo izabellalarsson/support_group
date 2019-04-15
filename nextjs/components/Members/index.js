@@ -43,9 +43,7 @@ const MembersStyled = styled.div`
         background-color: white;
         margin-bottom: 60px;
         div:nth-child(2){
-            margin-top: 40px;
-            margin-bottom: 40px;
-            padding-left: 30px;
+            margin: 40px 0 40px 30px;;
             display: grid;
             grid-template-columns: 1fr 1fr;
         }

@@ -32,9 +32,9 @@ const IconLine = (props) => {
         <IconLineStyled menu={props.menu}>
             <hr/>
             <div className="icon-container">
-                <FooterIcon style={ (props.menu == "menu") ? "var(--sub-bg)" : null}><i class="fas fa-cog"/></FooterIcon>
-                <FooterIcon style={ (props.menu == "menu") ? "var(--sub-bg)" : null}><i class="fab fa-facebook-f"/></FooterIcon>
-                <FooterIcon style={ (props.menu == "menu") ? "var(--sub-bg)" : null}><i class="fab fa-youtube"/></FooterIcon>
+                <FooterIcon style={ (props.menu == "menu") ? "var(--sub-bg)" : null}><i className="fas fa-cog"/></FooterIcon>
+                <FooterIcon style={ (props.menu == "menu") ? "var(--sub-bg)" : null}><i className="fab fa-facebook-f"/></FooterIcon>
+                <FooterIcon style={ (props.menu == "menu") ? "var(--sub-bg)" : null}><i className="fab fa-youtube"/></FooterIcon>
             </div>
         </IconLineStyled>
     );

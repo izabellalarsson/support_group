@@ -25,9 +25,10 @@ a {
 }
 
 img {
-    margin: 30px 0 0 30px;
+    /* margin: 30px 0 0 30px; */
     object-fit: cover;
-    width: 84%;
+    width: 100%;
+    height: auto;
 }
 `
 

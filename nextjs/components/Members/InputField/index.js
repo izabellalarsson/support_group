@@ -11,9 +11,9 @@ const InputFieldStyled = styled.input`
     outline: none;
     color: var(--sub-bg);
     font-size: 14px;
+    text-indent: 10px;
 
     &::placeholder{
-        padding: 10px;
         color: var(--sub-bg);
         font-size: 14px;
     }
