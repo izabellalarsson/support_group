@@ -13,10 +13,11 @@ div {
     width: 92vw;
     margin-top: -20px;
     padding: 0;
-    background: #EFEFEF;
+    background: var(--main-bg);
     margin-bottom: 55px;
-
 }
+
+
 
 `
 
@@ -25,8 +26,7 @@ const Hero = ({text}) => {
         <HeroStyle>
             <Title text={text}></Title>
             <div>
-
-            </div>
+            </div>  
         </HeroStyle>
     );
 };
