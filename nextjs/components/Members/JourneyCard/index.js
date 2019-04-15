@@ -23,6 +23,7 @@ p{
     font-size: 12px;
 }
 
+
 `
 const JourneyCard = ({name, age, memberSince, src}) => {
     return (

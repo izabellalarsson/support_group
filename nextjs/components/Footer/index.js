@@ -4,6 +4,7 @@ import SmallText from './SmallText';
 import FooterText from './FooterText';
 import FooterTitle from './FooterTitle';
 import IconLine from '../IconLine';
+import Link from 'next/link'
 
 const FooterStyled = styled.div`
     display: flex;
@@ -28,8 +29,8 @@ class Footer extends Component {
                 <FooterText>Kungsladugårdsvägen 5 <br/>Restad Gård, 462 54<br /> Vänersborg Sweden</FooterText>
                 <SmallText>If you have any questions,<br /> feel free to contact us</SmallText>
                 <SmallText>
-                    For donations and<br/>
-                    supportive acts <a href="#" >click here</a>                    
+                    For donations and <br/>
+                    supportive acts <Link href="/make-a-change">click here</Link>            
                 </SmallText>
                 <IconLine />
                 <SmallText>Support Group Network © 2019</SmallText>
