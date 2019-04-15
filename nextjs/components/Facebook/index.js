@@ -64,9 +64,9 @@ const Facebook = ({props}) => {
     return (
         <FacebookStyle>
             <Subheading text='Our Facebook activity'/>
-            <div><i class="fab fa-facebook-f"></i></div>
+            <div><i className="fab fa-facebook-f"></i></div>
             <div>
-                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSupportRestadGard%2F&tabs=timeline&width=250&height=380&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=321304838567791" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSupportRestadGard%2F&tabs=timeline&width=250&height=380&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=321304838567791" scrolling="no" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
             </div>
 
         </FacebookStyle>

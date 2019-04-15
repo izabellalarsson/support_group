@@ -20,7 +20,7 @@ div:nth-child(2) div{
     grid-template-columns: 48% 48%;
     grid-column-gap: 3%;
     grid-row-gap: 15%;
-    margin: 13% 30px;
+    margin: 13vh 30px;
 }
 
 

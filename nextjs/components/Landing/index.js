@@ -6,9 +6,7 @@ import Title from '../Title'
 import Awards from './Awards'
 
 export default class Landing extends Component {
-  static propTypes = {
-    prop: PropTypes
-  }
+
 
   render() {
     return (

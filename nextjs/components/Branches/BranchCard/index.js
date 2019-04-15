@@ -63,23 +63,23 @@ width: 100%;
 const BranchCard = ({name, shortDescription, link, id, city, type}) => {
     return (
         <BranchCardStyle>
-            <Link id={id} href={`/${type}/${link}`} ><a href={`/${type}/${link}`}><Title text={name}/></a></Link>
+            <Link href={`/${type}/${link}`} ><a href={`/${type}/${link}`}><Title text={name}/></a></Link>
             <section>
                 <div className="where">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i className="fas fa-map-marker-alt"></i>
                     <Subheading text={city}/> 
                 </div>
 
                 <Text dangerouslySetInnerHTML={{__html: shortDescription}} text={shortDescription}/>
                 <ReadMore id={id} link={link} type={type}/>
                 <article>
-                    <atricle className="one">
+                    <div className="one">
                     <Text text="Visit the Facebook page for more info"/>
-                    </atricle>
+                    </div>
 
-                    <article className="two">
-                        <i class="fas fa-exclamation-circle"></i>
-                    </article>
+                    <div className="two">
+                        <i className="fas fa-exclamation-circle"></i>
+                    </div>
                 </article>
             </section>
         </BranchCardStyle>
