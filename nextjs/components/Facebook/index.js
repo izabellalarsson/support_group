@@ -29,9 +29,12 @@ h2 {
 div:nth-child(2){
     z-index: 998;
     width: 30%;
-    height: 70px;
+    height: 9vh;
     background: var(--facebook-bg);
     align-self: flex-end;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
 }
 
 > h2 {
@@ -47,6 +50,12 @@ iframe {
     overflow: hidden;
 }
 
+i {
+    font-size: 40pt;
+    color: #fff;
+    padding-left: 20px;
+}
+
 `
 
 
@@ -55,7 +64,7 @@ const Facebook = ({props}) => {
     return (
         <FacebookStyle>
             <Subheading text='Our Facebook activity'/>
-            <div></div>
+            <div><i class="fab fa-facebook-f"></i></div>
             <div>
                 <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSupportRestadGard%2F&tabs=timeline&width=250&height=380&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=321304838567791" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
             </div>
