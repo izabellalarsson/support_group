@@ -7,7 +7,7 @@ const DropdownMainItemStyle = styled.div`
     
     
     
-    margin: 30px 30px 30px 0;
+    margin: 3vh 3vh 3vh 0;
     font-family: 'Rubik', sans-serif;
     
     a {

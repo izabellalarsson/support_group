@@ -11,7 +11,7 @@ const FooterStyled = styled.div`
     flex-flow: column;
     align-items: center;
     background: var(--headline-font);
-    height: 650px;
+    height: 93vh;
     width: 100%;
     
     div:last-child{

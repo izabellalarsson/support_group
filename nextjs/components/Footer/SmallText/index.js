@@ -7,8 +7,8 @@ text-align: center;
 color: white;
 font-family: 'Rubik', sans-serif;
 font-size: 12px;
-line-height: 20px;
-margin-bottom: 32px;
+line-height: 2.5vh;
+margin-bottom: 3vh;
 a{
     color: var(--detail-red);
     font-size: 12px;

@@ -4,7 +4,7 @@ const FooterTitleStyled = styled.div`
 color: white;
 font-size: 40px;
 font-family: 'Rubik', sans-serif;
-margin: 60px 0px;
+margin: 4vh 0px;
 `
 
 const FooterTitle = ({children}) => {

@@ -4,7 +4,8 @@ import Navbar from './Navbar'
 
 class Header extends Component {
     state = {
-        isClicked: false
+        isClicked: false,
+        searchOpen: false
     }
 
     componentDidMount () {
@@ -16,10 +17,19 @@ class Header extends Component {
             isClicked: !this.state.isClicked
         })
     }
+    handleClickSearch = () => {
+        this.setState ({
+            searchOpen: !this.state.searchOpen
+        })
+    }
+
 
     render() {
         return (
-            <Navbar handleClickMenu={this.handleClickMenu} isClicked={this.state.isClicked}>
+            <Navbar handleClickMenu={this.handleClickMenu} 
+                    isClicked={this.state.isClicked} 
+                    searchOpen={this.state.searchOpen}
+                    handleClickSearch={this.handleClickSearch}>
             </Navbar>
         );
     }
