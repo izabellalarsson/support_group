@@ -25,7 +25,7 @@ a {
 }
 
 img {
-    /* margin: 30px 0 0 30px; */
+    margin: 30px 0 0 0;
     object-fit: cover;
     width: 100%;
     height: auto;
