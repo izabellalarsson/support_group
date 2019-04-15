@@ -8,7 +8,7 @@ import Title from '../Title';
 import Text from '../Text';
 import BlueLine from '../BlueLine';
 import ReadMore from '../ReadMore';
-import Subheading from '../Subheading';
+import JourneyCard from './JourneyCard';
 
 const MembersStyled = styled.div`
     background-color: var(--main-bg);
@@ -42,15 +42,8 @@ const MembersStyled = styled.div`
     section:nth-child(4){
         background-color: white;
         margin-bottom: 60px;
-        div:nth-child(2){
-            margin: 40px 0 40px 30px;;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-        img{
-            width: 100%;
-            height: auto;
-        }
+        
+        
         div:nth-child(4){
             display: flex;
             justify-content: flex-end;
@@ -98,14 +91,10 @@ class Members extends Component {
                 </section>
                 <section>
                     <Title text="This is my SGN journey" />
-                    <div>
-                        <div>
-                            <Subheading text="Pretty Boy Floyd" />
-                            <Subheading text="25 years" />
-                            <Subheading text="Member since 2015" />
-                        </div>
-                        <img src="https://c.pxhere.com/photos/f7/4c/smile_profile_face_male_portrait_young_person_glasses-451655.jpg!d" alt="person" />
-                    </div>
+                    < JourneyCard name = "Mahmood Younes"
+                    age = "21"
+                    memberSince = "2015"
+                    src = "https://assets.pando.com/_versions/2012/02/8-markpinc-mark-pincus-is-the-founder-and-ceo-of-zynga-and-was-an-early-investor-in-facebook-maybe-murdoch-really-likes-farmville-after-rupert-started-following-him-pincus-gave-him-a-s1_featured.jpeg" / >
                     <Text text="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
                     <div>
                         <ReadMore />
