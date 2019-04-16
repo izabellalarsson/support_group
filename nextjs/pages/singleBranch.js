@@ -4,6 +4,21 @@ import Layout from '../components/Layout';
 import fetch from 'isomorphic-unfetch';
 import Title from '../components/Title';
 import Text from '../components/Text';
+import ActivityName from '../components/Branches/ActivityName';
+import BlueLine from '../components/BlueLine';
+import styled from 'styled-components';
+
+const BranchPageStyled = styled.div`
+h1 {
+    margin-bottom: 4vh;
+}
+`
+const ActivityCardStyled = styled.div`
+    background-color: ${props => props.blueBackground ? "var(--main-bg)" : "white"};
+    p {
+        margin: 0;
+    }
+`
 
 class BranchPage extends Component {
 
@@ -17,19 +32,17 @@ class BranchPage extends Component {
         this.state = {
             notFound: false,
             branch: newBranch[0],
-            activities: []
+            activities: [],
+            backgroundColor: true
         }
 
         // Check if slug excists
         if (newBranch.length < 1) {
-            //Redirect to 404;
-            console.log('hej');
             this.state = {
                 notFound: true
             }
         }else{
             const activitiesApi = this.state.branch._links['wp:term'][0].href
-            //console.log(activitiesApi);
             fetch(activitiesApi)
             .then(res => res.json())
             .then(activities => {
@@ -40,29 +53,45 @@ class BranchPage extends Component {
         }    
     }
 
+    getBackgroundColor = () => {
+        
+        this.state = {
+            backgroundColor: !this.state.backgroundColor
+        }
+        return !this.state.backgroundColor
+       
+    }
+
     
     render () {
         return (
             
             <Layout>
+                <BranchPageStyled >
+                
                 {this.state.notFound && 
-                <div>
-                    <Title text={'Branch Not Found'} /> 
-                    <Text text="Please try again" />
-                </div>
+                    <div>
+                        <Title text={'Branch Not Found'} /> 
+                        <Text text="Please try again" />
+                    </div>
                 } 
 
                 {!this.state.notFound && 
                     <div>
-                        <Title text={this.state.branch.title.rendered} />
+                        <Title text={`Activities in ${this.state.branch.title.rendered}`} />
+                        <BlueLine />
                         {
                             this.state.activities.map(activity => {
-                                console.log(activity.name)
-                                return <Text text={activity.name} />
+                                
+                                return (<ActivityCardStyled blueBackground={this.getBackgroundColor()}>
+                                            <ActivityName text={activity.name}/>
+                                            <Text text={activity.description}/>
+                                        </ActivityCardStyled>)
                             })
                         }
                     </div>
                 }
+                </BranchPageStyled>
             </Layout>
         )
     }
