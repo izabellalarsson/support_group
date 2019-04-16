@@ -81,9 +81,9 @@ class BranchPage extends Component {
                         <Title text={`Activities in ${this.state.branch.title.rendered}`} />
                         <BlueLine />
                         {
-                            this.state.activities.map(activity => {
+                            this.state.activities.map((activity, i) => {
                                 
-                                return (<ActivityCardStyled blueBackground={this.getBackgroundColor()}>
+                                return (<ActivityCardStyled blueBackground={this.getBackgroundColor()} key={i}>
                                             <ActivityName text={activity.name}/>
                                             <Text text={activity.description}/>
                                         </ActivityCardStyled>)
