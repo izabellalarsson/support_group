@@ -25,11 +25,11 @@ i {
 }
 `
 
-const Navbar = ({isClicked, handleClickMenu, searchOpen, handleClickSearch}) => {
+const Navbar = ({isClicked, handleClickMenu, handleClickSearch}) => {
     return (
         <NavbarStyle>
             <Logo />
-            <Search handleClickSearch={handleClickSearch} searchOpen={searchOpen}/>
+            <Search handleClickSearch={handleClickSearch}/>
             <DropdownButton handleClickMenu={handleClickMenu} isClicked={isClicked}/>
             <Dropdown handleClickMenu={handleClickMenu} onClick={handleClickMenu} isClicked={isClicked}/>
         </NavbarStyle>

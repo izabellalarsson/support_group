@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Navbar from './Navbar'
+import SearchBar from './SearchBar';
+import styled from 'styled-components';
+
+const HeaderStyled = styled.div`
+    position: sticky;
+    top: 0;
+    z-index: 999;
+`
 
 class Header extends Component {
     state = {
@@ -26,11 +34,15 @@ class Header extends Component {
 
     render() {
         return (
-            <Navbar handleClickMenu={this.handleClickMenu} 
-                    isClicked={this.state.isClicked} 
-                    searchOpen={this.state.searchOpen}
-                    handleClickSearch={this.handleClickSearch}>
-            </Navbar>
+            <HeaderStyled>
+
+                <Navbar handleClickMenu={this.handleClickMenu} 
+                        isClicked={this.state.isClicked} 
+                        handleClickSearch={this.handleClickSearch}>
+                </Navbar>
+                <SearchBar searchOpen={this.state.searchOpen} />
+
+            </HeaderStyled>
         );
     }
 }

@@ -5,21 +5,13 @@ const SearchStyled = styled.div`
     i {
         font-size: 20px;
     }
-    div {
-        width: 100%;
-        height: 50px;
-        display: ${props => props.searchOpen ? "block" : "none"};
-        background-color: hotpink;
-    }
+    
 `
 
 const Search = (props) => {
     return (
-        <SearchStyled onClick={props.handleClickSearch} searchOpen={props.searchOpen} >
+        <SearchStyled onClick={props.handleClickSearch} >
             <i className="fas fa-search"></i>
-            <div>
-
-            </div>
         </SearchStyled>
     );
 };
