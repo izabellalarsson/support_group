@@ -21,6 +21,19 @@ const FooterStyled = styled.div`
 
 `
 class Footer extends Component {
+    state = {
+        isClicked: false
+    }
+
+    handleClickSettings = () => {
+        this.setState ({
+            isClicked: !this.state.isClicked
+        })
+
+        console.log('hej')
+    }
+
+
     render() {
         return (
             <FooterStyled>
@@ -32,7 +45,7 @@ class Footer extends Component {
                     For donations and <br/>
                     supportive acts <Link href="/make-a-change">click here</Link>            
                 </SmallText>
-                <IconLine />
+                <IconLine handleClickSettings={this.handleClickSettings} isClicked={this.state.isClicked}/>
                 <SmallText>Support Group Network © 2019</SmallText>
             </FooterStyled>
         );

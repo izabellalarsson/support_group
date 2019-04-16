@@ -19,9 +19,9 @@ i {
 
 `
 
-const FooterIcon = ({children, style}) => {
+const FooterIcon = ({children, style, handleClickSettings, isClicked}) => {
     return (
-        <FooterIconStyled color={style}>
+        <FooterIconStyled color={style} onClick={handleClickSettings}>
             {children}
         </FooterIconStyled>
     );

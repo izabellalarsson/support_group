@@ -16,26 +16,48 @@ const IconLineStyled = styled.div`
     }
     hr{
         border-top: 1px solid ${props => props.menu ? "var(--sub-bg)" : "white"};
+
     }
 
+    section {
+        transition: height 0.5s ease;
+        height: ${props => props.isClicked ? "20vh" : "0"};
+        background: white;
+        margin-top: -2.5vh;
+    }
 
-i {
-    /* font-size: 20px;
-    color: ${props => props.menu ? "blue" : "red"}; */
-}
+    section * {
+        opacity: ${props => props.isClicked ? "1" : "0"};
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 20vh;
+    }
 
+    section h2 {
+        margin: 3vh 3vh 3vh 0;
+        font-family: 'Rubik', sans-serif;
+        text-decoration: none;
+        line-height: 90%;
+        font-weight: bold;
+        color: var(--headline-font);
+        font-size: 26px;
+    }
 
 `
-const IconLine = (props) => {
-    // console.log(props.menu)
+const IconLine = ({isClicked, handleClickSettings, menu}) => {
     return (
-        <IconLineStyled menu={props.menu}>
+        <IconLineStyled menu={menu} isClicked={isClicked}>
             <hr/>
             <div className="icon-container">
-                <FooterIcon style={ (props.menu == "menu") ? "var(--sub-bg)" : null}><i className="fas fa-cog"/></FooterIcon>
-                <FooterIcon style={ (props.menu == "menu") ? "var(--sub-bg)" : null}><i className="fab fa-facebook-f"/></FooterIcon>
-                <FooterIcon style={ (props.menu == "menu") ? "var(--sub-bg)" : null}><i className="fab fa-youtube"/></FooterIcon>
+                <FooterIcon style={ (menu == "menu") ? "var(--sub-bg)" : null} handleClickSettings={handleClickSettings} isClicked={isClicked}><i className="fas fa-cog"/></FooterIcon>
+                <FooterIcon style={ (menu == "menu") ? "var(--sub-bg)" : null}><i className="fab fa-facebook-f"/></FooterIcon>
+                <FooterIcon style={ (menu == "menu") ? "var(--sub-bg)" : null}><i className="fab fa-youtube"/></FooterIcon>
             </div>
+            <section>
+                <h2>Settings</h2>
+            </section>
         </IconLineStyled>
     );
 };
