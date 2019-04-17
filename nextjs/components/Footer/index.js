@@ -5,6 +5,7 @@ import FooterText from "./FooterText";
 import FooterTitle from "./FooterTitle";
 import IconLine from "../IconLine";
 import Link from "next/link";
+import ArrowToTop from "./ArrowToTop";
 
 const FooterStyled = styled.div`
   display: flex;
@@ -36,6 +37,8 @@ class Footer extends Component {
   render() {
     return (
       <FooterStyled isClicked={this.state.isClicked}>
+        <ArrowToTop />
+
         <FooterTitle>Contact</FooterTitle>
         <FooterText>+4676-884 08 84 info@supportgroup.se</FooterText>
         <FooterText>
