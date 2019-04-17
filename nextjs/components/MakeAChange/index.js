@@ -37,6 +37,8 @@ class MakeAChange extends Component {
                 <div>
                     <BlueLine />
                 </div>
+                <Title text="Donations" />
+                <Text text="As we are a non-profit organisation, donations are very welcome." />
             </MakeAChangeStyled>
         );
     }

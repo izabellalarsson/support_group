@@ -7,7 +7,7 @@ const SearchBarStyled = styled.div`
         width: 100%;
         height: 60px;
         display: flex;
-        ${props => props.searchOpen ? "top: 7vh " : "top: -11px;"};
+        ${props => props.searchOpen ? "top: 7vh " : "top: -20px;"};
         background-color: var(--sub-bg);
         position: absolute;
         left: 0;
