@@ -28,16 +28,15 @@ const IconLine = ({ isClicked, handleClickSettings, menu }) => {
         <FooterIcon
           style={menu == "menu" ? "var(--sub-bg)" : null}
           handleClickSettings={handleClickSettings}
-          isClicked={isClicked}
-        >
-          <i className='fas fa-cog' />
-        </FooterIcon>{" "}
-        <FooterIcon style={menu == "menu" ? "var(--sub-bg)" : null}>
-          <i className='fab fa-facebook-f' />
-        </FooterIcon>{" "}
-        <FooterIcon style={menu == "menu" ? "var(--sub-bg)" : null}>
-          <i className='fab fa-youtube' />
-        </FooterIcon>{" "}
+          isClicked={isClicked} 
+          icon="settings"/>
+          {" "}
+        <FooterIcon style={menu == "menu" ? "var(--sub-bg)" : null}
+          icon="facebook"/>
+          {" "}
+        <FooterIcon style={menu == "menu" ? "var(--sub-bg)" : null}
+          icon="youtube" />
+        {" "}
       </div>{" "}
       <Settings isClicked={isClicked} />{" "}
     </IconLineStyled>

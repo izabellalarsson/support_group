@@ -38,8 +38,8 @@ class ArrowToTop extends Component {
           <path
             d='M50.8006 10.3989L25.9003 2L1 10.3989'
             stroke='white'
-            stroke-width='3'
-            stroke-miterlimit='10'
+            strokeWidth='3'
+            strokeMiterlimit='10'
           />
         </svg>
       </ArrowToTopStyled>

@@ -4,17 +4,34 @@ import Title from '../../Title';
 import Text from '../../Text';
 import BlueLine from '../../BlueLine';
 import ReadMore from '../../ReadMore';
+import Subheading from '../../Subheading';
 
 
 const EventCardStyled = styled.div`
     section:nth-child(2) {
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        justify-content: space-around;
         background: var(--main-bg);
-        padding: 40px 30px;
-        height: 100px;
+        padding-top: 40px;
         margin-top: -20px;
+        img{
+            width: 100%;
+            height: 40vh;
+            object-fit: cover;
+            object-position: 50% 50%;
+        }
+        h2{
+            margin: 30px;
+        }
     }
     section:nth-child(3) {
         background: white;
+        p:first-child{
+            padding-bottom: 20px;
+
+        }
 
     }
     section:nth-child(4){
@@ -23,37 +40,34 @@ const EventCardStyled = styled.div`
     i {
         color: var(--detail-red);
     }
-    div:nth-child(3){
+    div:nth-child(2){
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         padding-left: 30px;
-        div:last-child{
-            margin-bottom: 6%;
-        }
+        padding-bottom: 15px;
     }
     p:nth-child(2){
         margin-left: 20px;
+        font-size: 10px;
     }
     
     
 `
-const EventCard = ({name, text, adress}) => {
+const EventCard = ({date, name, text, adress}) => {
     return (
         <EventCardStyled>
-            <Title text={name} />
+            <Title text={date} />
             <section>
-                <img src="" alt="event picture" />
+                <img src="http://www.dummyimage.com/700x1400/56AA56/000" alt="event picture" />
+                <Subheading text={name}  />
             </section>
             <section>
                 <Text text={text} />
-                <BlueLine />
+                
                 <div>
                     <i class="fas fa-map-marker-alt" />
-                   
                     <p>{adress}</p>
-                    
-                    <ReadMore className="margin-up"/>
                 </div>
                 <BlueLine />
             </section>
