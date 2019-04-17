@@ -1,48 +1,57 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components'
-import Link from 'next/link'
-import Text from '../../Text';
-import Arrow from '../Arrow';
-import IconLine from '../../IconLine'
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import Link from "next/link";
+import Text from "../../Text";
+import Arrow from "../Arrow";
+import IconLine from "../../IconLine";
 
 const DropdownSecondaryItemStyle = styled.div`
-    display: flex;
-    justify-content: flex-start;
-    flex-flow: column;
-    align-items: center;
-    height: 650px;
-    width: 100%;
-a{
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: column;
+  align-items: center;
+  height: 650px;
+  width: 100%;
+  a {
     font-size: 22px;
     color: var(--font-grey);
     text-decoration: none;
-}
+  }
 
-hr {
+  hr {
     display: block;
     width: 100vw;
     border-top: 2px solid var(--sub-bg);
-}
+  }
 
-
-
-:hover {
+  :hover {
     text-decoration: underline;
-}
-
-`
-const DropdownSecondaryItem = ({text, link, handleClickMenu}) => {
-    return (
-        <DropdownSecondaryItemStyle>
-            <IconLine menu="menu"/>
-            <Link href={link}><a href={link} onClick={handleClickMenu}>{text}</a></Link>
-        </DropdownSecondaryItemStyle>
-    );
+  }
+`;
+const DropdownSecondaryItem = ({
+  text,
+  link,
+  handleClickMenu,
+  isClicked,
+  handleClickSettings
+}) => {
+  return (
+    <DropdownSecondaryItemStyle>
+      <IconLine
+        menu='menu'
+        isClicked={isClicked}
+        handleClickSettings={handleClickSettings}
+      />
+      <Link href={link}>
+        <a href={link} onClick={handleClickMenu}>
+          {text}
+        </a>
+      </Link>
+    </DropdownSecondaryItemStyle>
+  );
 };
 
-DropdownSecondaryItem.propTypes = {
-    
-};
+DropdownSecondaryItem.propTypes = {};
 
 export default DropdownSecondaryItem;
