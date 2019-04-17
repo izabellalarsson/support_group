@@ -8,6 +8,7 @@ import Facebook from "../Facebook";
 import Map from "./Map";
 import Partners from "../Partners";
 
+
 const AboutStyle = styled.div`
   img {
     width: 100%;

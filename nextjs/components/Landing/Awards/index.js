@@ -10,35 +10,38 @@ const AwardStyled = styled.div`
     flex-direction: column;
 
 img {
+    width: 86%;
+    height: 15%;
+    margin: 15px 30px;
+}
+
+img:first-child {
+    margin-top: 50px;
+}
+
+div:nth-child(2){
+    height: 60vh;
     width: 100%;
+    margin-top: -20px;
+    padding: 0;
+    background: var(--main-bg);
+    margin-bottom: 55px;
+    align-self: flex-end;
 }
 
-div:nth-child(2) div{
-    position: absolute;
-    left: 0;
-    display: grid;
-    grid-template-columns: 48% 48%;
-    grid-column-gap: 3%;
-    grid-row-gap: 15%;
-    margin: 13vh 30px;
+h1 {
 }
-
-
-
-
 `
 const Awards = ({text}) => {
     return (
         <AwardStyled>
             <Title text={text}></Title>
-            <Background>
-                <div>
-                    <img src="https://dummyimage.com/2000x1720/ff123f/123312"/>
-                    <img src="https://dummyimage.com/2000x1720/ff123f/123312"/>
-                    <img src="https://dummyimage.com/2000x1720/ff123f/123312"/>
-                    <img src="https://dummyimage.com/2000x1720/ff123f/123312"/>
-                </div>
-            </Background>
+            <div>
+                    <img src="https://dummyimage.com/2000x1720/ffffff/123312"/>
+                    <img src="https://dummyimage.com/2000x1720/ffffff/123312"/>
+                    <img src="https://dummyimage.com/2000x1720/ffffff/123312"/>
+                    <img src="https://dummyimage.com/2000x1720/ffffff/123312"/>
+            </div>
 
         </AwardStyled>
     );

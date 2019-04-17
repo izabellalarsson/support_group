@@ -34,13 +34,6 @@ margin-bottom: 2vh;
         margin-top: -20px;
     }
 
-    .fa-exclamation-circle {
-        font-size: 42px;
-        color: var(--facebook-bg);
-        align-self: flex-end;
-        margin: 30px;
-    }
-
     article {
         display: flex;
     }
@@ -48,11 +41,13 @@ margin-bottom: 2vh;
     article .one {
         display: flex;
         align-items: center;
+        justify-content: center;
         background: #fff;
         width: 60%;
 
         p {
             padding-bottom: 0;
+            padding: 4vh 30px;
         }
     } 
 

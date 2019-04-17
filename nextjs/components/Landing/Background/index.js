@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const BackgroundStyled = styled.div`
     height: 60vh;
-    width: 84%;
+    width: 100%;
     margin-top: -20px;
     padding: 0;
     background: var(--main-bg);
