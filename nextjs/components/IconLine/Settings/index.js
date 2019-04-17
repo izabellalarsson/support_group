@@ -50,11 +50,10 @@ const Settings = ({ isClicked }) => {
   return (
     <SettingStyled isClicked={isClicked}>
       <div>
-        <h2>Settings</h2>
-        <Text text='Language' />
+        <h2> Settings </h2> <Text text='Language' />
         <Text text='High contrast mode' />
-        <Link href='/make-a-change'>
-          <a href=''>Privacy policy</a>
+        <Link href='/privacypolicy'>
+          <a href='/privacypolicy'> Privacy policy </a>
         </Link>
       </div>
     </SettingStyled>
