@@ -9,7 +9,7 @@ const JourneyCardStyled = styled.section`
 
 background-color: white;
 margin-bottom: 60px;
-margin-top: 30px;
+margin-top: 130px;
 img {
     width: 100%;
     height: 40vh;

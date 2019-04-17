@@ -18,7 +18,6 @@ const MembersStyled = styled.div`
         justify-content: space-between;
         padding: 0 15vw;
         height: 30px;
-
         button:nth-child(3){
             text-align: right;
         }
@@ -26,17 +25,37 @@ const MembersStyled = styled.div`
             cursor: pointer;
         }
     }
-    section:nth-child(3){
-        background-color: var(--main-bg);
-        padding: 40px 30px;
-
-        div:nth-child(4){
-            display:flex;
-            justify-content: flex-end;
-        }
+    section:nth-child(5){
+       
+        margin-top:370px;
     }
     
-    
+
+`
+const SignInStyled = styled.section`
+    width: 86%;
+    height: 295px;
+    padding: 40px 30px;
+    background-color: var(--main-bg);
+    transition: .3s linear;
+    transform: ${props => props.signIn ? 'translateX(0)' : 'translateX(100vw)'};
+    position: absolute;
+    div{
+        display:flex;
+        justify-content: flex-end;
+    }
+`
+const RegisterStyled = styled.section`
+    background-color: var(--main-bg);
+    height: 295px;
+    padding: 40px 30px;
+    transition: .3s linear;
+    transform: ${props => props.signIn ? 'translateX(-100vw)' : 'translateX(0)'};
+    position: absolute;
+    div{
+        display:flex;
+        justify-content: flex-end;
+    }
 `
 
 class Members extends Component {
@@ -67,14 +86,25 @@ class Members extends Component {
                     <MembersChoices onClick={this.setTrue} text="SIGN IN"/>
                     <MembersChoices onClick={this.setFalse} text="SIGN UP"/>
                 </section>
-                <section>
-                    <InputField name="name" type="text" placeholder="Name" />
+
+                <SignInStyled signIn={this.state.signIn} >
                     <InputField name="email" type="email" placeholder="Email" />
                     <InputField name="password" type="password" placeholder="Password" />
                     <div>
-                        <Button text={this.state.buttonText} />
+                        <Button text="Sign In" />
                     </div>
-                </section> 
+                </SignInStyled>
+
+                <RegisterStyled signIn={this.state.signIn} >
+                    <InputField name="name" type="text" placeholder="Name" />
+                    <InputField name="email" type="email" placeholder="Email" />
+                    <InputField name="password" type="password" placeholder="Password" />
+                    <InputField name="repeat-password" type="password" placeholder="Repeat Password" />
+                    <div>
+                        <Button text="Register" />
+                    </div>
+                </RegisterStyled>
+                
                 <JourneyCard 
                     name = "Mahmood Younes"
                     age = "21"
