@@ -11,7 +11,7 @@ const DropdownSecondaryItemStyle = styled.div`
   justify-content: flex-start;
   flex-flow: column;
   align-items: center;
-  height: 650px;
+  height: ${props => props.isClicked ? '430px' : '300px'};
   width: 100%;
   a {
     font-size: 22px;
@@ -37,7 +37,7 @@ const DropdownSecondaryItem = ({
   handleClickSettings
 }) => {
   return (
-    <DropdownSecondaryItemStyle>
+    <DropdownSecondaryItemStyle isClicked={isClicked}>
       <IconLine
         menu='menu'
         isClicked={isClicked}

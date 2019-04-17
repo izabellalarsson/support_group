@@ -9,6 +9,12 @@ const SettingStyled = styled.div`
   height: ${props => (props.isClicked ? "35vh" : "0")};
   background: white;
   margin-top: -1.5vh;
+  ${props => (props.isClicked && props.menu == 'menu') ? `
+    border-top: 2px solid var(--sub-bg);
+    border-bottom: 2px solid var(--sub-bg);` : ''
+  
+  }
+  
 
   div:nth-child(1) {
     transition: transform 0.4s ease;
@@ -18,6 +24,7 @@ const SettingStyled = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
   }
 
   h2 {
@@ -46,9 +53,9 @@ const SettingStyled = styled.div`
   }
 `;
 
-const Settings = ({ isClicked }) => {
+const Settings = ({ isClicked, menu }) => {
   return (
-    <SettingStyled isClicked={isClicked}>
+    <SettingStyled isClicked={isClicked} menu={menu}>
       <div>
         <h2> Settings </h2> <Text text='Language' />
         <Text text='High contrast mode' />

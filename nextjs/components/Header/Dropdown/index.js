@@ -12,7 +12,8 @@ const DropdownStyle = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: ${props => (props.isClicked ? "113vh" : "93vh")};
+  height: ${props => (props.isClicked ? "103vh" : "93vh")};
+  overflow: scroll;
   transition: transform 0.5s ease;
   opacity: 0;
   transform: ${props =>

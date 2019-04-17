@@ -30,15 +30,15 @@ const IconLine = ({ isClicked, handleClickSettings, menu }) => {
           handleClickSettings={handleClickSettings}
           isClicked={isClicked} 
           icon="settings"/>
-          {" "}
+          
         <FooterIcon style={menu == "menu" ? "var(--sub-bg)" : null}
           icon="facebook"/>
-          {" "}
+          
         <FooterIcon style={menu == "menu" ? "var(--sub-bg)" : null}
           icon="youtube" />
-        {" "}
-      </div>{" "}
-      <Settings isClicked={isClicked} />{" "}
+        
+      </div>
+      <Settings isClicked={isClicked} menu={menu} />
     </IconLineStyled>
   );
 };
