@@ -5,7 +5,7 @@ import Link from "next/link";
 const LogoStyled = styled.div`
   margin-left: 30px;
   width: 10.5vw;
-  height: 5.5vh;
+  height: 3.5vh;
 
   svg {
     width: 100%;
