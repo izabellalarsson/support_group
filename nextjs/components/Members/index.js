@@ -4,10 +4,6 @@ import RedLine from './RedLine';
 import MembersChoices from './MembersChoices';
 import InputField from './InputField';
 import Button from '../Button';
-import Title from '../Title';
-import Text from '../Text';
-import BlueLine from '../BlueLine';
-import ReadMore from '../ReadMore';
 import JourneyCard from './JourneyCard';
 
 const MembersStyled = styled.div`
@@ -39,17 +35,7 @@ const MembersStyled = styled.div`
             justify-content: flex-end;
         }
     }
-    section:nth-child(4){
-        background-color: white;
-        margin-bottom: 60px;
-        
-        
-        div:nth-child(4){
-            display: flex;
-            justify-content: flex-end;
-            /* padding-right: 30px; */
-        }
-    }
+    
     
 `
 
@@ -88,19 +74,14 @@ class Members extends Component {
                     <div>
                         <Button text={this.state.buttonText} />
                     </div>
-                </section>
-                <section>
-                    <Title text="This is my SGN journey" />
-                    < JourneyCard name = "Mahmood Younes"
+                </section> 
+                <JourneyCard 
+                    name = "Mahmood Younes"
                     age = "21"
                     memberSince = "2015"
-                    src = "https://assets.pando.com/_versions/2012/02/8-markpinc-mark-pincus-is-the-founder-and-ceo-of-zynga-and-was-an-early-investor-in-facebook-maybe-murdoch-really-likes-farmville-after-rupert-started-following-him-pincus-gave-him-a-s1_featured.jpeg" / >
-                    <Text text="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
-                    <div>
-                        <ReadMore />
-                    </div>
-                    <BlueLine />
-                </section>
+                    src="https://assets.pando.com/_versions/2012/02/8-markpinc-mark-pincus-is-the-founder-and-ceo-of-zynga-and-was-an-early-investor-in-facebook-maybe-murdoch-really-likes-farmville-after-rupert-started-following-him-pincus-gave-him-a-s1_featured.jpeg" / >
+                    
+                
             </MembersStyled>
         );
     }
