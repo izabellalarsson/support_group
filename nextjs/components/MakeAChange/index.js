@@ -4,6 +4,7 @@ import Title from '../Title';
 import Text from '../Text';
 import Form from './Form';
 import BlueLine from '../BlueLine';
+import Subheading from '../Subheading';
 
 const MakeAChangeStyled = styled.div`
 img {
@@ -11,9 +12,39 @@ img {
     width: 100%;
     height: auto;
 }
-div:last-child {
+div:nth-child(5) {
     height: 50px;
     background-color: var(--main-bg);
+}
+div:nth-child(8){
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    h2{
+        margin-top: -5vh;
+    }
+}
+div:nth-child(9){
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+
+    img{
+        width: 80%;
+    }
+    h2{
+        margin-top: 5vh;
+        width: 90%;
+        text-align: center;
+    }
+    h2:nth-child(3){
+        margin-top: -15px;
+        margin-bottom: 60px;
+    }
+
 }
 `
 
@@ -37,6 +68,19 @@ class MakeAChange extends Component {
                 <div>
                     <BlueLine />
                 </div>
+                <Title text="Donations" />
+                <Text text="As we are a non-profit organisation, donations are very welcome." />
+                <div>
+                    <img src="https://www.getswish.se/content/uploads/2018/07/swish_horizontal_main_rgb.png" alt="swish" />
+                    <Subheading text="123 123 123 123" />
+                </div>
+                <div>
+                    <img src="https://www.bankgirot.se/Content/images/bankgirot-logo.png" alt="bankgiro" />
+                    <Subheading text="Bankgiro: 5138-5854" />
+                    <Subheading text="Organization number: 802503-7097" />
+
+                </div>
+               
             </MakeAChangeStyled>
         );
     }

@@ -33,7 +33,7 @@ class BranchPage extends Component {
             notFound: false,
             branch: newBranch[0],
             activities: [],
-            backgroundColor: true
+            blueBackground: true
         }
 
         // Check if slug excists
@@ -56,9 +56,9 @@ class BranchPage extends Component {
     getBackgroundColor = () => {
         
         this.state = {
-            backgroundColor: !this.state.backgroundColor
+            blueBackground: !this.state.blueBackground
         }
-        return !this.state.backgroundColor
+        return !this.state.blueBackground   
        
     }
 
