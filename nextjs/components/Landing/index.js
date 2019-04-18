@@ -6,6 +6,7 @@ import ReadMore from "../ReadMore";
 import Title from "../Title";
 import Awards from "./Awards";
 import JourneyCard from "../Members/JourneyCard";
+import ThankYou from "./ThankYou";
 
 const LandingStyled = styled.div``;
 export default class Landing extends Component {
@@ -15,7 +16,7 @@ export default class Landing extends Component {
         <Hero text='Support Group Network' />
         <JourneyCard src='https://images.unsplash.com/photo-1506919258185-6078bba55d2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1415&q=80' />
         <Awards text='Awards' />
-        <ReadMore />
+        <ThankYou />
       </LandingStyled>
     );
   }
