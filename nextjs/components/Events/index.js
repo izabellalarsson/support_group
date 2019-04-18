@@ -23,10 +23,27 @@ class Events extends Component {
 
     fetchEvents = async () => {
         const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/event`);
-        const events = await res.json();
+        let events = await res.json();
+        console.log(events);
+        events = this.changeDates(events);
+        console.log(events);
         this.setState({
             events: events
         })
+    }
+
+    changeDates = (events) => {
+        events.map(event => {
+            const date = new Date(event.date);
+            const options = {
+                month: 'long',
+                day: 'numeric'
+            };
+            event.date = date.toLocaleDateString('en-EN', options)
+            return event;
+        })
+        return events
+        
     }
 
 
