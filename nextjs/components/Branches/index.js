@@ -20,8 +20,8 @@ class Branches extends Component {
                     let newBranch =  ({
                         id: branch.id,
                         name: branch.title.rendered,
-                        description: branch.content.rendered,
-                        shortDescription: branch.excerpt.rendered,
+                        description: branch.description,
+                        shortDescription: branch.description,
                         adress: branch.adress,
                         city: branch.city,
                         email: branch.email,

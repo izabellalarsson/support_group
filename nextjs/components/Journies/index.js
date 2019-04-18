@@ -31,9 +31,9 @@ const Journey = ({ journey }) => {
         <Title text='This is my SGN journey' />
       </div>
       <img src={journey.image} />
-      <Subheading text={journey.fullname + ", " + journey.age} />
+      <Subheading text={journey.name + ", " + journey.age} />
       <Subheading text={"member sice " + journey.member_since} />
-      <Text text={journey.about} />
+      <Text text={journey.description} />
     </JourneyStyled>
   );
 };
