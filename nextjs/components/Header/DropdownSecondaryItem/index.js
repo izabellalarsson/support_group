@@ -34,7 +34,11 @@ const DropdownSecondaryItem = ({
   link,
   handleClickMenu,
   isClicked,
-  handleClickSettings
+  handleClickSettings,
+  handleSwitchLargeLetters,
+  isLargeLetters,
+  handleSwitchHighContrast,
+  isHighContrast
 }) => {
   return (
     <DropdownSecondaryItemStyle isClicked={isClicked}>
@@ -42,6 +46,10 @@ const DropdownSecondaryItem = ({
         menu='menu'
         isClicked={isClicked}
         handleClickSettings={handleClickSettings}
+        handleSwitchLargeLetters={handleSwitchLargeLetters}
+        isLargeLetters={isLargeLetters}
+        handleSwitchHighContrast={handleSwitchHighContrast}
+        isHighContrast={isHighContrast}
       />
       <Link href={link}>
         <a href={link} onClick={handleClickMenu}>
