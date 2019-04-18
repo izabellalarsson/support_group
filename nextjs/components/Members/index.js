@@ -36,7 +36,7 @@ const MembersStyled = styled.div`
 
 `
 const SignInStyled = styled.section`
-    width: 86%;
+    width: 84%;
     height: 335px;
     padding: 40px 30px;
     background-color: var(--main-bg);

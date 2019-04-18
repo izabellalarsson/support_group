@@ -5,30 +5,53 @@ import GlobalStyle from "../../styles";
 import Head from "next/head";
 import dotenv from "dotenv";
 import LoadingPage from "../LoadingPage";
-import CookiePolicy from "../CookiePolicy";
+import CookiePolicy from '../CookiePolicy';
+import nookies from 'nookies'
 
 dotenv.config();
 
 class Layout extends Component {
   constructor() {
-    super();
-    this.state = {
+
+      super();
+      this.state = { 
       isLoading: true,
-      isCookiesApproved: true
+      isCookiesApproved: null
     };
+  }
+  static async getInitialProps(ctx) {
+    this.setState({
+      ctx: ctx
+    });
+
   }
 
   componentDidMount() {
     this.setState({
-      isLoading: false
+      isLoading: false,
+      isCookiesApproved: nookies.get(this.state.ctx).approvedCookies
     });
+
   }
 
   componentWillMount() {}
 
-  cookieButtonClick = () => {
-    setState({});
-  };
+
+  handleCookieButtonClick = () => {
+	
+  	this.setState({
+		  isCookiesApproved: true
+    });
+    nookies.set(
+      this.state.ctx,
+      'approvedCookies',
+      true, {
+        maxAge: 30 * 24 * 60 * 60,
+        path: '/'
+      }
+    );
+  }
+
 
   render() {
     const { children } = this.props;
@@ -62,12 +85,9 @@ class Layout extends Component {
           </div>
         ) : (
           <div>
-            <Header />
-            <CookiePolicy
-              isCookiesApproved={this.state.isCookiesApproved}
-              cookieButtonClick={this.cookieButtonClick}
-            />
-            {children}
+            <Header /> 
+            <CookiePolicy isCookiesApproved={this.state.isCookiesApproved} handleCookieButtonClick={this.handleCookieButtonClick}/>
+            {children} 
             <Footer />
           </div>
         )}
