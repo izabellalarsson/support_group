@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import DropdownMainItem from "../DropdownMainItem";
 import styled from "styled-components";
 import DropdownSecondaryItem from "../DropdownSecondaryItem";
-import Arrow from "../Arrow";
 import nookies from 'nookies'
 
 const DropdownStyle = styled.div`
@@ -62,7 +61,7 @@ class Dropdown extends Component {
           isLargeLetters: nookies.get(this.state.ctx).letters === 'true' ? true : false
       })
   }
-
+  
   // 
   handleSwitchHighContrast = () => {
         this.setState({

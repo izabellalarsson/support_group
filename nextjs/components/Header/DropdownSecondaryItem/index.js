@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Link from "next/link";
 import Text from "../../Text";
-import Arrow from "../Arrow";
 import IconLine from "../../IconLine";
 
 const DropdownSecondaryItemStyle = styled.div`
