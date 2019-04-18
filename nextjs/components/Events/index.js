@@ -14,21 +14,44 @@ const EventsStyled = styled.div`
 
 
 class Events extends Component {
+    state = {
+        events: []
+    }
+    componentDidMount(){
+        this.fetchEvents();
+    }
+
+    fetchEvents = async () => {
+        const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/event`);
+        const events = await res.json();
+        this.setState({
+            events: events
+        })
+    }
+
+
     render() {
         return (
+            
             <EventsStyled>
                 <Title text="Events schedule" />
                 <Text text="Welcome to read about our events. Here you can easely follow our journey to make a difference and also be a part of it!" />
-                <EventCard  date="March 18"
-                        name="Pers Name" 
-                        text="There are many people who cannot 
-                        write and read their mother tongue. 
-                        Also others from different nationalities are 
-                        interested in Arabic. When Support Group Network 
-                        at Restad Gård does this course Everyone 
-                        is welcome to register."
-                        adress="Kungsladugårdsgatan 5, Vänersborg"/>
+                {this.state.events.map((event, i) => {
+                    return (
+                        <EventCard  
+                            key={i}
+                            date={event.date}
+                            name={event.name}
+                            text={event.description}
+                            image={event.image}
+                            adress={event.adress}
+                            city={event.city}
+                            />
+                        
+                    );
+                })}
             </EventsStyled>
+                
         );
     }
 }
