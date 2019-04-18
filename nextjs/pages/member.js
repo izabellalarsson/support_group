@@ -1,11 +1,28 @@
+import React, { Component } from "react";
+import Layout from "../components/Layout";
+import Members from "../components/Members";
+import LoadingPage from "../components/LoadingPage";
 
-import { Fragment } from 'react'
-import Layout from '../components/Layout';
-import Members from '../components/Members';
+export default class MembersPage extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isLoading: true
+    };
+  }
 
+  componentDidMount() {
+    this.setState({
+      isLoading: false
+    });
+  }
 
-export default () => (
-    <Layout>
+  render() {
+    return (
+      <Layout>
+        {this.state.isLoading && <LoadingPage />}
         <Members />
-    </Layout >
-)
+      </Layout>
+    );
+  }
+}

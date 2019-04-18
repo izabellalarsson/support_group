@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import Header from "../Header";
 import Footer from "../Footer";
@@ -6,18 +5,17 @@ import GlobalStyle from "../../styles";
 import Head from "next/head";
 import dotenv from "dotenv";
 import LoadingPage from "../LoadingPage";
-import CookiePolicy from '../CookiePolicy';
+import CookiePolicy from "../CookiePolicy";
 
 dotenv.config();
 
 class Layout extends Component {
-
   constructor() {
     super();
-    this.state = { 
-		isLoading: true,
-		isCookiesApproved: true
-	};
+    this.state = {
+      isLoading: true,
+      isCookiesApproved: true
+    };
   }
 
   componentDidMount() {
@@ -29,15 +27,11 @@ class Layout extends Component {
   componentWillMount() {}
 
   cookieButtonClick = () => {
-  	setState({
-
-  	})
-  }
+    setState({});
+  };
 
   render() {
     const { children } = this.props;
-
-    console.log(this.state.isLoading);
     return (
       <div>
         <GlobalStyle />
@@ -68,10 +62,13 @@ class Layout extends Component {
           </div>
         ) : (
           <div>
-            <Header /> 
-			<CookiePolicy isCookiesApproved={this.state.isCookiesApproved} cookieButtonClick={this.cookieButtonClick}/>
-			{children} 
-			<Footer />
+            <Header />
+            <CookiePolicy
+              isCookiesApproved={this.state.isCookiesApproved}
+              cookieButtonClick={this.cookieButtonClick}
+            />
+            {children}
+            <Footer />
           </div>
         )}
       </div>
