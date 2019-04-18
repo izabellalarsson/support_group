@@ -11,14 +11,12 @@ const HeaderStyled = styled.div`
 `
 
 class Header extends Component {
+    
     state = {
         isClicked: false,
-        searchOpen: false
+        searchOpen: false,
     }
-
-    componentDidMount () {
-        // this.handleClickMenu()
-    }
+    
     
     handleClickMenu = () => {
         this.setState ({
@@ -31,6 +29,8 @@ class Header extends Component {
         })
     }
 
+    
+
 
     render() {
         return (
@@ -39,7 +39,7 @@ class Header extends Component {
                 <Navbar handleClickMenu={this.handleClickMenu} 
                         isClicked={this.state.isClicked} 
                         handleClickSearch={this.handleClickSearch}>
-                </Navbar>
+                </Navbar >
                 <SearchBar searchOpen={this.state.searchOpen} />
 
             </HeaderStyled>
