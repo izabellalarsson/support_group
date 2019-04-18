@@ -9,7 +9,6 @@ const FormStyled = styled.div`
     div:nth-child(2){
         margin-bottom: 16px;
         font-size: 14px; 
-        color: var(--sub-bg); 
         display: flex;
         align-items: center;
         input{
@@ -38,7 +37,6 @@ const FormStyled = styled.div`
             font-size: 14px;
 
             &::placeholder{
-                color: var(--sub-bg);
                 font-size: 14px;
             }
         }
@@ -56,7 +54,7 @@ const FormStyled = styled.div`
             font-size: 14px;
 
             &::placeholder{
-                color: var(--sub-bg);
+               
                 font-size: 14px;
             }
         }

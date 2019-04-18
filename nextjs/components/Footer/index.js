@@ -14,7 +14,7 @@ const FooterStyled = styled.div`
   align-items: center;
   background: var(--headline-font);
   transition: height 0.5 ease-in-out;
-  height: ${props => (props.isClicked ? "113vh" : "93vh")};
+  height: ${props => (props.isClicked ? "123vh" : "93vh")};
   width: 100%;
 
   div:last-child {
@@ -23,16 +23,27 @@ const FooterStyled = styled.div`
 `;
 class Footer extends Component {
   state = {
-    isClicked: false
+    isClicked: false,
+    isHighContrast: false,
+    isLargeLetters: false
   };
 
   handleClickSettings = () => {
     this.setState({
       isClicked: !this.state.isClicked
     });
-
-    console.log("hej");
   };
+  handleSwitchHighContrast = () => {
+    this.setState({
+      isHighContrast: !this.state.isHighContrast
+    })
+  }
+  handleSwitchLargeLetters = () => {
+    this.setState({
+      isLargeLetters: !this.state.isLargeLetters
+    })
+  }
+
 
   render() {
     return (
@@ -52,11 +63,15 @@ class Footer extends Component {
         </SmallText>
         <SmallText>
           For donations and <br />
-          supportive acts <Link href='/make-a-change'>click here</Link>
+          supportive acts <Link href='/make-a-change'><a href='/make-a-change'>click here</a></Link>
         </SmallText>
         <IconLine
           handleClickSettings={this.handleClickSettings}
           isClicked={this.state.isClicked}
+          handleSwitchLargeLetters={this.handleSwitchLargeLetters}
+          isLargeLetters={this.state.isLargeLetters}
+          handleSwitchHighContrast={this.handleSwitchHighContrast}
+          isHighContrast={this.state.isHighContrast}
         />
         <SmallText>Support Group Network © 2019</SmallText>
       </FooterStyled>

@@ -12,7 +12,7 @@ const DropdownStyle = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: ${props => (props.isClicked ? "103vh" : "93vh")};
+  height: ${props => (props.isClicked ? "93vh" : "93vh")};
   overflow: scroll;
   transition: transform 0.5s ease;
   opacity: 0;
@@ -22,7 +22,7 @@ const DropdownStyle = styled.div`
   background: #f3f5ff;
 
   .Dropdown-Main-Item {
-    padding-top: 30px;
+    padding-top: 15px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -31,7 +31,7 @@ const DropdownStyle = styled.div`
   }
 
   .Dropdown-Secondary-Item {
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     align-self: flex-start;
   }
 `;

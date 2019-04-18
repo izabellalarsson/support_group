@@ -10,7 +10,7 @@ class Layout extends Component {
 	render() {
 		const { children } = this.props
 		return (
-			<div>
+			<div style={{transition: '1s linear'}}>
 				<GlobalStyle/>
 				<Head>
 					<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"

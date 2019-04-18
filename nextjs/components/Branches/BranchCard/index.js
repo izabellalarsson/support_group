@@ -71,7 +71,7 @@ const BranchCard = ({name, shortDescription, link, id, city, type}) => {
             <Link href={`/${type}/${link}`} ><a href={`/${type}/${link}`}><Title text={name}/></a></Link>
             <section>
                 <div className="where">
-                <svg height="21" width="17" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M14 8.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0zm.968 5.516a8.5 8.5 0 1 0-12.935 0L2 14l6.5 7 6.5-7-.032.016z" fill="#fff" fill-rule="evenodd"/></svg>
+                <svg height="21" width="17" xmlns="http://www.w3.org/2000/svg"><path clipRule="evenodd" d="M14 8.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0zm.968 5.516a8.5 8.5 0 1 0-12.935 0L2 14l6.5 7 6.5-7-.032.016z" fill="#fff" fillRule="evenodd"/></svg>
                     <Subheading text={city}/> 
                 </div>
 

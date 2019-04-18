@@ -59,14 +59,14 @@ const EventCard = ({date, name, text, adress}) => {
         <EventCardStyled>
             <Title text={date} />
             <section>
-                <img src="http://www.dummyimage.com/700x1400/56AA56/000" alt="event picture" />
+                <img src="http://www.dummyimage.com/1500x500/56AA56/000" alt="event picture" />
                 <Subheading text={name}  />
             </section>
             <section>
                 <Text text={text} />
                 
                 <div>
-                    <i class="fas fa-map-marker-alt" />
+                    <svg height="21" width="17" xmlns="http://www.w3.org/2000/svg"><path clipRule="evenodd" d="M14 8.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0zm.968 5.516a8.5 8.5 0 1 0-12.935 0L2 14l6.5 7 6.5-7-.032.016z" fill="#fff" fillRule="evenodd"/></svg>
                     <p>{adress}</p>
                 </div>
                 <BlueLine />

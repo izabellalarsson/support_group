@@ -4,7 +4,10 @@ import RedLine from './RedLine';
 import MembersChoices from './MembersChoices';
 import InputField from './InputField';
 import Button from '../Button';
+import Text from '../Text';
 import JourneyCard from './JourneyCard';
+import Link from 'next/link'
+
 
 const MembersStyled = styled.div`
     background-color: var(--main-bg);
@@ -34,7 +37,7 @@ const MembersStyled = styled.div`
 `
 const SignInStyled = styled.section`
     width: 86%;
-    height: 295px;
+    height: 335px;
     padding: 40px 30px;
     background-color: var(--main-bg);
     transition: .3s linear;
@@ -47,11 +50,19 @@ const SignInStyled = styled.section`
 `
 const RegisterStyled = styled.section`
     background-color: var(--main-bg);
-    height: 295px;
+    height: 335px;
     padding: 40px 30px;
     transition: .3s linear;
     transform: ${props => props.signIn ? 'translateX(-100vw)' : 'translateX(0)'};
     position: absolute;
+    p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    p a{
+        text-decoration: none;
+        color: var(--detail-red);
+    }
     div{
         display:flex;
         justify-content: flex-end;
@@ -100,6 +111,7 @@ class Members extends Component {
                     <InputField name="email" type="email" placeholder="Email" />
                     <InputField name="password" type="password" placeholder="Password" />
                     <InputField name="repeat-password" type="password" placeholder="Repeat Password" />
+                    <p>By clicking register, you agree to Support group networks <Link href='/privacypolicy'><a href='/privacypolicy'>user agreements and privacy policy</a></Link></p>
                     <div>
                         <Button text="Register" />
                     </div>

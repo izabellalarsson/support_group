@@ -20,7 +20,9 @@ const IconLineStyled = styled.div`
     border-top: 1px solid ${props => (props.menu ? "var(--sub-bg)" : "white")};
   }
 `;
-const IconLine = ({ isClicked, handleClickSettings, menu }) => {
+const IconLine = ({ isClicked, handleClickSettings, menu, 
+                    isLargeLetters, handleSwitchLargeLetters, 
+                    isHighContrast, handleSwitchHighContrast }) => {
   return (
     <IconLineStyled menu={menu} isClicked={isClicked}>
       <hr />
@@ -28,7 +30,8 @@ const IconLine = ({ isClicked, handleClickSettings, menu }) => {
         <FooterIcon
           style={menu == "menu" ? "var(--sub-bg)" : null}
           handleClickSettings={handleClickSettings}
-          isClicked={isClicked} 
+          isClicked={isClicked}
+          
           icon="settings"/>
           
         <FooterIcon style={menu == "menu" ? "var(--sub-bg)" : null}
@@ -38,7 +41,14 @@ const IconLine = ({ isClicked, handleClickSettings, menu }) => {
           icon="youtube" />
         
       </div>
-      <Settings isClicked={isClicked} menu={menu} />
+      <Settings 
+        isClicked={isClicked} 
+        menu={menu} 
+        handleSwitchLargeLetters={handleSwitchLargeLetters}
+        isLargeLetters={isLargeLetters}
+        handleSwitchHighContrast={handleSwitchHighContrast}
+        isHighContrast={isHighContrast}
+      />
     </IconLineStyled>
   );
 };
