@@ -11,13 +11,24 @@ const CookiePolicyStyled = styled.div`
     justify-content: space-around;
     align-items: center;
     display: ${props => props.isCookiesApproved ? 'none' : 'flex'};
+    button{
+        height: 28px;
+        background-color: var(--detail-red);
+        color: white;
+        font-family: 'Rubik', sans-serif;
+        font-size: 14px;
+        letter-spacing: -1.6%;
+        border-radius: 5px;
+        border: none;
+        outline:none;
+    }
 `
 
-const CookiePolicy = ({isCookiesApproved, cookieButtonClick}) => {
+const CookiePolicy = ({isCookiesApproved, handleCookieButtonClick}) => {
     return (
         <CookiePolicyStyled isCookiesApproved={isCookiesApproved}>
             Do you approve of cookies?
-            <Button onClick={cookieButtonClick} text="Approve!"/>
+            <button onClick={handleCookieButtonClick}> I Understand</button>
         </CookiePolicyStyled>
     );
 };
