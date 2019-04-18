@@ -32,19 +32,19 @@ const JourneyCardStyled = styled.section`
     justify-content: flex-end;
   }
 `;
-const JourneyCard = ({ name, age, memberSince, src }) => {
+const JourneyCard = ({ name, age, memberSince, image, description, slug }) => {
   return (
     <JourneyCardStyled>
       <Title text='This is my SGN journey' />
       <div>
-        <p> {name} </p> <p> {`${age} years old`} </p>{" "}
-        <p> {`Member since ${memberSince}`} </p>{" "}
-      </div>{" "}
-      <img src={src} alt='person' />
-      <Text text='Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' />
+        <p> {name} </p> <p> {`${age} years old`} </p>
+        <p> {`Member since ${memberSince}`} </p>
+      </div>
+      <img src={image} alt='person' />
+      <Text text={description} />
       <div>
-        <ReadMore />
-      </div>{" "}
+        <ReadMore type="journey" link={slug}/>
+      </div>
       <BlueLine />
     </JourneyCardStyled>
   );

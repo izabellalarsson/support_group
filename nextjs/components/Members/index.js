@@ -72,7 +72,21 @@ const RegisterStyled = styled.section`
 class Members extends Component {
     state = {
         signIn: true,
-        buttonText: 'Sign In'
+        buttonText: 'Sign In',
+        journey: []
+    }
+    
+    componentDidMount(){
+        this.fetchRandomJournies();
+    }
+
+    fetchRandomJournies = async () => {
+        const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/journey`);
+        const journies = await res.json();
+        console.log(journies);
+        this.setState({
+            journey: journies[Math.floor(Math.random() * journies.length)]
+        }) 
     }
 
     setTrue= () => {
@@ -118,10 +132,13 @@ class Members extends Component {
                 </RegisterStyled>
                 
                 <JourneyCard 
-                    name = "Mahmood Younes"
-                    age = "21"
-                    memberSince = "2015"
-                    src="https://assets.pando.com/_versions/2012/02/8-markpinc-mark-pincus-is-the-founder-and-ceo-of-zynga-and-was-an-early-investor-in-facebook-maybe-murdoch-really-likes-farmville-after-rupert-started-following-him-pincus-gave-him-a-s1_featured.jpeg" / >
+                    name = {this.state.journey.name}
+                    age = {this.state.journey.age}
+                    memberSince = {this.state.journey.member_since}
+                    image={this.state.journey.image}
+                    description={this.state.journey.description}
+                    slug={this.state.journey.slug}
+                />
                     
                 
             </MembersStyled>
