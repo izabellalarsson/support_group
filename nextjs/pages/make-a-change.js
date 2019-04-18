@@ -18,9 +18,20 @@ export default class MakeAChangePage extends Component {
   }
 
   render() {
-    return (
+    return this.state.isLoading ? (
+      <div
+        style={{
+          width: 100 + "%",
+          height: 100 + "vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        Loading...
+      </div>
+    ) : (
       <Layout>
-        {this.state.isLoading && <LoadingPage />}
         <MakeAChange />
       </Layout>
     );

@@ -33,9 +33,20 @@ export default class JourneyPage extends Component {
   }
   render() {
     // console.log(this.props.journey);
-    return (
+    return this.state.isLoading ? (
+      <div
+        style={{
+          width: 100 + "%",
+          height: 100 + "vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        Loading...
+      </div>
+    ) : (
       <Layout>
-        {this.state.isLoading && <LoadingPage />}
         <Journies journey={this.props.journey} />
       </Layout>
     );

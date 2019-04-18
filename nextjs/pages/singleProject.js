@@ -27,7 +27,19 @@ class ProjectPage extends Component {
   }
 
   render() {
-    return (
+    return this.state.isLoading ? (
+      <div
+        style={{
+          width: 100 + "%",
+          height: 100 + "vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        Loading...
+      </div>
+    ) : (
       <Layout>
         {this.state.isLoading && <LoadingPage />}
         <Project
@@ -38,7 +50,7 @@ class ProjectPage extends Component {
           goal={this.state.project.goal}
           headlinePurpose={this.state.project.headlinepurpose}
           headlineGoal={this.state.project.headlinegoal}
-        />{" "}
+        />
       </Layout>
     );
   }

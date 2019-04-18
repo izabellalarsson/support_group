@@ -58,7 +58,7 @@ class Layout extends Component {
               alignItems: "center"
             }}
           >
-            hej
+            Loading...
           </div>
         ) : (
           <div>
