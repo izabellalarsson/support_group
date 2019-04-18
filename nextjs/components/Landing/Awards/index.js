@@ -5,14 +5,14 @@ import Title from '../../Title'
 import Background from '../Background';
 
 
-const AwardStyled = styled.div`
+const AwardStyled = styled.div `
     display: flex;
     flex-direction: column;
 
 img {
     width: 86%;
     height: 15%;
-    margin: 15px 30px;
+    margin: 15px 0px 15px 30px;
 }
 
 img:first-child {
@@ -32,23 +32,34 @@ div:nth-child(2){
 h1 {
 }
 `
-const Awards = ({text}) => {
-    return (
-        <AwardStyled>
-            <Title text={text}></Title>
-            <div>
-                    <img src="https://dummyimage.com/2000x1720/ffffff/123312"/>
-                    <img src="https://dummyimage.com/2000x1720/ffffff/123312"/>
-                    <img src="https://dummyimage.com/2000x1720/ffffff/123312"/>
-                    <img src="https://dummyimage.com/2000x1720/ffffff/123312"/>
-            </div>
+const Awards = ({
+    text
+}) => {
+    return ( <
+        AwardStyled >
+        <
+        Title text = {
+            text
+        } > < /Title> <
+        div >
+        <
+        img src = "https://dummyimage.com/2000x1720/ffffff/123312" / >
+        <
+        img src = "https://dummyimage.com/2000x1720/ffffff/123312" / >
+        <
+        img src = "https://dummyimage.com/2000x1720/ffffff/123312" / >
+        <
+        img src = "https://dummyimage.com/2000x1720/ffffff/123312" / >
+        <
+        /div>
 
-        </AwardStyled>
+        <
+        /AwardStyled>
     );
 };
 
 Awards.propTypes = {
-    
+
 };
 
 export default Awards;
