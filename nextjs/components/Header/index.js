@@ -11,10 +11,18 @@ const HeaderStyled = styled.div`
 `
 
 class Header extends Component {
+    
     state = {
         isClicked: false,
         searchOpen: false
     }
+    static async getInitialProps(ctx) {
+        this.setState({
+            ctx: ctx
+        });
+    }
+
+    
 
     componentDidMount () {
         // this.handleClickMenu()

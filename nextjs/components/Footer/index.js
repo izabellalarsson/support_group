@@ -6,6 +6,7 @@ import FooterTitle from "./FooterTitle";
 import IconLine from "../IconLine";
 import Link from "next/link";
 import ArrowToTop from "./ArrowToTop";
+import nookies from 'nookies';
 
 const FooterStyled = styled.div`
   display: flex;
@@ -24,24 +25,56 @@ const FooterStyled = styled.div`
 class Footer extends Component {
   state = {
     isClicked: false,
-    isHighContrast: false,
-    isLargeLetters: false
+    isHighContrast: null,
+    isLargeLetters: null
   };
+  static async getInitialProps(ctx) {
+    this.setState({
+      ctx: ctx
+    });
+  }
+  
+  componentDidMount () {
+      this.setState({
+        isHighContrast: nookies.get(this.state.ctx).contrast === 'true' ? true : false,
+        isLargeLetters: nookies.get(this.state.ctx).letters === 'true' ? true : false
+      })
+    }
 
   handleClickSettings = () => {
     this.setState({
       isClicked: !this.state.isClicked
     });
   };
+
   handleSwitchHighContrast = () => {
     this.setState({
       isHighContrast: !this.state.isHighContrast
-    })
+    });
+    nookies.set(
+      this.state.ctx,
+      'contrast',
+      !this.state.isHighContrast,
+      {
+        maxAge: 30 * 24 * 60 * 60,
+        path: '/'
+      }
+    );
+    //document.location.reload();
   }
   handleSwitchLargeLetters = () => {
     this.setState({
       isLargeLetters: !this.state.isLargeLetters
     })
+    nookies.set(
+      this.state.ctx,
+      'letters',
+      !this.state.isLargeLetters,
+      {
+        maxAge: 30 * 24 * 60 * 60,
+        path: '/'
+      }
+    );
   }
 
 
