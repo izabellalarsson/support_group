@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import Header from "../Header";
 import Footer from "../Footer";
@@ -12,8 +11,8 @@ import nookies from 'nookies'
 dotenv.config();
 
 class Layout extends Component {
-
   constructor() {
+
       super();
       this.state = { 
       isLoading: true,
@@ -24,6 +23,7 @@ class Layout extends Component {
     this.setState({
       ctx: ctx
     });
+
   }
 
   componentDidMount() {
@@ -35,6 +35,7 @@ class Layout extends Component {
   }
 
   componentWillMount() {}
+
 
   handleCookieButtonClick = () => {
 	
@@ -51,10 +52,9 @@ class Layout extends Component {
     );
   }
 
+
   render() {
     const { children } = this.props;
-
-    console.log(this.state.isLoading);
     return (
       <div>
         <GlobalStyle />
@@ -86,9 +86,9 @@ class Layout extends Component {
         ) : (
           <div>
             <Header /> 
-			<CookiePolicy isCookiesApproved={this.state.isCookiesApproved} handleCookieButtonClick={this.handleCookieButtonClick}/>
-			{children} 
-			<Footer />
+            <CookiePolicy isCookiesApproved={this.state.isCookiesApproved} handleCookieButtonClick={this.handleCookieButtonClick}/>
+            {children} 
+            <Footer />
           </div>
         )}
       </div>
