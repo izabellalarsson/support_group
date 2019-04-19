@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from '../../Button';
 import BlueLine from '../../BlueLine';
+//glass på tisdag?
 
 const FormStyled = styled.div`
     background-color: var(--main-bg);
