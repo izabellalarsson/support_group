@@ -10,11 +10,34 @@ import ThankYou from "./ThankYou";
 
 const LandingStyled = styled.div``;
 export default class Landing extends Component {
+  state = {
+    journey: []
+  }
+  componentDidMount(){
+    this.fetchRandomJournies();
+  }
+
+  fetchRandomJournies = async () => {
+        const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/journey`);
+        const journies = await res.json();
+        console.log(journies);
+        this.setState({
+            journey: journies[Math.floor(Math.random() * journies.length)]
+        }) 
+    }
+
   render() {
     return (
       <LandingStyled>
         <Hero text='Support Group Network' />
-        <JourneyCard src='https://images.unsplash.com/photo-1506919258185-6078bba55d2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1415&q=80' />
+        <JourneyCard 
+          name = {this.state.journey.name}
+          age = {this.state.journey.age}
+          memberSince = {this.state.journey.member_since}
+          image={this.state.journey.image}
+          description={this.state.journey.description}
+          slug={this.state.journey.slug}
+        />
         <Awards text='Awards' />
         <ThankYou />
       </LandingStyled>
