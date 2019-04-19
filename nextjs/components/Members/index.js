@@ -83,7 +83,6 @@ class Members extends Component {
     fetchRandomJournies = async () => {
         const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/journey`);
         const journies = await res.json();
-        console.log(journies);
         this.setState({
             journey: journies[Math.floor(Math.random() * journies.length)]
         }) 

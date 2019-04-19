@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Title from "../../Title";
@@ -58,26 +58,46 @@ const ThankYouStyled = styled.div`
   }
 `;
 
-const ThankYou = props => {
-  return (
-    <ThankYouStyled>
-      <Title text='Thank you' />
-      <section>
-        <div>
-          <section>
-            <img src='https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80' />
-            <Subheading text='Izabella Larsson' />
-          </section>
-          <section>
-            <img src='https://images.unsplash.com/photo-1444210971048-6130cf0c46cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80' />
-            <Subheading text='Per Baltzar' />
-            <Subheading text='Member since 2019' />
-          </section>
-        </div>
-      </section>
-    </ThankYouStyled>
-  );
+class ThankYou extends Component {
+
+  state = {
+    thanks: []
+  }
+  componentDidMount(){
+    this.fetchRandomJournies();
+  }
+
+  fetchRandomJournies = async () => {
+      const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/thanks`);
+      const thanks = await res.json();
+      console.log(thanks);
+      this.setState({
+          thanks: thanks
+      }) 
+  }
+
+
+  render() {
+    return (
+      <ThankYouStyled>
+        <Title text='Thank you' />
+        <section>
+          <div>
+            {this.state.thanks.map((thankyou) => {
+              return(
+                <section>
+                  <img src={thankyou.image} />
+                  <Subheading text={thankyou.name} />
+                  <Subheading text={thankyou.description} />
+                </section>
+              )
+            })}
+          </div>
+        </section>
+      </ThankYouStyled>
+    );
 };
+}
 
 ThankYou.propTypes = {};
 
