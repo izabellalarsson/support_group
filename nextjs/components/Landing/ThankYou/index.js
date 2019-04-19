@@ -58,32 +58,13 @@ const ThankYouStyled = styled.div`
   }
 `;
 
-class ThankYou extends Component {
-
-  state = {
-    thanks: []
-  }
-  componentDidMount(){
-    this.fetchRandomJournies();
-  }
-
-  fetchRandomJournies = async () => {
-      const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/thanks`);
-      const thanks = await res.json();
-      console.log(thanks);
-      this.setState({
-          thanks: thanks
-      }) 
-  }
-
-
-  render() {
+const ThankYou = ({thanks}) => {
     return (
       <ThankYouStyled>
         <Title text='Thank you' />
         <section>
           <div>
-            {this.state.thanks.map((thankyou) => {
+            {thanks.map((thankyou) => {
               return(
                 <section>
                   <img src={thankyou.image} />
@@ -97,7 +78,7 @@ class ThankYou extends Component {
       </ThankYouStyled>
     );
 };
-}
+
 
 ThankYou.propTypes = {};
 
