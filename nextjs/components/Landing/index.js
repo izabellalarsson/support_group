@@ -18,6 +18,7 @@ export default class Landing extends Component {
   componentDidMount(){
     this.fetchRandomJournies();
     this.fetchThanks();
+    this.fetchAwards();
   }
 
   fetchRandomJournies = async () => {
@@ -34,8 +35,8 @@ export default class Landing extends Component {
       thanks: thanks
     }) 
   }
-  fetchAwars = async () => {
-    const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/thanks`);
+  fetchAwards = async () => {
+    const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/award`);
     const awards = await res.json();
     this.setState({
       awards: awards
@@ -54,7 +55,7 @@ export default class Landing extends Component {
           description={this.state.journey.description}
           slug={this.state.journey.slug}
         />
-        <Awards text='Awards' />
+        <Awards awards={this.state.awards}/>
         <ThankYou thanks={this.state.thanks}/>
       </LandingStyled>
     );

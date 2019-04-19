@@ -31,15 +31,14 @@ const AwardStyled = styled.div`
   h1 {
   }
 `;
-const Awards = ({ text }) => {
+const Awards = ({ text, awards }) => {
   return (
     <AwardStyled>
-      <Title text={text}> </Title>{" "}
+      <Title text="Awards"> </Title>{" "}
       <div>
-        <img src='https://dummyimage.com/2000x1720/ffffff/123312' />
-        <img src='https://dummyimage.com/2000x1720/ffffff/123312' />
-        <img src='https://dummyimage.com/2000x1720/ffffff/123312' />
-        <img src='https://dummyimage.com/2000x1720/ffffff/123312' />
+        {awards.map((award, i) => {
+          return <img key={i} src={award.image} />
+        })}
       </div>
     </AwardStyled>
   );

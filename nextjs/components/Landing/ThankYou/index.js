@@ -64,9 +64,9 @@ const ThankYou = ({thanks}) => {
         <Title text='Thank you' />
         <section>
           <div>
-            {thanks.map((thankyou) => {
+            {thanks.map((thankyou, i) => {
               return(
-                <section>
+                <section key={i}>
                   <img src={thankyou.image} />
                   <Subheading text={thankyou.name} />
                   <Subheading text={thankyou.description} />
