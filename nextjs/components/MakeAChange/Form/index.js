@@ -54,7 +54,8 @@ const FormStyled = styled.div`
             font-size: 14px;
 
             &::placeholder{
-               
+                
+                font-family: 'Aktiv Grotesk', sans-serif;
                 font-size: 14px;
             }
         }

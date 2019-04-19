@@ -16,10 +16,26 @@ const AboutStyle = styled.div`
 `;
 
 class About extends Component {
+  
+  state = {
+    partners: []
+  }
+
   constructor(props) {
     super(props);
   }
 
+  componentDidMount() {
+    this.fetchPartners();
+  }
+
+  fetchPartners = async () => {
+    const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/partner`);
+    const partners = await res.json();
+    this.setState({
+      partners: partners
+    }) 
+  }
   render() {
     return (
       <AboutStyle>
@@ -37,7 +53,7 @@ class About extends Component {
         />
         <Facebook />
         <Title text='Our partners' />
-        <Partners />
+        <Partners partners={this.state.partners}/>
         <Title text='Locations' />
         <Map />
       </AboutStyle>

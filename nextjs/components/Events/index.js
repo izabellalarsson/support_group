@@ -26,7 +26,6 @@ class Events extends Component {
         let events = await res.json();
         console.log(events);
         events = this.changeDates(events);
-        console.log(events);
         this.setState({
             events: events
         })
