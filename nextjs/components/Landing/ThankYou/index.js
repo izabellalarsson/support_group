@@ -4,11 +4,9 @@ import styled from "styled-components";
 import Title from "../../Title";
 import Subheading from "../../Subheading";
 const ThankYouStyled = styled.div`
-  /* overflow: hidden; */
-  /* scroll-snap-type: x mandatory; */
+
   div {
     width: 100vw;
-    /* background: red; */
     margin-bottom: 55px;
     display: flex;
     scroll-snap-points-y: repeat(100vw);
