@@ -15,31 +15,11 @@ require get_template_directory().'/post-types/journey.php';
 require get_template_directory().'/post-types/thanks.php';
 require get_template_directory().'/post-types/award.php';
 require get_template_directory().'/post-types/site-text.php';
-
-
-add_action( 'init', 'my_site_text_cpt' );
-function my_site_text_cpt() {
-    $args = array(
-      'public'       => true,
-      'show_in_rest' => true,
-      'label'        => 'Site-Text'
-    );
-    register_post_type( 'site-text', $args );
-}
+require get_template_directory().'/post-types/partner.php';
 
 //-----------------------------------------------------------------
 // Added Branches to Rest API
 //----------------------------------------------------------------- 
-add_action( 'init', 'my_branch_cpt' );
-function my_branch_cpt() {
-    $args = array(
-      'public'       => true,
-      'show_in_rest' => true,
-      'label'        => 'Branches'
-    );
-    register_post_type( 'branch', $args );
-}
-
 function my_rest_prepare_branch($data, $post, $request) {
   $_data = $data->data;
   $fields = get_fields($post->ID);
@@ -53,15 +33,6 @@ add_filter("rest_prepare_branch", 'my_rest_prepare_branch', 10, 3);
 //-----------------------------------------------------------------
 // Added Awards to Rest API
 //----------------------------------------------------------------- 
-add_action( 'init', 'my_award_cpt' );
-function my_award_cpt() {
-    $args = array(
-      'public'       => true,
-      'show_in_rest' => true,
-      'label'        => 'Awards'
-    );
-    register_post_type( 'award', $args );
-}
 
 function my_rest_prepare_award($data, $post, $request) {
   $_data = $data->data;
@@ -77,15 +48,6 @@ add_filter("rest_prepare_award", 'my_rest_prepare_award', 10, 3);
 //-----------------------------------------------------------------
 // Added Thanks to Rest API
 //----------------------------------------------------------------- 
-add_action( 'init', 'my_thanks_cpt' );
-function my_thanks_cpt() {
-    $args = array(
-      'public'       => true,
-      'show_in_rest' => true,
-      'label'        => 'Thanks'
-    );
-    register_post_type( 'thanks', $args );
-}
 
 function my_rest_prepare_thanks($data, $post, $request) {
   $_data = $data->data;
@@ -101,15 +63,7 @@ add_filter("rest_prepare_thanks", 'my_rest_prepare_thanks', 10, 3);
 //-----------------------------------------------------------------
 // Added Partners to Rest API
 //----------------------------------------------------------------- 
-add_action( 'init', 'my_partner_cpt' );
-function my_partner_cpt() {
-    $args = array(
-      'public'       => true,
-      'show_in_rest' => true,
-      'label'        => 'Partners'
-    );
-    register_post_type( 'partner', $args );
-}
+
 
 function my_rest_prepare_partner($data, $post, $request) {
   $_data = $data->data;
@@ -125,15 +79,7 @@ add_filter("rest_prepare_partner", 'my_rest_prepare_partner', 10, 3);
 //-----------------------------------------------------------------
 // Added Project to Rest API
 //-----------------------------------------------------------------
-add_action( 'init', 'my_project_cpt' );
-function my_project_cpt() {
-    $args = array(
-      'public'       => true,
-      'show_in_rest' => true,
-      'label'        => 'Projects'
-    );
-    register_post_type( 'project', $args );
-}
+
 function my_rest_prepare_project($data, $post, $request) {
   $_data = $data->data;
   $fields = get_fields($post->ID);
@@ -147,15 +93,7 @@ add_filter("rest_prepare_project", 'my_rest_prepare_project', 10, 3);
 //-----------------------------------------------------------------
 // Added Events to Rest API
 //-----------------------------------------------------------------
-add_action( 'init', 'my_event_cpt' );
-function my_event_cpt() {
-    $args = array(
-      'public'       => true,
-      'show_in_rest' => true,
-      'label'        => 'Events'
-    );
-    register_post_type( 'event', $args );
-}
+
 function my_rest_prepare_event($data, $post, $request) {
   $_data = $data->data;
   $fields = get_fields($post->ID);
@@ -169,15 +107,7 @@ add_filter("rest_prepare_event", 'my_rest_prepare_event', 10, 3);
 //-----------------------------------------------------------------
 // Added Journey to Rest API
 //-----------------------------------------------------------------
-add_action( 'init', 'my_journey_cpt' );
-function my_journey_cpt() {
-    $args = array(
-      'public'       => true,
-      'show_in_rest' => true,
-      'label'        => 'Journies'
-    );
-    register_post_type( 'journey', $args );
-}
+
 
 function my_rest_prepare_journey($data, $post, $request) {
   $_data = $data->data;

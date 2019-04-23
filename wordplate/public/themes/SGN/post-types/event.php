@@ -5,6 +5,7 @@ declare(strict_types=1);
 add_action('init', function () {
     register_post_type('event', [
         'has_archive' => true,
+        'show_in_rest' => true,
         'labels' => [
             'add_new_item' => __('Add New Event'),
             'edit_item' => __('Edit Event'),
@@ -18,8 +19,8 @@ add_action('init', function () {
             'thumbnail',
             'excerpt'
         ],
-        'menu_icon' => 'dashicons-admin-home',
-        'menu_position' => 3,
+        'menu_icon' => 'dashicons-tickets-alt',
+        'menu_position' => 12,
         'public' => true,
     ]);
 });

@@ -5,6 +5,7 @@ declare(strict_types=1);
 add_action('init', function () {
     register_post_type('project', [
         'has_archive' => true,
+        'show_in_rest' => true,
         'labels' => [
             'add_new_item' => __('Add New Project'),
             'edit_item' => __('Edit Project'),
@@ -18,7 +19,7 @@ add_action('init', function () {
             'thumbnail',
         ],
         'menu_icon' => 'dashicons-editor-ol',
-        'menu_position' => 1,
+        'menu_position' => 13,
         'public' => true,
     ]);
 });

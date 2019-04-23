@@ -5,6 +5,7 @@ declare(strict_types=1);
 add_action('init', function () {
     register_post_type('journey', [
         'has_archive' => true,
+        'show_in_rest' => true,
         'labels' => [
             'add_new_item' => __('Add New Journey'),
             'edit_item' => __('Edit Journey'),
@@ -17,7 +18,7 @@ add_action('init', function () {
             'title'
         ],
         'menu_icon' => 'dashicons-admin-site',
-        'menu_position' => 3,
+        'menu_position' => 16,
         'public' => true,
     ]);
 });
