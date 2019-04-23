@@ -10,6 +10,11 @@ const CookiePolicyStyled = styled.div`
     background: var(--sub-bg);
     flex-flow: column;
     display: ${props => props.isCookiesApproved ? 'none' : 'flex'};
+    h3 {
+        color: white;
+        margin-left: 30px;
+        margin-bottom: 0;
+    }
     button{
         margin-right: 30px;
         margin-bottom: 30px;
@@ -36,13 +41,12 @@ const CookiePolicyStyled = styled.div`
 const CookiePolicy = ({isCookiesApproved, handleCookieButtonClick}) => {
     return (
         <CookiePolicyStyled isCookiesApproved={isCookiesApproved}>
-            <Text text="We and our partners use cookies on this site to improve our service, 
-            perform analytics, personalize advertising, measure advertising performance, 
-            and remember website preferences. By using the site, 
-            you consent to these cookies.For more information on cookies 
-            including how to manage your consent visit our cookie policy." />
+            <h3>Cookies</h3>
+            <Text text="We use cookies to give you a better experience while using out site" />
+            {/* <Text text="Vi använder cookies för att ge dig en bättre upplevelse på våran websida.
+            Om cookies på supportgroup.se." /> */}
             <div>
-                <button onClick={handleCookieButtonClick}>Continue</button>
+                <button onClick={handleCookieButtonClick}>I understand</button>
             </div>
         </CookiePolicyStyled>
     );
