@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Text from "../../Text";
 import Link from "next/link";
 import FlipSwitch from "../FlipSwitch";
+import LanguageDrop from "../LanguageDrop";
 
 const SettingStyled = styled.div`
   transition: height 0.5s ease;
@@ -74,6 +75,14 @@ const TextSizeContainerStyled = styled.div`
       padding: 0 5px;
       margin: 0;
       align-self: center;
+      /* text-decoration: ${props => props.isLargeLetters}; */
+    }
+
+    p:nth-child(1) {
+
+      text-decoration: ${props =>
+        props.isLargeLetters ? "underline" : "none"};
+      text-decoration-color: var(--detail-red)
     }
 
     p:nth-child(2) {
@@ -92,13 +101,25 @@ const Settings = ({
   isLargeLetters,
   handleSwitchLargeLetters,
   isHighContrast,
-  handleSwitchHighContrast
+  handleSwitchHighContrast,
+  handleLargeLetters,
+  handleLanguageClick,
+  isLanguageClicked
 }) => {
+  const style = {
+    height: "80vh"
+  };
   return (
-    <SettingStyled isClicked={isClicked} menu={menu}>
+    <SettingStyled
+      isClicked={isClicked}
+      menu={menu}
+      isLanguageClicked={isLanguageClicked}
+      style={isLanguageClicked ? style : null}
+    >
       <div>
         <h2> Settings </h2>
-        <Text text='Language' />
+        <Text text='Language' onClick={handleLanguageClick} />
+        <LanguageDrop isLanguageClicked={isLanguageClicked} />
         <FlipSwitchContainerStyled>
           <Text text='High contrast mode' />
           <FlipSwitch
@@ -106,12 +127,14 @@ const Settings = ({
             onClick={handleSwitchHighContrast}
           />
         </FlipSwitchContainerStyled>
-        <TextSizeContainerStyled>
+        <TextSizeContainerStyled isLargeLetters={isLargeLetters}>
           <Text text='Textsize' />
           <div>
-            <p>Aa</p>
-            <p>Aa</p>
-            <p>Aa</p>
+            <p onClick={handleLargeLetters} className='one'>
+              Aa
+            </p>
+            <p className='two'>Aa</p>
+            <p className='three'>Aa</p>
           </div>
         </TextSizeContainerStyled>
         <Link href='/privacypolicy'>
