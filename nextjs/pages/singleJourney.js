@@ -14,8 +14,6 @@ export default class JourneyPage extends Component {
     const newJourney = props.journey.filter(journey => {
       return journey.slug === slug;
     });
-
-    console.log(newJourney)
     this.state = {
       journey: newJourney[0],
       isLoading: true,
@@ -42,6 +40,7 @@ export default class JourneyPage extends Component {
       <div
         style={{
           width: 100 + "%",
+          fontFamily: "Aktiv Grotesk",
           height: 100 + "vh",
           display: "flex",
           justifyContent: "center",
