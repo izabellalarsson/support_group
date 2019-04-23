@@ -10,15 +10,15 @@ display: flex;
 flex-flow: column;
 align-items: center;
  h3{
-     margin: 0px;
-     margin-top: 60px;
-     color: white;
-     font-size: 40px;
-     font-weight: 300;
-     font-family: 'Rubik'
+    margin: 0px;
+    margin-top: 60px;
+    color: white;
+    font-size: 40px;
+    font-weight: 300;
+    font-family: 'Rubik'
  }
  p{
-     margin-top: 40px;
+    margin-top: 40px;
     color: white;
     font-family: 'Aktiv Grotesk', sans-serif;
  }

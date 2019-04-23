@@ -69,6 +69,7 @@ class Layout extends Component {
             href='https://fonts.googleapis.com/css?family=Rubik:400,700'
             rel='stylesheet'
           />
+          <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
           <title>Support Group Network </title>
         </Head>
         {this.state.isLoading ? (
