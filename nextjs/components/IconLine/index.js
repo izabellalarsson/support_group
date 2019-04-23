@@ -20,9 +20,18 @@ const IconLineStyled = styled.div`
     border-top: 1px solid ${props => (props.menu ? "var(--sub-bg)" : "white")};
   }
 `;
-const IconLine = ({ isClicked, handleClickSettings, menu, 
-                    isLargeLetters, handleSwitchLargeLetters, 
-                    isHighContrast, handleSwitchHighContrast }) => {
+const IconLine = ({
+  isClicked,
+  handleClickSettings,
+  menu,
+  isLargeLetters,
+  handleSwitchLargeLetters,
+  isHighContrast,
+  handleSwitchHighContrast,
+  handleLargeLetters,
+  isLanguageClicked,
+  handleLanguageClick
+}) => {
   return (
     <IconLineStyled menu={menu} isClicked={isClicked}>
       <hr />
@@ -31,23 +40,29 @@ const IconLine = ({ isClicked, handleClickSettings, menu,
           style={menu == "menu" ? "var(--sub-bg)" : null}
           handleClickSettings={handleClickSettings}
           isClicked={isClicked}
-          
-          icon="settings"/>
-          
-        <FooterIcon style={menu == "menu" ? "var(--sub-bg)" : null}
-          icon="facebook"/>
-          
-        <FooterIcon style={menu == "menu" ? "var(--sub-bg)" : null}
-          icon="youtube" />
-        
-      </div>
-      <Settings 
-        isClicked={isClicked} 
-        menu={menu} 
+          icon='settings'
+        />
+
+        <FooterIcon
+          style={menu == "menu" ? "var(--sub-bg)" : null}
+          icon='facebook'
+        />
+
+        <FooterIcon
+          style={menu == "menu" ? "var(--sub-bg)" : null}
+          icon='youtube'
+        />
+      </div>{" "}
+      <Settings
+        isClicked={isClicked}
+        menu={menu}
         handleSwitchLargeLetters={handleSwitchLargeLetters}
         isLargeLetters={isLargeLetters}
         handleSwitchHighContrast={handleSwitchHighContrast}
         isHighContrast={isHighContrast}
+        handleLargeLetters={handleLargeLetters}
+        isLanguageClicked={isLanguageClicked}
+        handleLanguageClick={handleLanguageClick}
       />
     </IconLineStyled>
   );
