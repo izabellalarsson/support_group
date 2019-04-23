@@ -17,57 +17,72 @@ const MembersStyled = styled.div`
         mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0));
     }
     section:nth-child(2){
-        display: flex;
-        justify-content: space-between;
-        padding: 0 15vw;
-        height: 30px;
-        button:nth-child(3){
-            text-align: right;
-        }
-        button:hover{
-            cursor: pointer;
-        }
+        
     }
-    section:nth-child(5){
+    section:nth-child(6){
        
         margin-top:370px;
     }
     
 
 `
+const SelectSignInStyled = styled.section`
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15vw;
+  height: 30px;
+  button:nth-child(3) {
+    text-align: right;
+  }
+  button:hover {
+    cursor: pointer;
+  }
+`;
 const SignInStyled = styled.section`
-    width: 84%;
-    height: 335px;
-    padding: 40px 30px;
-    background-color: var(--main-bg);
-    transition: .3s linear;
-    transform: ${props => props.signIn ? 'translateX(0)' : 'translateX(100vw)'};
-    position: absolute;
-    div{
-        display:flex;
-        justify-content: flex-end;
-    }
-`
+  width: 100%;
+  height: 345px;
+  background-color: var(--main-bg);
+  transition: 0.3s linear;
+  transform: ${props =>
+    props.signIn
+      ? "translateX(0)"
+      : "translateX(100vw)"
+      };
+
+  div {
+    display: flex;
+    justify-content: flex-end;
+  }
+`;
 const RegisterStyled = styled.section`
-    background-color: var(--main-bg);
-    height: 335px;
-    padding: 40px 30px;
-    transition: .3s linear;
-    transform: ${props => props.signIn ? 'translateX(-100vw)' : 'translateX(0)'};
-    position: absolute;
-    p {
-        font-size: 14px;
-        line-height: 20px;
-    }
-    p a{
-        text-decoration: none;
-        color: var(--detail-red);
-    }
-    div{
-        display:flex;
-        justify-content: flex-end;
-    }
-`
+  width: 86%;
+  background-color: var(--main-bg);
+  height: 345px;
+  transition: 0.3s linear;
+  transform: ${props =>
+    props.signIn ? "translateX(-100vw)" : "translateX(0)"
+    };
+  position: absolute;
+  p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  p a {
+    text-decoration: none;
+    color: var(--detail-red);
+  }
+  div {
+    display: flex;
+    justify-content: flex-end;
+  }
+`;
+const FormWrapperStyled = styled.section`
+    width: 90vw;
+    overflow-x: hidden;
+    height: 355px;
+    padding: 30px 5vw;
+    display: flex;
+`;
 
 class Members extends Component {
     state = {
@@ -105,31 +120,31 @@ class Members extends Component {
         return (
             <MembersStyled>
                 <img src="https://s3-ap-southeast-2.amazonaws.com/media1.mydeal.com.au/blog/post/blog_image_20180219221810890.jpg" alt="members" />
-                <section>
+                <SelectSignInStyled>
                     <RedLine place={this.state.signIn} />
                     <MembersChoices onClick={this.setTrue} text="SIGN IN"/>
                     <MembersChoices onClick={this.setFalse} text="SIGN UP"/>
-                </section>
+                </SelectSignInStyled>
+                <FormWrapperStyled >
+                    <SignInStyled signIn={this.state.signIn} >
+                        <InputField name="email" type="email" placeholder="Email" />
+                        <InputField name="password" type="password" placeholder="Password" />
+                        <div>
+                            <Button text="Sign In" />
+                        </div>
+                    </SignInStyled>
 
-                <SignInStyled signIn={this.state.signIn} >
-                    <InputField name="email" type="email" placeholder="Email" />
-                    <InputField name="password" type="password" placeholder="Password" />
-                    <div>
-                        <Button text="Sign In" />
-                    </div>
-                </SignInStyled>
-
-                <RegisterStyled signIn={this.state.signIn} >
-                    <InputField name="name" type="text" placeholder="Name" />
-                    <InputField name="email" type="email" placeholder="Email" />
-                    <InputField name="password" type="password" placeholder="Password" />
-                    <InputField name="repeat-password" type="password" placeholder="Repeat Password" />
-                    <p>By clicking register, you agree to Support group networks <Link href='/privacypolicy'><a href='/privacypolicy'>user agreements and privacy policy</a></Link></p>
-                    <div>
-                        <Button text="Register" />
-                    </div>
-                </RegisterStyled>
-                
+                    <RegisterStyled signIn={this.state.signIn} >
+                        <InputField name="name" type="text" placeholder="Name" />
+                        <InputField name="email" type="email" placeholder="Email" />
+                        <InputField name="password" type="password" placeholder="Password" />
+                        <InputField name="repeat-password" type="password" placeholder="Repeat Password" />
+                        <p>By clicking register, you agree to Support group networks <Link href='/privacypolicy'><a href='/privacypolicy'>user agreements and privacy policy</a></Link></p>
+                        <div>
+                            <Button text="Register" />
+                        </div>
+                    </RegisterStyled>
+                </FormWrapperStyled >
                 <JourneyCard 
                     name = {this.state.journey.name}
                     age = {this.state.journey.age}
