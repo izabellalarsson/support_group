@@ -11,7 +11,6 @@ class ProjectPage extends Component {
   constructor(props) {
     super();
     const slug = props.url.query.slug;
-    // console.log(props)
     const newProject = props.projects.filter(project => {
       return project.slug === slug;
     });

@@ -3,33 +3,38 @@ import fetch from "isomorphic-unfetch";
 import Layout from "../components/Layout";
 import Journies from "../components/Journies";
 import LoadingPage from "../components/LoadingPage";
+import NotFound from "../components/NotFound";
 
 export default class JourneyPage extends Component {
-  constructor() {
+  constructor(props) {
     super();
+
+    const slug = props.url.query.slug;
+
+    const newJourney = props.journey.filter(journey => {
+      return journey.slug === slug;
+    });
+
+    console.log(newJourney)
     this.state = {
-      isLoading: true
+      journey: newJourney[0],
+      isLoading: true,
+      notFound: false,
+      working: true
     };
+
+
+    if (newJourney.length < 1) {
+      this.state = {
+        notFound: true
+      }
+    }
   }
 
   componentDidMount() {
     this.setState({
       isLoading: false
     });
-  }
-  static async getInitialProps(context) {
-    const slug = context.query.slug;
-
-    const res = await fetch(
-      `http://${process.env.HOST}/wp-json/wp/v2/journey?slug=${slug}`
-    );
-
-    const journey = await res.json();
-    // console.log(res);
-
-    return {
-      journey: journey[0]
-    };
   }
   render() {
     // console.log(this.props.journey);
@@ -47,8 +52,17 @@ export default class JourneyPage extends Component {
       </div>
     ) : (
       <Layout>
-        <Journies journey={this.props.journey} />
+        {this.state.notFound && <NotFound />}
+        {!this.state.notFound && <Journies journey={this.state.journey} />}
       </Layout>
     );
   }
+}
+JourneyPage.getInitialProps = async function () {
+  const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/journey`);
+  const journey = await res.json();
+  return {
+    journey: journey
+  };
+
 }
