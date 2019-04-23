@@ -5,6 +5,7 @@ import Title from "../components/Title";
 import Text from "../components/Text";
 import Project from "../components/Projects/Project";
 import LoadingPage from "../components/LoadingPage";
+import NotFound from "../components/NotFound";
 
 class ProjectPage extends Component {
   constructor(props) {
@@ -14,10 +15,19 @@ class ProjectPage extends Component {
     const newProject = props.projects.filter(project => {
       return project.slug === slug;
     });
+    
     this.state = {
       project: newProject[0],
-      isLoading: true
+      isLoading: true,
+      notFound: false
     };
+
+    // Show 404 if project not found 
+    if (newProject.length < 1) {
+      this.state = {
+        notFound: true
+      }
+    }
   }
 
   componentDidMount() {
@@ -42,15 +52,18 @@ class ProjectPage extends Component {
     ) : (
       <Layout>
         {this.state.isLoading && <LoadingPage />}
-        <Project
-          name={this.state.project.name}
-          imageUrl={this.state.project.image}
-          description={this.state.project.description}
-          purpose={this.state.project.purpose}
-          goal={this.state.project.goal}
-          headlinePurpose={this.state.project.headlinepurpose}
-          headlineGoal={this.state.project.headlinegoal}
-        />
+        {this.state.notFound && <NotFound />}
+        {!this.state.notFound && 
+          <Project
+            name={this.state.project.name}
+            imageUrl={this.state.project.image}
+            description={this.state.project.description}
+            purpose={this.state.project.purpose}
+            goal={this.state.project.goal}
+            headlinePurpose={this.state.project.headlinepurpose}
+            headlineGoal={this.state.project.headlinegoal}
+          />
+        }
       </Layout>
     );
   }
