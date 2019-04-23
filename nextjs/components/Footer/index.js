@@ -15,7 +15,7 @@ const FooterStyled = styled.div`
   align-items: center;
   background: var(--headline-font);
   transition: height 0.5 ease-in-out;
-  height: ${props => (props.isClicked ? "123vh" : "93vh")};
+  height: ${props => (props.isClicked ? "133vh" : "93vh")};
   width: 100%;
 
   div:last-child {
@@ -83,8 +83,14 @@ class Footer extends Component {
   };
 
   render() {
+    const style = {
+      height: "160vh"
+    };
     return (
-      <FooterStyled isClicked={this.state.isClicked}>
+      <FooterStyled
+        isClicked={this.state.isClicked}
+        style={this.state.isLanguageClicked ? style : null}
+      >
         <ArrowToTop />
         <FooterTitle> Contact </FooterTitle>
         <FooterText> +4676 - 884 08 84 info @supportgroup.se </FooterText>
