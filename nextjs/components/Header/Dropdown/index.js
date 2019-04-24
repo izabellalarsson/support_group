@@ -62,7 +62,8 @@ class Dropdown extends Component {
       isHighContrast:
         nookies.get(this.state.ctx).contrast === "true" ? true : false,
       isLargeLetters:
-        nookies.get(this.state.ctx).letters === "true" ? true : false
+        nookies.get(this.state.ctx).letters === "true" ? true : false,
+      pageActive: nookies.get(this.state.ctx).pageActive
     });
   }
 
