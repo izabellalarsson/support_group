@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import DropdownMainItem from "../DropdownMainItem";
 import styled from "styled-components";
 import DropdownSecondaryItem from "../DropdownSecondaryItem";
-import nookies from 'nookies'
+import nookies from "nookies";
 
 const DropdownStyle = styled.div`
   position: fixed;
@@ -49,50 +49,42 @@ class Dropdown extends Component {
     this.fetchPages();
   }
   static async getInitialProps(ctx) {
-        this.setState({
-            ctx: ctx
-        });
-    }
+    this.setState({
+      ctx: ctx
+    });
+  }
 
   // Get cookies from storage and updating state
-  componentDidMount () {
-      this.setState({
-          isHighContrast: nookies.get(this.state.ctx).contrast === 'true' ? true : false,
-          isLargeLetters: nookies.get(this.state.ctx).letters === 'true' ? true : false
-      })
+  componentDidMount() {
+    this.setState({
+      isHighContrast:
+        nookies.get(this.state.ctx).contrast === "true" ? true : false,
+      isLargeLetters:
+        nookies.get(this.state.ctx).letters === "true" ? true : false
+    });
   }
-  
-  // 
-  handleSwitchHighContrast = () => {
-        this.setState({
-        isHighContrast: !this.state.isHighContrast
-        });
-        nookies.set(
-        this.state.ctx,
-        'contrast',
-        !this.state.isHighContrast,
-        {
-            maxAge: 30 * 24 * 60 * 60,
-            path: '/'
-        }
-        );
-        //document.location.reload();
-    }
 
-    handleSwitchLargeLetters = () => {
-        this.setState({
-        isLargeLetters: !this.state.isLargeLetters
-        })
-        nookies.set(
-        this.state.ctx,
-        'letters',
-        !this.state.isLargeLetters,
-        {
-            maxAge: 30 * 24 * 60 * 60,
-            path: '/'
-        }
-        );
-    }
+  //
+  handleSwitchHighContrast = () => {
+    this.setState({
+      isHighContrast: !this.state.isHighContrast
+    });
+    nookies.set(this.state.ctx, "contrast", !this.state.isHighContrast, {
+      maxAge: 30 * 24 * 60 * 60,
+      path: "/"
+    });
+    //document.location.reload();
+  };
+
+  handleSwitchLargeLetters = () => {
+    this.setState({
+      isLargeLetters: !this.state.isLargeLetters
+    });
+    nookies.set(this.state.ctx, "letters", !this.state.isLargeLetters, {
+      maxAge: 30 * 24 * 60 * 60,
+      path: "/"
+    });
+  };
   // Fetching pages from RestApi and sorting
   fetchPages = async () => {
     const pagesApi = `http://${process.env.HOST}/wp-json/wp/v2/pages`;
@@ -109,10 +101,9 @@ class Dropdown extends Component {
     pages.sort(compare);
 
     //Removing Landing Page
-    pages = pages.filter(page =>{
-      
-      return (page.slug !== "landing");
-    })
+    pages = pages.filter(page => {
+      return page.slug !== "landing";
+    });
     this.setState({
       pages: pages
     });
@@ -128,6 +119,7 @@ class Dropdown extends Component {
     return (
       <DropdownStyle isClicked={this.props.isClicked}>
         <nav className='Dropdown-Main-Item'>
+          {" "}
           {this.state.pages.map((page, i) => {
             return (
               <DropdownMainItem
@@ -137,8 +129,8 @@ class Dropdown extends Component {
                 key={i}
               />
             );
-          })}
-        </nav>
+          })}{" "}
+        </nav>{" "}
         <nav className='Dropdown-Secondary-Item'>
           <DropdownSecondaryItem
             link='/'
@@ -149,8 +141,8 @@ class Dropdown extends Component {
             isLargeLetters={this.state.isLargeLetters}
             handleSwitchHighContrast={this.handleSwitchHighContrast}
             isHighContrast={this.state.isHighContrast}
-          />
-        </nav>
+          />{" "}
+        </nav>{" "}
       </DropdownStyle>
     );
   }
