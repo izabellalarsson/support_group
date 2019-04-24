@@ -12,8 +12,9 @@ const AwardStyled = styled.div`
     width: 86%;
     height: 20%;
     margin: 15px 0px 15px 30px;
-    object-fit: cover;
+    object-fit: contain;
     object-position: 50% 50%;
+    background: white;
   }
 
   img:first-child {
