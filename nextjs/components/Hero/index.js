@@ -29,10 +29,10 @@ const HeroStyle = styled.div`
 const Hero = ({ text }) => {
   return (
     <HeroStyle>
-      <Title text={text}> </Title>{" "}
+      <Title text={text}> </Title>
       <div>
         <img src='/static/Landing.jpg' />
-      </div>{" "}
+      </div>
     </HeroStyle>
   );
 };

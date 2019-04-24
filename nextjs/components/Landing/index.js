@@ -66,9 +66,9 @@ export default class Landing extends Component {
           image={this.state.journey.image}
           description={this.state.journey.description}
           slug={this.state.journey.slug}
-        />{" "}
-        <Awards awards={this.state.awards} />{" "}
-        <ThankYou thanks={this.state.thanks} />{" "}
+        />
+        <Awards awards={this.state.awards} />
+        <ThankYou thanks={this.state.thanks} />
       </LandingStyled>
     );
   }

@@ -50,7 +50,7 @@ class About extends Component {
       <AboutStyle>
         <div>
           <img src='./static/About.jpg' />
-        </div>{" "}
+        </div>
         <Title text='Whats is SGN?' />
         <Subheading text='A better future' />
         <Text

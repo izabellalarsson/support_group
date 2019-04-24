@@ -21,11 +21,10 @@ export default class JourneyPage extends Component {
       working: true
     };
 
-
     if (newJourney.length < 1) {
       this.state = {
         notFound: true
-      }
+      };
     }
   }
 
@@ -35,7 +34,6 @@ export default class JourneyPage extends Component {
     });
   }
   render() {
-    // console.log(this.props.journey);
     return this.state.isLoading ? (
       <div
         style={{
@@ -57,11 +55,10 @@ export default class JourneyPage extends Component {
     );
   }
 }
-JourneyPage.getInitialProps = async function () {
+JourneyPage.getInitialProps = async function() {
   const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/journey`);
   const journey = await res.json();
   return {
     journey: journey
   };
-
-}
+};

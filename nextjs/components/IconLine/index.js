@@ -52,7 +52,7 @@ const IconLine = ({
           style={menu == "menu" ? "var(--sub-bg)" : null}
           icon='youtube'
         />
-      </div>{" "}
+      </div>
       <Settings
         isClicked={isClicked}
         menu={menu}
