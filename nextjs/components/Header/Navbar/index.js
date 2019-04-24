@@ -28,7 +28,7 @@ i {
 const Navbar = ({isClicked, handleClickMenu, handleClickSearch, pageActive, handleClickActive}) => {
     return (
         <NavbarStyle>
-            <Logo />
+            <Logo handleClickActive={() => handleClickActive('')} />
             <Search handleClickSearch={handleClickSearch}/>
             <DropdownButton handleClickMenu={handleClickMenu} isClicked={isClicked}/>
             <Dropdown handleClickMenu={handleClickMenu} onClick={handleClickMenu} isClicked={isClicked}

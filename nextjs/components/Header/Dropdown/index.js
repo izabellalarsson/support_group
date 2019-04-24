@@ -122,7 +122,7 @@ class Dropdown extends Component {
     return (
       <DropdownStyle isClicked={this.props.isClicked}>
         <nav className='Dropdown-Main-Item'>
-          {" "}
+          
           {this.state.pages.map((page, i) => {
             return (
               <DropdownMainItem
@@ -134,8 +134,8 @@ class Dropdown extends Component {
                 // changePage={() => this.changePage(page.slug)}
               />
             );
-          })}{" "}
-        </nav>{" "}
+          })}
+        </nav>
         <nav className='Dropdown-Secondary-Item'>
           <DropdownSecondaryItem
             link='/'

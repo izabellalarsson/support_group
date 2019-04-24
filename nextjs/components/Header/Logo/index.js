@@ -12,9 +12,9 @@ const LogoStyled = styled.div`
     height: 100%;
   }
 `;
-const Logo = () => {
+const Logo = ({handleClickActive}) => {
   return (
-    <LogoStyled>
+    <LogoStyled onClick={handleClickActive}>
       <Link href='/'>
         <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220.58 176.79'>
           <title>SGN_logo_icon</title>

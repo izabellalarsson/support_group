@@ -36,6 +36,7 @@ class Header extends Component {
   };
 
   handleClickActive = slug => {
+      console.log(slug);
     this.setState({
       isClicked: !this.state.isClicked
     });
