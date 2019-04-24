@@ -34,7 +34,6 @@ class Events extends Component {
     fetchEvents = async () => {
         const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/event`);
         let events = await res.json();
-        console.log(events);
         events = this.changeDates(events);
         this.setState({
             events: events

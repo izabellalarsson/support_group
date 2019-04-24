@@ -15,12 +15,22 @@ class Header extends Component {
     state = {
         isClicked: false,
         searchOpen: false,
+        pageActive: ''
     }
     
     
-    handleClickMenu = () => {
+    handleClickMenu = (e) => {
+        e.preventDefault();
         this.setState ({
-            isClicked: !this.state.isClicked
+            isClicked: !this.state.isClicked,
+        })
+    }
+
+    handleClickActive = (slug, e) => {
+        e.preventDefault();
+        this.setState({
+            isClicked: !this.state.isClicked,
+            pageActive: slug
         })
     }
     handleClickSearch = () => {
@@ -38,7 +48,9 @@ class Header extends Component {
 
                 <Navbar handleClickMenu={this.handleClickMenu} 
                         isClicked={this.state.isClicked} 
-                        handleClickSearch={this.handleClickSearch}>
+                        handleClickSearch={this.handleClickSearch}
+                        handleClickActive={this.handleClickActive}
+                        pageActive={this.state.pageActive}>
                 </Navbar >
                 <SearchBar searchOpen={this.state.searchOpen} />
 

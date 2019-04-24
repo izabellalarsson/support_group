@@ -12,13 +12,13 @@ const DropdownMainItemStyle = styled.div`
     line-height: 90%;
     font-weight: bold;
     color: ${props =>
-      props.pageActive ? "var(--detail-red)" : "var(--headline-font)"};
+      props.isActive ? "var(--detail-red)" : "var(--headline-font)"};
     font-size: 26px;
   }
 `;
-const DropdownMainItem = ({ text, link, handleClickMenu }) => {
+const DropdownMainItem = ({ text, link, handleClickMenu, isActive }) => {
   return (
-    <DropdownMainItemStyle>
+    <DropdownMainItemStyle isActive={isActive} >
       <Link href={link}>
         <a href={link} onClick={handleClickMenu}>
           {text}
