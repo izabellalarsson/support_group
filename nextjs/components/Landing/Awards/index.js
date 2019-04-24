@@ -10,8 +10,10 @@ const AwardStyled = styled.div`
 
   img {
     width: 86%;
-    height: 15%;
+    height: 20%;
     margin: 15px 0px 15px 30px;
+    object-fit: cover;
+    object-position: 50% 50%;
   }
 
   img:first-child {
@@ -34,10 +36,10 @@ const AwardStyled = styled.div`
 const Awards = ({ text, awards }) => {
   return (
     <AwardStyled>
-      <Title text="Awards"> </Title>{" "}
+      <Title text='Awards'> </Title>
       <div>
         {awards.map((award, i) => {
-          return <img key={i} src={award.image} />
+          return <img key={i} src={award.image} />;
         })}
       </div>
     </AwardStyled>
