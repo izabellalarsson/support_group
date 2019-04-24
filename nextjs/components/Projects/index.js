@@ -65,7 +65,6 @@ export default class Projects extends Component {
 
 
   render() {
-      console.log(this.state.projects)
     return (
       <div>
         {this.state.projects.map((project, i) => (
