@@ -10,8 +10,12 @@ const ReadMoreStyle = styled.div`
   margin-bottom: 8px;
 
   a {
+    animation-name: move;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
     text-decoration: none;
     color: #ee7171;
+    font-weight: 200;
   }
 
   a:hover {
@@ -41,6 +45,24 @@ const ReadMoreStyle = styled.div`
 
     100% {
       width: 80%;
+    }
+  }
+
+  @keyframes move {
+    0% {
+      font-weight: 200;
+    }
+
+    50% {
+      font-weight: 200;
+    }
+
+    75% {
+      font-weight: 600;
+    }
+
+    100% {
+      font-weight: 200;
     }
   }
 `;
