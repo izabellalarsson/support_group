@@ -67,7 +67,7 @@ class MakeAChange extends Component {
     render() {
         return (
             <MakeAChangeStyled>
-                <img src={this.state.page.image} alt="make-a-change" />
+                <img src="/static/make-a-change.png" alt="make-a-change" />
                 <Title text="We need your support" />
                 <Text text="
                     As our members grow in numbers our needs increase. 

@@ -97,7 +97,7 @@ class Dropdown extends Component {
   fetchPages = async () => {
     const pagesApi = `http://${process.env.HOST}/wp-json/wp/v2/pages`;
     const response = await fetch(pagesApi);
-    const pages = await response.json();
+    let pages = await response.json();
     // Sorting pages by menu_order from WP
     const compare = (a, b) => {
       if (a.menu_order < b.menu_order) {
@@ -107,6 +107,12 @@ class Dropdown extends Component {
       return 0;
     };
     pages.sort(compare);
+
+    //Removing Landing Page
+    pages = pages.filter(page =>{
+      
+      return (page.slug !== "landing");
+    })
     this.setState({
       pages: pages
     });

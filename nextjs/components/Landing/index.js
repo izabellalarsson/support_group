@@ -56,7 +56,7 @@ export default class Landing extends Component {
   render() {
     return (
       <LandingStyled>
-        <Hero text='Support Group Network' />
+        <Hero text='Support Group Network' image={this.state.page.image}/>
         <JourneyCard 
           name = {this.state.journey.name}
           age = {this.state.journey.age}
