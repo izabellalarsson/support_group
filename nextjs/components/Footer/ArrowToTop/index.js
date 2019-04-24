@@ -41,7 +41,7 @@ class ArrowToTop extends Component {
             strokeWidth='3'
             strokeMiterlimit='10'
           />
-        </svg>{" "}
+        </svg>
       </ArrowToTopStyled>
     );
   }
