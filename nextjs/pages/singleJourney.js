@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import fetch from "isomorphic-unfetch";
 import Layout from "../components/Layout";
 import Journies from "../components/Journies";
-import LoadingPage from "../components/LoadingPage";
+
 import NotFound from "../components/NotFound";
 
 export default class JourneyPage extends Component {

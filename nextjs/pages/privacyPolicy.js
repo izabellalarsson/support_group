@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Layout from "../components/Layout";
 import PrivacyPolicy from "../components/PrivacyPolicy";
-import LoadingPage from "../components/LoadingPage";
+
 
 export default class PrivacyPolicyPage extends Component {
   constructor() {

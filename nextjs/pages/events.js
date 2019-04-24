@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Layout from "../components/Layout";
 import Events from "../components/Events";
-import LoadingPage from "../components/LoadingPage";
+
 
 export default class EventPage extends Component {
   constructor() {
