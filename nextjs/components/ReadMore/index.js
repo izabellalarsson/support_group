@@ -11,8 +11,8 @@ const ReadMoreStyle = styled.div`
 
   a {
     animation-name: move;
-    animation-duration: 5s;
-    animation-iteration-count: 1;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
     text-decoration: none;
     color: #ee7171;
     font-weight: 200;

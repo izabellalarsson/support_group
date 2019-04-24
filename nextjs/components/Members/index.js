@@ -158,7 +158,7 @@ class Members extends Component {
             <p>
               By clicking register, you agree to Support group networks
               <Link href='/privacypolicy'>
-                <a href='/privacypolicy'>user agreements and privacy policy</a>
+                <a href='/privacypolicy'> user agreements and privacy policy</a>
               </Link>
             </p>
             <div>
