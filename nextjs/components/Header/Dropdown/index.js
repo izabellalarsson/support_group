@@ -44,7 +44,8 @@ class Dropdown extends Component {
         handleClickMenu: this.props.handleClickMenu,
         pages: [],
         isHighContrast: null,
-        isLargeLetters: null
+        isLargeLetters: null,
+        pageActive: 'about'
       });
     this.fetchPages();
   }
@@ -124,6 +125,12 @@ class Dropdown extends Component {
     });
   };
 
+  changePage = (slug) => {
+    this.setState({
+      pageActive: slug
+    })
+  };
+
   render() {
     return (
       <DropdownStyle isClicked={this.props.isClicked}>
@@ -135,6 +142,8 @@ class Dropdown extends Component {
                 link={`/${page.slug}`}
                 handleClickMenu={this.state.handleClickMenu}
                 key={i}
+                isActive={this.state.pageActive === page.slug}
+                onClick={this.changePage(page.slug)}
               />
             );
           })}
@@ -149,6 +158,7 @@ class Dropdown extends Component {
             isLargeLetters={this.state.isLargeLetters}
             handleSwitchHighContrast={this.handleSwitchHighContrast}
             isHighContrast={this.state.isHighContrast}
+
           />
         </nav>
       </DropdownStyle>
