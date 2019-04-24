@@ -46,6 +46,20 @@ function my_rest_prepare_award($data, $post, $request) {
 add_filter("rest_prepare_award", 'my_rest_prepare_award', 10, 3);
 
 //-----------------------------------------------------------------
+// Added Pages to Rest API
+//----------------------------------------------------------------- 
+function my_rest_prepare_pages($data, $post, $request) {
+  $_data = $data->data;
+  $fields = get_fields($post->ID);
+  foreach ($fields as $key => $value){
+    $_data[$key] = get_field($key, $post->ID);
+  }
+  $data->data = $_data;
+  return $data;
+}
+add_filter("rest_prepare_pages", 'my_rest_prepare_pages', 10, 2);
+
+//-----------------------------------------------------------------
 // Added Thanks to Rest API
 //----------------------------------------------------------------- 
 
