@@ -15,10 +15,20 @@ const EventsStyled = styled.div`
 
 class Events extends Component {
     state = {
-        events: []
+        events: [],
+        page: []
     }
     componentDidMount(){
         this.fetchEvents();
+        this.fetchPage('events');
+    }
+
+    fetchPage = async (slug) => {
+        const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/pages?slug=${slug}]`);
+        const page = await res.json();
+        this.setState({
+            page: page[0]
+        })
     }
 
     fetchEvents = async () => {

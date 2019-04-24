@@ -57,11 +57,9 @@ class MakeAChange extends Component {
     componentDidMount(){
         this.fetchPage('make-a-change');
     }
-
     fetchPage = async (slug) => {
         const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/pages?slug=${slug}]`);
         const page = await res.json();
-        // const page = pages.filter(page => {return page.slug === slug})
         this.setState({
             page: page[0]
         })

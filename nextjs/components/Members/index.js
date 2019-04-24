@@ -88,13 +88,22 @@ class Members extends Component {
     state = {
         signIn: true,
         buttonText: 'Sign In',
-        journey: []
+        journey: [],
+        page: []
     }
     
     componentDidMount(){
         this.fetchRandomJournies();
+        this.fetchPage('member');
     }
 
+    fetchPage = async (slug) => {
+        const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/pages?slug=${slug}]`);
+        const page = await res.json();
+        this.setState({
+            page: page[0]
+        })
+    }
     fetchRandomJournies = async () => {
         const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/journey`);
         const journies = await res.json();

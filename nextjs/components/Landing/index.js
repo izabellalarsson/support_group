@@ -13,12 +13,22 @@ export default class Landing extends Component {
   state = {
     journey: [],
     thanks: [],
-    awards: []
+    awards: [],
+    page: []
   }
   componentDidMount(){
     this.fetchRandomJournies();
     this.fetchThanks();
     this.fetchAwards();
+    this.fetchPage('landing');
+  }
+
+  fetchPage = async (slug) => {
+    const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/pages?slug=${slug}]`);
+    const page = await res.json();
+    this.setState({
+      page: page[0]
+    })
   }
 
   fetchRandomJournies = async () => {
