@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Layout from "../components/Layout";
 import MakeAChange from "../components/MakeAChange";
-import LoadingPage from "../components/LoadingPage";
+
 
 export default class MakeAChangePage extends Component {
   constructor() {

@@ -6,7 +6,7 @@ import Text from "../components/Text";
 import ActivityName from "../components/Branches/ActivityName";
 import BlueLine from "../components/BlueLine";
 import styled from "styled-components";
-import LoadingPage from "../components/LoadingPage";
+
 import NotFound from "../components/NotFound";
 
 const BranchPageStyled = styled.div`
@@ -83,12 +83,8 @@ class BranchPage extends Component {
       </div>
     ) : (
       <Layout>
-        {this.state.isLoading && <LoadingPage />}
         <BranchPageStyled>
-          {this.state.notFound && (
-            <NotFound />
-          )}
-
+          {this.state.notFound && <NotFound />}
           {!this.state.notFound && (
             <div>
               <Title

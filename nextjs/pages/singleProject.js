@@ -4,7 +4,7 @@ import fetch from "isomorphic-unfetch";
 import Title from "../components/Title";
 import Text from "../components/Text";
 import Project from "../components/Projects/Project";
-import LoadingPage from "../components/LoadingPage";
+
 import NotFound from "../components/NotFound";
 
 class ProjectPage extends Component {
@@ -14,18 +14,18 @@ class ProjectPage extends Component {
     const newProject = props.projects.filter(project => {
       return project.slug === slug;
     });
-    
+
     this.state = {
       project: newProject[0],
       isLoading: true,
       notFound: false
     };
 
-    // Show 404 if project not found 
+    // Show 404 if project not found
     if (newProject.length < 1) {
       this.state = {
         notFound: true
-      }
+      };
     }
   }
 
@@ -50,9 +50,8 @@ class ProjectPage extends Component {
       </div>
     ) : (
       <Layout>
-        {this.state.isLoading && <LoadingPage />}
         {this.state.notFound && <NotFound />}
-        {!this.state.notFound && 
+        {!this.state.notFound && (
           <Project
             name={this.state.project.name}
             imageUrl={this.state.project.image}
@@ -62,7 +61,7 @@ class ProjectPage extends Component {
             headlinePurpose={this.state.project.headlinepurpose}
             headlineGoal={this.state.project.headlinegoal}
           />
-        }
+        )}
       </Layout>
     );
   }

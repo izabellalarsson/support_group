@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Layout from "../components/Layout";
 import Members from "../components/Members";
-import LoadingPage from "../components/LoadingPage";
+
 
 export default class MembersPage extends Component {
   constructor() {
