@@ -31,7 +31,7 @@ const Hero = ({ text }) => {
     <HeroStyle>
       <Title text={text}> </Title>{" "}
       <div>
-        <img src='https://images.unsplash.com/photo-1501386761578-eac5c94b800a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80' />
+        <img src='/static/Landing.jpg' />
       </div>{" "}
     </HeroStyle>
   );
