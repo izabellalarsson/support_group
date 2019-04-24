@@ -116,7 +116,6 @@ class Dropdown extends Component {
       isClicked: !this.state.isClicked
     });
   };
-  
 
   render() {
     return (
@@ -125,12 +124,12 @@ class Dropdown extends Component {
           {" "}
           {this.state.pages.map((page, i) => {
             return (
-              <DropdownMainItem 
+              <DropdownMainItem
                 text={page.title.rendered}
                 link={`/${page.slug}`}
                 handleClickMenu={() => this.state.handleClickActive(page.slug)}
                 key={i}
-                isActive={this.state.pageActive === page.slug}
+                pageActive={this.state.pageActive === page.slug}
                 // changePage={() => this.changePage(page.slug)}
               />
             );
@@ -146,11 +145,8 @@ class Dropdown extends Component {
             isLargeLetters={this.state.isLargeLetters}
             handleSwitchHighContrast={this.handleSwitchHighContrast}
             isHighContrast={this.state.isHighContrast}
-
-
           />
         </nav>
-
       </DropdownStyle>
     );
   }

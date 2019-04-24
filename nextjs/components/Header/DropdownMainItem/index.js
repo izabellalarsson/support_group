@@ -16,9 +16,9 @@ const DropdownMainItemStyle = styled.div`
     font-size: 26px;
   }
 `;
-const DropdownMainItem = ({ text, link, handleClickMenu, isActive }) => {
+const DropdownMainItem = ({ text, link, handleClickMenu, pageActive }) => {
   return (
-    <DropdownMainItemStyle isActive={isActive} >
+    <DropdownMainItemStyle isActive={pageActive}>
       <Link href={link}>
         <a href={link} onClick={handleClickMenu}>
           {text}
