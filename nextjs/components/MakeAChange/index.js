@@ -51,11 +51,25 @@ div:nth-child(9){
 
 
 class MakeAChange extends Component {
-    render() {
+    state = {
+        page: []
+    }
+    componentDidMount(){
+        this.fetchPage('make-a-change');
+    }
 
+    fetchPage = async (slug) => {
+        const res = await fetch(`http://${process.env.HOST}/wp-json/wp/v2/pages?slug=${slug}]`);
+        const page = await res.json();
+        // const page = pages.filter(page => {return page.slug === slug})
+        this.setState({
+            page: page[0]
+        })
+    }
+    render() {
         return (
             <MakeAChangeStyled>
-                <img src="https://mensline.org.au/wp-content/uploads/2018/04/supportheader.jpg" alt="support" />
+                <img src={this.state.page.image} alt="make-a-change" />
                 <Title text="We need your support" />
                 <Text text="
                     As our members grow in numbers our needs increase. 
